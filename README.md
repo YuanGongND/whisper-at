@@ -43,6 +43,8 @@ Please cite our Interspeech 2023 paper if you find this repository useful.
 **The best way to learn how to use Whisper-AT is this [[**Colab Tutorial**]](https://colab.research.google.com/drive/1BbOGWCMjkOlOY5PbEMGk5RomRSqMcy_Q?usp=sharing). You can skip all below if you read it.**
 If you don't have Google Colab access (uncommon), you can use this [[Local Notebook]](https://github.com/YuanGongND/whisper-at/blob/main/sample/whisper_at_demo.ipynb) as a substitution.
 
+<hr style="border: 0; height: 1px; background-color: #e0e0e0;">
+
 If you do not care how Whisper-AT is implemented, but just want to use it, you only need to read this section. This will be very simple.
 
 ### Step 1. Install Whisper-AT
