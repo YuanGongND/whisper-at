@@ -12,6 +12,7 @@
 
 [**[Paper]**]()
 [**[Colab Demo]**](https://colab.research.google.com/drive/1BbOGWCMjkOlOY5PbEMGk5RomRSqMcy_Q?usp=sharing)
+[**[Local Notebook Demo]**(for user without Colab access)](https://github.com/YuanGongND/whisper-at/blob/main/sample/whisper_at_demo.ipynb)
 
 <p align="center"><img src="https://github.com/YuanGongND/whisper-at/blob/main/tltr.png?raw=true" alt="Illustration of Whisper-AT." width="800"/></p>
 
@@ -39,7 +40,8 @@ Please cite our Interspeech 2023 paper if you find this repository useful.
 
 ## For Applications
 
-**The best way to learn how to use Whisper-AT is this [Colab Tutorial](https://colab.research.google.com/drive/1BbOGWCMjkOlOY5PbEMGk5RomRSqMcy_Q?usp=sharing). You can skip all below if you read it.**
+**The best way to learn how to use Whisper-AT is this [[**Colab Tutorial**]](https://colab.research.google.com/drive/1BbOGWCMjkOlOY5PbEMGk5RomRSqMcy_Q?usp=sharing). You can skip all below if you read it.**
+If you don't have Google Colab access (uncommon), you can use this [[Local Notebook]](https://github.com/YuanGongND/whisper-at/blob/main/sample/whisper_at_demo.ipynb) as a substitution.
 
 If you do not care how Whisper-AT is implemented, but just want to use it, you only need to read this section. This will be very simple.
 
