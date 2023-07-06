@@ -1,0 +1,1666 @@
++ . /data/sls/scratch/share-201907/slstoolchainrc
+++ export TCROOT=/data/sls/scratch/share-201907
+++ TCROOT=/data/sls/scratch/share-201907
+++ export PATH=/data/sls/scratch/share-201907/bin:/data/sls/scratch/share-201907/opt/cuda/bin:/data/sls/r/u/yuangong/home/miniconda3/bin:/data/sls/r/u/yuangong/home/miniconda3/condabin:/usr/local/csail/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:.:/afs/csail.mit.edu/u/y/yuangong/.local/bin
+++ PATH=/data/sls/scratch/share-201907/bin:/data/sls/scratch/share-201907/opt/cuda/bin:/data/sls/r/u/yuangong/home/miniconda3/bin:/data/sls/r/u/yuangong/home/miniconda3/condabin:/usr/local/csail/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:.:/afs/csail.mit.edu/u/y/yuangong/.local/bin
+++ export LD_LIBRARY_PATH=/data/sls/scratch/share-201907/lib:/data/sls/scratch/share-201907/lib64:/data/sls/scratch/share-201907/opt/cuda/lib64:
+++ LD_LIBRARY_PATH=/data/sls/scratch/share-201907/lib:/data/sls/scratch/share-201907/lib64:/data/sls/scratch/share-201907/opt/cuda/lib64:
+++ export OMP_NUM_THREADS=1
+++ OMP_NUM_THREADS=1
++ source /data/sls/scratch/yuangong/whisper-a/venv-a5/bin/activate
+++ deactivate nondestructive
+++ '[' -n '' ']'
+++ '[' -n '' ']'
+++ '[' -n /bin/bash -o -n '' ']'
+++ hash -r
+++ '[' -n '' ']'
+++ unset VIRTUAL_ENV
+++ '[' '!' nondestructive = nondestructive ']'
+++ VIRTUAL_ENV=/data/sls/scratch/yuangong/whisper-a/venv-a5
+++ export VIRTUAL_ENV
+++ _OLD_VIRTUAL_PATH=/data/sls/scratch/share-201907/bin:/data/sls/scratch/share-201907/opt/cuda/bin:/data/sls/r/u/yuangong/home/miniconda3/bin:/data/sls/r/u/yuangong/home/miniconda3/condabin:/usr/local/csail/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:.:/afs/csail.mit.edu/u/y/yuangong/.local/bin
+++ PATH=/data/sls/scratch/yuangong/whisper-a/venv-a5/bin:/data/sls/scratch/share-201907/bin:/data/sls/scratch/share-201907/opt/cuda/bin:/data/sls/r/u/yuangong/home/miniconda3/bin:/data/sls/r/u/yuangong/home/miniconda3/condabin:/usr/local/csail/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:.:/afs/csail.mit.edu/u/y/yuangong/.local/bin
+++ export PATH
+++ '[' -n '' ']'
+++ '[' -z '' ']'
+++ _OLD_VIRTUAL_PS1=
+++ '[' 'x(venv-a5) ' '!=' x ']'
+++ PS1='(venv-a5) '
+++ export PS1
+++ '[' -n /bin/bash -o -n '' ']'
+++ hash -r
++ export TORCH_HOME=../../pretrained_models
++ TORCH_HOME=../../pretrained_models
++ lr=5e-5
++ freqm=0
++ timem=10
++ mixup=0.5
++ batch_size=48
++ model=whisper-high-lw_tr_1_8
++ model_size=large-v2
++ dataset=as-full
++ bal=bal
++ epoch=30
++ lrscheduler_start=15
++ lrscheduler_decay=0.75
++ lrscheduler_step=5
++ wa=True
++ wa_start=16
++ wa_end=30
++ lr_adapt=False
++ tr_data=/data/sls/scratch/yuangong/aed-pc/src/enhance_label/datafiles_local/whole_train_data.json
++ te_data=/data/sls/scratch/yuangong/aed-pc/src/enhance_label/datafiles_local/eval_data.json
++ label_smooth=0.1
++ exp_dir=./exp/test-as-full-whisper-high-lw_tr_1_8-large-v2-5e-5-15-0.75-bs48-ldaFalse-mix0.5-0-10
++ mkdir -p ./exp/test-as-full-whisper-high-lw_tr_1_8-large-v2-5e-5-15-0.75-bs48-ldaFalse-mix0.5-0-10
++ python -W ignore ./run.py --model whisper-high-lw_tr_1_8 --dataset as-full --data-train /data/sls/scratch/yuangong/aed-pc/src/enhance_label/datafiles_local/whole_train_data.json --data-val /data/sls/scratch/yuangong/aed-pc/src/enhance_label/datafiles_local/eval_data.json --exp-dir ./exp/test-as-full-whisper-high-lw_tr_1_8-large-v2-5e-5-15-0.75-bs48-ldaFalse-mix0.5-0-10 --label-csv /data/sls/scratch/yuangong/convast/egs/audioset/data/class_labels_indices.csv --n_class 527 --lr 5e-5 --n-epochs 30 --batch-size 48 --save_model True --freqm 0 --timem 10 --mixup 0.5 --bal bal --model_size large-v2 --label_smooth 0.1 --lrscheduler_start 15 --lrscheduler_decay 0.75 --lrscheduler_step 5 --loss BCE --metrics mAP --warmup True --wa True --wa_start 16 --wa_end 30 --lr_adapt False --num-workers 8
+I am process 220907, running on sls-a5-1.csail.mit.edu: starting (Tue Jun  6 23:12:50 2023)
+balanced sampler is being used
+Dataset has 1953082 samples
+Using Label Smoothing: 0.1
+Using Following Mask: 0 Freq, 10 Time
+Using Mix-up with Rate 0.500000
+Now Process as-full
+Number of Classes is 527
+Now load features from /data/sls/scratch/yuangong/whisper-a/feat_as_full/whisper_large-v2
+Dataset has 19185 samples
+Using Label Smoothing: 0.0
+Using Following Mask: 0 Freq, 0 Time
+Using Mix-up with Rate 0.000000
+Now Process as-full
+Number of Classes is 527
+Now load features from /data/sls/scratch/yuangong/whisper-a/feat_as_eval/whisper_large-v2
+lw_tr_1_8 large-v2 32 1280
+
+Creating experiment directory: ./exp/test-as-full-whisper-high-lw_tr_1_8-large-v2-5e-5-15-0.75-bs48-ldaFalse-mix0.5-0-10
+Now starting training for 30 epochs
+running on cuda
+Total parameter number is : 40.030 million
+Total trainable parameter number is : 40.030 million
+The learning rate scheduler starts at 15 epoch with decay rate of 0.750 every 5 epoches
+now training with as-full, main metrics: mAP, loss function: BCEWithLogitsLoss(), learning rate scheduler: <torch.optim.lr_scheduler.MultiStepLR object at 0x7facfeafc5d0>
+current #steps=0, #epochs=1
+start training...
+---------------
+2023-06-06 23:13:01.474425
+current #epochs=1, #steps=0
+Epoch: [1][100/40689]	Per Sample Total Time 0.06337	Per Sample Data Time 0.06115	Per Sample DNN Time 0.00222	Train Loss 0.0344	
+Epoch: [1][200/40689]	Per Sample Total Time 0.05963	Per Sample Data Time 0.05754	Per Sample DNN Time 0.00210	Train Loss 0.0265	
+Epoch: [1][300/40689]	Per Sample Total Time 0.05608	Per Sample Data Time 0.05403	Per Sample DNN Time 0.00205	Train Loss 0.0265	
+Epoch: [1][400/40689]	Per Sample Total Time 0.05436	Per Sample Data Time 0.05233	Per Sample DNN Time 0.00203	Train Loss 0.0230	
+Epoch: [1][500/40689]	Per Sample Total Time 0.05371	Per Sample Data Time 0.05169	Per Sample DNN Time 0.00201	Train Loss 0.0222	
+Epoch: [1][600/40689]	Per Sample Total Time 0.05303	Per Sample Data Time 0.05103	Per Sample DNN Time 0.00201	Train Loss 0.0217	
+Epoch: [1][700/40689]	Per Sample Total Time 0.05273	Per Sample Data Time 0.05073	Per Sample DNN Time 0.00200	Train Loss 0.0215	
+Epoch: [1][800/40689]	Per Sample Total Time 0.05243	Per Sample Data Time 0.05043	Per Sample DNN Time 0.00200	Train Loss 0.0205	
+Epoch: [1][900/40689]	Per Sample Total Time 0.05258	Per Sample Data Time 0.05059	Per Sample DNN Time 0.00199	Train Loss 0.0204	
+Epoch: [1][1000/40689]	Per Sample Total Time 0.05214	Per Sample Data Time 0.05014	Per Sample DNN Time 0.00199	Train Loss 0.0208	
+Epoch: [1][1100/40689]	Per Sample Total Time 0.05195	Per Sample Data Time 0.04996	Per Sample DNN Time 0.00199	Train Loss 0.0219	
+Epoch: [1][1200/40689]	Per Sample Total Time 0.05152	Per Sample Data Time 0.04953	Per Sample DNN Time 0.00199	Train Loss 0.0194	
+Epoch: [1][1300/40689]	Per Sample Total Time 0.05122	Per Sample Data Time 0.04923	Per Sample DNN Time 0.00199	Train Loss 0.0191	
+Epoch: [1][1400/40689]	Per Sample Total Time 0.05068	Per Sample Data Time 0.04869	Per Sample DNN Time 0.00199	Train Loss 0.0206	
+Epoch: [1][1500/40689]	Per Sample Total Time 0.05061	Per Sample Data Time 0.04862	Per Sample DNN Time 0.00199	Train Loss 0.0185	
+Epoch: [1][1600/40689]	Per Sample Total Time 0.05006	Per Sample Data Time 0.04807	Per Sample DNN Time 0.00199	Train Loss 0.0198	
+Epoch: [1][1700/40689]	Per Sample Total Time 0.04981	Per Sample Data Time 0.04782	Per Sample DNN Time 0.00199	Train Loss 0.0189	
+Epoch: [1][1800/40689]	Per Sample Total Time 0.04938	Per Sample Data Time 0.04739	Per Sample DNN Time 0.00199	Train Loss 0.0167	
+Epoch: [1][1900/40689]	Per Sample Total Time 0.04912	Per Sample Data Time 0.04714	Per Sample DNN Time 0.00199	Train Loss 0.0189	
+Epoch: [1][2000/40689]	Per Sample Total Time 0.04875	Per Sample Data Time 0.04676	Per Sample DNN Time 0.00199	Train Loss 0.0167	
+Epoch: [1][2100/40689]	Per Sample Total Time 0.04850	Per Sample Data Time 0.04651	Per Sample DNN Time 0.00199	Train Loss 0.0171	
+Epoch: [1][2200/40689]	Per Sample Total Time 0.04835	Per Sample Data Time 0.04636	Per Sample DNN Time 0.00199	Train Loss 0.0192	
+Epoch: [1][2300/40689]	Per Sample Total Time 0.04808	Per Sample Data Time 0.04610	Per Sample DNN Time 0.00198	Train Loss 0.0174	
+Epoch: [1][2400/40689]	Per Sample Total Time 0.04796	Per Sample Data Time 0.04598	Per Sample DNN Time 0.00198	Train Loss 0.0168	
+Epoch: [1][2500/40689]	Per Sample Total Time 0.04780	Per Sample Data Time 0.04581	Per Sample DNN Time 0.00198	Train Loss 0.0191	
+Epoch: [1][2600/40689]	Per Sample Total Time 0.04772	Per Sample Data Time 0.04574	Per Sample DNN Time 0.00198	Train Loss 0.0186	
+Epoch: [1][2700/40689]	Per Sample Total Time 0.04754	Per Sample Data Time 0.04556	Per Sample DNN Time 0.00198	Train Loss 0.0179	
+Epoch: [1][2800/40689]	Per Sample Total Time 0.04750	Per Sample Data Time 0.04551	Per Sample DNN Time 0.00198	Train Loss 0.0155	
+Epoch: [1][2900/40689]	Per Sample Total Time 0.04734	Per Sample Data Time 0.04536	Per Sample DNN Time 0.00198	Train Loss 0.0185	
+Epoch: [1][3000/40689]	Per Sample Total Time 0.04731	Per Sample Data Time 0.04533	Per Sample DNN Time 0.00198	Train Loss 0.0167	
+Epoch: [1][3100/40689]	Per Sample Total Time 0.04718	Per Sample Data Time 0.04520	Per Sample DNN Time 0.00198	Train Loss 0.0163	
+Epoch: [1][3200/40689]	Per Sample Total Time 0.04710	Per Sample Data Time 0.04512	Per Sample DNN Time 0.00198	Train Loss 0.0184	
+Epoch: [1][3300/40689]	Per Sample Total Time 0.04700	Per Sample Data Time 0.04502	Per Sample DNN Time 0.00198	Train Loss 0.0163	
+Epoch: [1][3400/40689]	Per Sample Total Time 0.04699	Per Sample Data Time 0.04501	Per Sample DNN Time 0.00198	Train Loss 0.0170	
+Epoch: [1][3500/40689]	Per Sample Total Time 0.04686	Per Sample Data Time 0.04487	Per Sample DNN Time 0.00198	Train Loss 0.0149	
+Epoch: [1][3600/40689]	Per Sample Total Time 0.04680	Per Sample Data Time 0.04482	Per Sample DNN Time 0.00198	Train Loss 0.0154	
+Epoch: [1][3700/40689]	Per Sample Total Time 0.04669	Per Sample Data Time 0.04471	Per Sample DNN Time 0.00198	Train Loss 0.0156	
+Epoch: [1][3800/40689]	Per Sample Total Time 0.04664	Per Sample Data Time 0.04466	Per Sample DNN Time 0.00198	Train Loss 0.0166	
+Epoch: [1][3900/40689]	Per Sample Total Time 0.04652	Per Sample Data Time 0.04454	Per Sample DNN Time 0.00198	Train Loss 0.0169	
+Epoch: [1][4000/40689]	Per Sample Total Time 0.04659	Per Sample Data Time 0.04461	Per Sample DNN Time 0.00198	Train Loss 0.0144	
+start validation
+mAP: 0.268905
+AUC: 0.954528
+d_prime: 2.390646
+train_loss: 0.021488
+valid_loss: 0.016418
+validation finished
+Epoch-1 lr: 5e-05
+epoch 1 training time: 9268.444
+---------------
+2023-06-07 01:47:29.918277
+current #epochs=2, #steps=4070
+Epoch: [2][30/40689]	Per Sample Total Time 0.05518	Per Sample Data Time 0.05317	Per Sample DNN Time 0.00201	Train Loss 0.0172	
+Epoch: [2][130/40689]	Per Sample Total Time 0.05149	Per Sample Data Time 0.04951	Per Sample DNN Time 0.00198	Train Loss 0.0170	
+Epoch: [2][230/40689]	Per Sample Total Time 0.05018	Per Sample Data Time 0.04820	Per Sample DNN Time 0.00198	Train Loss 0.0170	
+Epoch: [2][330/40689]	Per Sample Total Time 0.05022	Per Sample Data Time 0.04825	Per Sample DNN Time 0.00197	Train Loss 0.0163	
+Epoch: [2][430/40689]	Per Sample Total Time 0.04946	Per Sample Data Time 0.04748	Per Sample DNN Time 0.00198	Train Loss 0.0160	
+Epoch: [2][530/40689]	Per Sample Total Time 0.04973	Per Sample Data Time 0.04775	Per Sample DNN Time 0.00198	Train Loss 0.0163	
+Epoch: [2][630/40689]	Per Sample Total Time 0.04902	Per Sample Data Time 0.04703	Per Sample DNN Time 0.00199	Train Loss 0.0164	
+Epoch: [2][730/40689]	Per Sample Total Time 0.04945	Per Sample Data Time 0.04746	Per Sample DNN Time 0.00199	Train Loss 0.0167	
+Epoch: [2][830/40689]	Per Sample Total Time 0.04953	Per Sample Data Time 0.04754	Per Sample DNN Time 0.00199	Train Loss 0.0152	
+Epoch: [2][930/40689]	Per Sample Total Time 0.04954	Per Sample Data Time 0.04756	Per Sample DNN Time 0.00199	Train Loss 0.0155	
+Epoch: [2][1030/40689]	Per Sample Total Time 0.05017	Per Sample Data Time 0.04819	Per Sample DNN Time 0.00198	Train Loss 0.0159	
+Epoch: [2][1130/40689]	Per Sample Total Time 0.05020	Per Sample Data Time 0.04821	Per Sample DNN Time 0.00198	Train Loss 0.0143	
+Epoch: [2][1230/40689]	Per Sample Total Time 0.05047	Per Sample Data Time 0.04849	Per Sample DNN Time 0.00198	Train Loss 0.0150	
+Epoch: [2][1330/40689]	Per Sample Total Time 0.05029	Per Sample Data Time 0.04831	Per Sample DNN Time 0.00198	Train Loss 0.0145	
+Epoch: [2][1430/40689]	Per Sample Total Time 0.05050	Per Sample Data Time 0.04852	Per Sample DNN Time 0.00198	Train Loss 0.0176	
+Epoch: [2][1530/40689]	Per Sample Total Time 0.05013	Per Sample Data Time 0.04815	Per Sample DNN Time 0.00198	Train Loss 0.0151	
+Epoch: [2][1630/40689]	Per Sample Total Time 0.05006	Per Sample Data Time 0.04808	Per Sample DNN Time 0.00198	Train Loss 0.0152	
+Epoch: [2][1730/40689]	Per Sample Total Time 0.04982	Per Sample Data Time 0.04784	Per Sample DNN Time 0.00198	Train Loss 0.0170	
+Epoch: [2][1830/40689]	Per Sample Total Time 0.04999	Per Sample Data Time 0.04801	Per Sample DNN Time 0.00198	Train Loss 0.0148	
+Epoch: [2][1930/40689]	Per Sample Total Time 0.04992	Per Sample Data Time 0.04794	Per Sample DNN Time 0.00198	Train Loss 0.0162	
+Epoch: [2][2030/40689]	Per Sample Total Time 0.04995	Per Sample Data Time 0.04797	Per Sample DNN Time 0.00198	Train Loss 0.0146	
+Epoch: [2][2130/40689]	Per Sample Total Time 0.04978	Per Sample Data Time 0.04780	Per Sample DNN Time 0.00198	Train Loss 0.0169	
+Epoch: [2][2230/40689]	Per Sample Total Time 0.04975	Per Sample Data Time 0.04777	Per Sample DNN Time 0.00198	Train Loss 0.0147	
+Epoch: [2][2330/40689]	Per Sample Total Time 0.04952	Per Sample Data Time 0.04754	Per Sample DNN Time 0.00198	Train Loss 0.0155	
+Epoch: [2][2430/40689]	Per Sample Total Time 0.04936	Per Sample Data Time 0.04737	Per Sample DNN Time 0.00198	Train Loss 0.0176	
+Epoch: [2][2530/40689]	Per Sample Total Time 0.04928	Per Sample Data Time 0.04730	Per Sample DNN Time 0.00198	Train Loss 0.0141	
+Epoch: [2][2630/40689]	Per Sample Total Time 0.04908	Per Sample Data Time 0.04710	Per Sample DNN Time 0.00198	Train Loss 0.0145	
+Epoch: [2][2730/40689]	Per Sample Total Time 0.04903	Per Sample Data Time 0.04705	Per Sample DNN Time 0.00198	Train Loss 0.0154	
+Epoch: [2][2830/40689]	Per Sample Total Time 0.04884	Per Sample Data Time 0.04687	Per Sample DNN Time 0.00198	Train Loss 0.0181	
+Epoch: [2][2930/40689]	Per Sample Total Time 0.04883	Per Sample Data Time 0.04685	Per Sample DNN Time 0.00198	Train Loss 0.0148	
+Epoch: [2][3030/40689]	Per Sample Total Time 0.04869	Per Sample Data Time 0.04671	Per Sample DNN Time 0.00198	Train Loss 0.0167	
+Epoch: [2][3130/40689]	Per Sample Total Time 0.04866	Per Sample Data Time 0.04668	Per Sample DNN Time 0.00198	Train Loss 0.0157	
+Epoch: [2][3230/40689]	Per Sample Total Time 0.04853	Per Sample Data Time 0.04655	Per Sample DNN Time 0.00198	Train Loss 0.0165	
+Epoch: [2][3330/40689]	Per Sample Total Time 0.04850	Per Sample Data Time 0.04652	Per Sample DNN Time 0.00198	Train Loss 0.0157	
+Epoch: [2][3430/40689]	Per Sample Total Time 0.04838	Per Sample Data Time 0.04641	Per Sample DNN Time 0.00198	Train Loss 0.0158	
+Epoch: [2][3530/40689]	Per Sample Total Time 0.04840	Per Sample Data Time 0.04642	Per Sample DNN Time 0.00198	Train Loss 0.0171	
+Epoch: [2][3630/40689]	Per Sample Total Time 0.04832	Per Sample Data Time 0.04634	Per Sample DNN Time 0.00198	Train Loss 0.0158	
+Epoch: [2][3730/40689]	Per Sample Total Time 0.04838	Per Sample Data Time 0.04640	Per Sample DNN Time 0.00198	Train Loss 0.0159	
+Epoch: [2][3830/40689]	Per Sample Total Time 0.04828	Per Sample Data Time 0.04630	Per Sample DNN Time 0.00198	Train Loss 0.0155	
+Epoch: [2][3930/40689]	Per Sample Total Time 0.04826	Per Sample Data Time 0.04628	Per Sample DNN Time 0.00198	Train Loss 0.0140	
+Epoch: [2][4030/40689]	Per Sample Total Time 0.04818	Per Sample Data Time 0.04621	Per Sample DNN Time 0.00198	Train Loss 0.0150	
+start validation
+mAP: 0.314657
+AUC: 0.962510
+d_prime: 2.518138
+train_loss: 0.015908
+valid_loss: 0.015194
+validation finished
+Epoch-2 lr: 5e-05
+epoch 2 training time: 9993.992
+---------------
+2023-06-07 04:34:03.910216
+current #epochs=3, #steps=8140
+Epoch: [3][60/40689]	Per Sample Total Time 0.05542	Per Sample Data Time 0.05343	Per Sample DNN Time 0.00199	Train Loss 0.0171	
+Epoch: [3][160/40689]	Per Sample Total Time 0.05483	Per Sample Data Time 0.05283	Per Sample DNN Time 0.00200	Train Loss 0.0134	
+Epoch: [3][260/40689]	Per Sample Total Time 0.05437	Per Sample Data Time 0.05238	Per Sample DNN Time 0.00200	Train Loss 0.0144	
+Epoch: [3][360/40689]	Per Sample Total Time 0.05402	Per Sample Data Time 0.05202	Per Sample DNN Time 0.00200	Train Loss 0.0145	
+Epoch: [3][460/40689]	Per Sample Total Time 0.05246	Per Sample Data Time 0.05046	Per Sample DNN Time 0.00200	Train Loss 0.0172	
+Epoch: [3][560/40689]	Per Sample Total Time 0.05203	Per Sample Data Time 0.05004	Per Sample DNN Time 0.00200	Train Loss 0.0142	
+Epoch: [3][660/40689]	Per Sample Total Time 0.05129	Per Sample Data Time 0.04929	Per Sample DNN Time 0.00200	Train Loss 0.0168	
+Epoch: [3][760/40689]	Per Sample Total Time 0.05095	Per Sample Data Time 0.04895	Per Sample DNN Time 0.00200	Train Loss 0.0150	
+Epoch: [3][860/40689]	Per Sample Total Time 0.05041	Per Sample Data Time 0.04841	Per Sample DNN Time 0.00199	Train Loss 0.0157	
+Epoch: [3][960/40689]	Per Sample Total Time 0.05046	Per Sample Data Time 0.04847	Per Sample DNN Time 0.00199	Train Loss 0.0147	
+Epoch: [3][1060/40689]	Per Sample Total Time 0.05003	Per Sample Data Time 0.04804	Per Sample DNN Time 0.00199	Train Loss 0.0153	
+Epoch: [3][1160/40689]	Per Sample Total Time 0.04984	Per Sample Data Time 0.04784	Per Sample DNN Time 0.00199	Train Loss 0.0159	
+Epoch: [3][1260/40689]	Per Sample Total Time 0.04948	Per Sample Data Time 0.04749	Per Sample DNN Time 0.00199	Train Loss 0.0164	
+Epoch: [3][1360/40689]	Per Sample Total Time 0.04919	Per Sample Data Time 0.04720	Per Sample DNN Time 0.00199	Train Loss 0.0153	
+Epoch: [3][1460/40689]	Per Sample Total Time 0.04912	Per Sample Data Time 0.04713	Per Sample DNN Time 0.00199	Train Loss 0.0156	
+Epoch: [3][1560/40689]	Per Sample Total Time 0.04898	Per Sample Data Time 0.04699	Per Sample DNN Time 0.00199	Train Loss 0.0163	
+Epoch: [3][1660/40689]	Per Sample Total Time 0.04887	Per Sample Data Time 0.04688	Per Sample DNN Time 0.00199	Train Loss 0.0139	
+Epoch: [3][1760/40689]	Per Sample Total Time 0.04874	Per Sample Data Time 0.04675	Per Sample DNN Time 0.00199	Train Loss 0.0157	
+Epoch: [3][1860/40689]	Per Sample Total Time 0.04873	Per Sample Data Time 0.04675	Per Sample DNN Time 0.00199	Train Loss 0.0134	
+Epoch: [3][1960/40689]	Per Sample Total Time 0.04863	Per Sample Data Time 0.04665	Per Sample DNN Time 0.00199	Train Loss 0.0143	
+Epoch: [3][2060/40689]	Per Sample Total Time 0.04872	Per Sample Data Time 0.04673	Per Sample DNN Time 0.00199	Train Loss 0.0173	
+Epoch: [3][2160/40689]	Per Sample Total Time 0.04860	Per Sample Data Time 0.04661	Per Sample DNN Time 0.00199	Train Loss 0.0151	
+Epoch: [3][2260/40689]	Per Sample Total Time 0.04855	Per Sample Data Time 0.04656	Per Sample DNN Time 0.00199	Train Loss 0.0149	
+Epoch: [3][2360/40689]	Per Sample Total Time 0.04841	Per Sample Data Time 0.04642	Per Sample DNN Time 0.00199	Train Loss 0.0153	
+Epoch: [3][2460/40689]	Per Sample Total Time 0.04837	Per Sample Data Time 0.04638	Per Sample DNN Time 0.00199	Train Loss 0.0168	
+Epoch: [3][2560/40689]	Per Sample Total Time 0.04830	Per Sample Data Time 0.04631	Per Sample DNN Time 0.00199	Train Loss 0.0158	
+Epoch: [3][2660/40689]	Per Sample Total Time 0.04820	Per Sample Data Time 0.04622	Per Sample DNN Time 0.00198	Train Loss 0.0149	
+Epoch: [3][2760/40689]	Per Sample Total Time 0.04814	Per Sample Data Time 0.04615	Per Sample DNN Time 0.00198	Train Loss 0.0154	
+Epoch: [3][2860/40689]	Per Sample Total Time 0.04811	Per Sample Data Time 0.04612	Per Sample DNN Time 0.00198	Train Loss 0.0154	
+Epoch: [3][2960/40689]	Per Sample Total Time 0.04804	Per Sample Data Time 0.04606	Per Sample DNN Time 0.00198	Train Loss 0.0158	
+Epoch: [3][3060/40689]	Per Sample Total Time 0.04799	Per Sample Data Time 0.04601	Per Sample DNN Time 0.00198	Train Loss 0.0165	
+Epoch: [3][3160/40689]	Per Sample Total Time 0.04797	Per Sample Data Time 0.04599	Per Sample DNN Time 0.00198	Train Loss 0.0173	
+Epoch: [3][3260/40689]	Per Sample Total Time 0.04795	Per Sample Data Time 0.04596	Per Sample DNN Time 0.00198	Train Loss 0.0135	
+Epoch: [3][3360/40689]	Per Sample Total Time 0.04793	Per Sample Data Time 0.04595	Per Sample DNN Time 0.00198	Train Loss 0.0146	
+Epoch: [3][3460/40689]	Per Sample Total Time 0.04793	Per Sample Data Time 0.04595	Per Sample DNN Time 0.00198	Train Loss 0.0162	
+Epoch: [3][3560/40689]	Per Sample Total Time 0.04791	Per Sample Data Time 0.04592	Per Sample DNN Time 0.00198	Train Loss 0.0159	
+Epoch: [3][3660/40689]	Per Sample Total Time 0.04787	Per Sample Data Time 0.04589	Per Sample DNN Time 0.00198	Train Loss 0.0152	
+Epoch: [3][3760/40689]	Per Sample Total Time 0.04781	Per Sample Data Time 0.04583	Per Sample DNN Time 0.00198	Train Loss 0.0146	
+Epoch: [3][3860/40689]	Per Sample Total Time 0.04782	Per Sample Data Time 0.04583	Per Sample DNN Time 0.00198	Train Loss 0.0156	
+Epoch: [3][3960/40689]	Per Sample Total Time 0.04775	Per Sample Data Time 0.04577	Per Sample DNN Time 0.00198	Train Loss 0.0159	
+Epoch: [3][4060/40689]	Per Sample Total Time 0.04769	Per Sample Data Time 0.04570	Per Sample DNN Time 0.00198	Train Loss 0.0150	
+start validation
+mAP: 0.333209
+AUC: 0.965373
+d_prime: 2.569285
+train_loss: 0.015400
+valid_loss: 0.014659
+validation finished
+Epoch-3 lr: 5e-05
+epoch 3 training time: 9902.383
+---------------
+2023-06-07 07:19:06.292643
+current #epochs=4, #steps=12210
+Epoch: [4][90/40689]	Per Sample Total Time 0.05321	Per Sample Data Time 0.05124	Per Sample DNN Time 0.00198	Train Loss 0.0147	
+Epoch: [4][190/40689]	Per Sample Total Time 0.05062	Per Sample Data Time 0.04865	Per Sample DNN Time 0.00197	Train Loss 0.0140	
+Epoch: [4][290/40689]	Per Sample Total Time 0.05071	Per Sample Data Time 0.04873	Per Sample DNN Time 0.00197	Train Loss 0.0166	
+Epoch: [4][390/40689]	Per Sample Total Time 0.04955	Per Sample Data Time 0.04757	Per Sample DNN Time 0.00197	Train Loss 0.0153	
+Epoch: [4][490/40689]	Per Sample Total Time 0.04969	Per Sample Data Time 0.04771	Per Sample DNN Time 0.00197	Train Loss 0.0146	
+Epoch: [4][590/40689]	Per Sample Total Time 0.04913	Per Sample Data Time 0.04716	Per Sample DNN Time 0.00198	Train Loss 0.0162	
+Epoch: [4][690/40689]	Per Sample Total Time 0.04905	Per Sample Data Time 0.04707	Per Sample DNN Time 0.00198	Train Loss 0.0138	
+Epoch: [4][790/40689]	Per Sample Total Time 0.04882	Per Sample Data Time 0.04684	Per Sample DNN Time 0.00198	Train Loss 0.0163	
+Epoch: [4][890/40689]	Per Sample Total Time 0.04885	Per Sample Data Time 0.04688	Per Sample DNN Time 0.00198	Train Loss 0.0145	
+Epoch: [4][990/40689]	Per Sample Total Time 0.04864	Per Sample Data Time 0.04666	Per Sample DNN Time 0.00198	Train Loss 0.0150	
+Epoch: [4][1090/40689]	Per Sample Total Time 0.04853	Per Sample Data Time 0.04655	Per Sample DNN Time 0.00198	Train Loss 0.0151	
+Epoch: [4][1190/40689]	Per Sample Total Time 0.04836	Per Sample Data Time 0.04639	Per Sample DNN Time 0.00198	Train Loss 0.0142	
+Epoch: [4][1290/40689]	Per Sample Total Time 0.04824	Per Sample Data Time 0.04627	Per Sample DNN Time 0.00198	Train Loss 0.0154	
+Epoch: [4][1390/40689]	Per Sample Total Time 0.04818	Per Sample Data Time 0.04621	Per Sample DNN Time 0.00198	Train Loss 0.0150	
+Epoch: [4][1490/40689]	Per Sample Total Time 0.04819	Per Sample Data Time 0.04621	Per Sample DNN Time 0.00198	Train Loss 0.0156	
+Epoch: [4][1590/40689]	Per Sample Total Time 0.04817	Per Sample Data Time 0.04620	Per Sample DNN Time 0.00198	Train Loss 0.0166	
+Epoch: [4][1690/40689]	Per Sample Total Time 0.04806	Per Sample Data Time 0.04608	Per Sample DNN Time 0.00198	Train Loss 0.0155	
+Epoch: [4][1790/40689]	Per Sample Total Time 0.04818	Per Sample Data Time 0.04620	Per Sample DNN Time 0.00198	Train Loss 0.0157	
+Epoch: [4][1890/40689]	Per Sample Total Time 0.04805	Per Sample Data Time 0.04607	Per Sample DNN Time 0.00198	Train Loss 0.0145	
+Epoch: [4][1990/40689]	Per Sample Total Time 0.04800	Per Sample Data Time 0.04602	Per Sample DNN Time 0.00198	Train Loss 0.0136	
+Epoch: [4][2090/40689]	Per Sample Total Time 0.04797	Per Sample Data Time 0.04599	Per Sample DNN Time 0.00198	Train Loss 0.0153	
+Epoch: [4][2190/40689]	Per Sample Total Time 0.04786	Per Sample Data Time 0.04588	Per Sample DNN Time 0.00198	Train Loss 0.0135	
+Epoch: [4][2290/40689]	Per Sample Total Time 0.04789	Per Sample Data Time 0.04591	Per Sample DNN Time 0.00198	Train Loss 0.0158	
+Epoch: [4][2390/40689]	Per Sample Total Time 0.04776	Per Sample Data Time 0.04578	Per Sample DNN Time 0.00198	Train Loss 0.0146	
+Epoch: [4][2490/40689]	Per Sample Total Time 0.04784	Per Sample Data Time 0.04586	Per Sample DNN Time 0.00198	Train Loss 0.0141	
+Epoch: [4][2590/40689]	Per Sample Total Time 0.04775	Per Sample Data Time 0.04577	Per Sample DNN Time 0.00198	Train Loss 0.0166	
+Epoch: [4][2690/40689]	Per Sample Total Time 0.04773	Per Sample Data Time 0.04574	Per Sample DNN Time 0.00198	Train Loss 0.0155	
+Epoch: [4][2790/40689]	Per Sample Total Time 0.04760	Per Sample Data Time 0.04562	Per Sample DNN Time 0.00198	Train Loss 0.0159	
+Epoch: [4][2890/40689]	Per Sample Total Time 0.04759	Per Sample Data Time 0.04561	Per Sample DNN Time 0.00198	Train Loss 0.0179	
+Epoch: [4][2990/40689]	Per Sample Total Time 0.04753	Per Sample Data Time 0.04555	Per Sample DNN Time 0.00198	Train Loss 0.0152	
+Epoch: [4][3090/40689]	Per Sample Total Time 0.04757	Per Sample Data Time 0.04559	Per Sample DNN Time 0.00198	Train Loss 0.0157	
+Epoch: [4][3190/40689]	Per Sample Total Time 0.04748	Per Sample Data Time 0.04550	Per Sample DNN Time 0.00198	Train Loss 0.0150	
+Epoch: [4][3290/40689]	Per Sample Total Time 0.04748	Per Sample Data Time 0.04549	Per Sample DNN Time 0.00198	Train Loss 0.0144	
+Epoch: [4][3390/40689]	Per Sample Total Time 0.04742	Per Sample Data Time 0.04543	Per Sample DNN Time 0.00198	Train Loss 0.0139	
+Epoch: [4][3490/40689]	Per Sample Total Time 0.04743	Per Sample Data Time 0.04545	Per Sample DNN Time 0.00198	Train Loss 0.0148	
+Epoch: [4][3590/40689]	Per Sample Total Time 0.04739	Per Sample Data Time 0.04540	Per Sample DNN Time 0.00198	Train Loss 0.0135	
+Epoch: [4][3690/40689]	Per Sample Total Time 0.04733	Per Sample Data Time 0.04535	Per Sample DNN Time 0.00198	Train Loss 0.0156	
+Epoch: [4][3790/40689]	Per Sample Total Time 0.04728	Per Sample Data Time 0.04530	Per Sample DNN Time 0.00198	Train Loss 0.0146	
+Epoch: [4][3890/40689]	Per Sample Total Time 0.04732	Per Sample Data Time 0.04533	Per Sample DNN Time 0.00198	Train Loss 0.0160	
+Epoch: [4][3990/40689]	Per Sample Total Time 0.04728	Per Sample Data Time 0.04530	Per Sample DNN Time 0.00198	Train Loss 0.0150	
+start validation
+mAP: 0.348673
+AUC: 0.967234
+d_prime: 2.604441
+train_loss: 0.015084
+valid_loss: 0.014331
+validation finished
+Epoch-4 lr: 5e-05
+epoch 4 training time: 9821.980
+---------------
+2023-06-07 10:02:48.272953
+current #epochs=5, #steps=16280
+Epoch: [5][20/40689]	Per Sample Total Time 0.06302	Per Sample Data Time 0.06101	Per Sample DNN Time 0.00202	Train Loss 0.0149	
+Epoch: [5][120/40689]	Per Sample Total Time 0.05353	Per Sample Data Time 0.05155	Per Sample DNN Time 0.00198	Train Loss 0.0149	
+Epoch: [5][220/40689]	Per Sample Total Time 0.05131	Per Sample Data Time 0.04933	Per Sample DNN Time 0.00198	Train Loss 0.0140	
+Epoch: [5][320/40689]	Per Sample Total Time 0.05137	Per Sample Data Time 0.04939	Per Sample DNN Time 0.00198	Train Loss 0.0158	
+Epoch: [5][420/40689]	Per Sample Total Time 0.05039	Per Sample Data Time 0.04841	Per Sample DNN Time 0.00198	Train Loss 0.0147	
+Epoch: [5][520/40689]	Per Sample Total Time 0.04993	Per Sample Data Time 0.04795	Per Sample DNN Time 0.00198	Train Loss 0.0165	
+Epoch: [5][620/40689]	Per Sample Total Time 0.04931	Per Sample Data Time 0.04734	Per Sample DNN Time 0.00198	Train Loss 0.0129	
+Epoch: [5][720/40689]	Per Sample Total Time 0.04916	Per Sample Data Time 0.04718	Per Sample DNN Time 0.00198	Train Loss 0.0138	
+Epoch: [5][820/40689]	Per Sample Total Time 0.04897	Per Sample Data Time 0.04699	Per Sample DNN Time 0.00198	Train Loss 0.0142	
+Epoch: [5][920/40689]	Per Sample Total Time 0.04906	Per Sample Data Time 0.04708	Per Sample DNN Time 0.00198	Train Loss 0.0143	
+Epoch: [5][1020/40689]	Per Sample Total Time 0.04892	Per Sample Data Time 0.04694	Per Sample DNN Time 0.00198	Train Loss 0.0139	
+Epoch: [5][1120/40689]	Per Sample Total Time 0.04886	Per Sample Data Time 0.04689	Per Sample DNN Time 0.00197	Train Loss 0.0131	
+Epoch: [5][1220/40689]	Per Sample Total Time 0.04885	Per Sample Data Time 0.04687	Per Sample DNN Time 0.00197	Train Loss 0.0166	
+Epoch: [5][1320/40689]	Per Sample Total Time 0.04870	Per Sample Data Time 0.04673	Per Sample DNN Time 0.00197	Train Loss 0.0140	
+Epoch: [5][1420/40689]	Per Sample Total Time 0.04873	Per Sample Data Time 0.04675	Per Sample DNN Time 0.00198	Train Loss 0.0146	
+Epoch: [5][1520/40689]	Per Sample Total Time 0.04859	Per Sample Data Time 0.04662	Per Sample DNN Time 0.00198	Train Loss 0.0143	
+Epoch: [5][1620/40689]	Per Sample Total Time 0.04864	Per Sample Data Time 0.04666	Per Sample DNN Time 0.00198	Train Loss 0.0139	
+Epoch: [5][1720/40689]	Per Sample Total Time 0.04847	Per Sample Data Time 0.04650	Per Sample DNN Time 0.00198	Train Loss 0.0146	
+Epoch: [5][1820/40689]	Per Sample Total Time 0.04894	Per Sample Data Time 0.04696	Per Sample DNN Time 0.00198	Train Loss 0.0140	
+Epoch: [5][1920/40689]	Per Sample Total Time 0.04901	Per Sample Data Time 0.04703	Per Sample DNN Time 0.00198	Train Loss 0.0144	
+Epoch: [5][2020/40689]	Per Sample Total Time 0.04903	Per Sample Data Time 0.04705	Per Sample DNN Time 0.00198	Train Loss 0.0142	
+Epoch: [5][2120/40689]	Per Sample Total Time 0.04894	Per Sample Data Time 0.04696	Per Sample DNN Time 0.00198	Train Loss 0.0155	
+Epoch: [5][2220/40689]	Per Sample Total Time 0.04897	Per Sample Data Time 0.04700	Per Sample DNN Time 0.00198	Train Loss 0.0129	
+Epoch: [5][2320/40689]	Per Sample Total Time 0.04881	Per Sample Data Time 0.04684	Per Sample DNN Time 0.00198	Train Loss 0.0139	
+Epoch: [5][2420/40689]	Per Sample Total Time 0.04887	Per Sample Data Time 0.04689	Per Sample DNN Time 0.00198	Train Loss 0.0152	
+Epoch: [5][2520/40689]	Per Sample Total Time 0.04868	Per Sample Data Time 0.04670	Per Sample DNN Time 0.00198	Train Loss 0.0156	
+Epoch: [5][2620/40689]	Per Sample Total Time 0.04866	Per Sample Data Time 0.04667	Per Sample DNN Time 0.00198	Train Loss 0.0135	
+Epoch: [5][2720/40689]	Per Sample Total Time 0.04850	Per Sample Data Time 0.04652	Per Sample DNN Time 0.00198	Train Loss 0.0153	
+Epoch: [5][2820/40689]	Per Sample Total Time 0.04849	Per Sample Data Time 0.04651	Per Sample DNN Time 0.00198	Train Loss 0.0138	
+Epoch: [5][2920/40689]	Per Sample Total Time 0.04841	Per Sample Data Time 0.04643	Per Sample DNN Time 0.00198	Train Loss 0.0122	
+Epoch: [5][3020/40689]	Per Sample Total Time 0.04836	Per Sample Data Time 0.04638	Per Sample DNN Time 0.00198	Train Loss 0.0156	
+Epoch: [5][3120/40689]	Per Sample Total Time 0.04834	Per Sample Data Time 0.04636	Per Sample DNN Time 0.00198	Train Loss 0.0158	
+Epoch: [5][3220/40689]	Per Sample Total Time 0.04829	Per Sample Data Time 0.04631	Per Sample DNN Time 0.00198	Train Loss 0.0159	
+Epoch: [5][3320/40689]	Per Sample Total Time 0.04824	Per Sample Data Time 0.04626	Per Sample DNN Time 0.00198	Train Loss 0.0155	
+Epoch: [5][3420/40689]	Per Sample Total Time 0.04816	Per Sample Data Time 0.04618	Per Sample DNN Time 0.00198	Train Loss 0.0129	
+Epoch: [5][3520/40689]	Per Sample Total Time 0.04816	Per Sample Data Time 0.04618	Per Sample DNN Time 0.00198	Train Loss 0.0158	
+Epoch: [5][3620/40689]	Per Sample Total Time 0.04810	Per Sample Data Time 0.04612	Per Sample DNN Time 0.00198	Train Loss 0.0155	
+Epoch: [5][3720/40689]	Per Sample Total Time 0.04809	Per Sample Data Time 0.04612	Per Sample DNN Time 0.00198	Train Loss 0.0140	
+Epoch: [5][3820/40689]	Per Sample Total Time 0.04803	Per Sample Data Time 0.04605	Per Sample DNN Time 0.00198	Train Loss 0.0139	
+Epoch: [5][3920/40689]	Per Sample Total Time 0.04801	Per Sample Data Time 0.04603	Per Sample DNN Time 0.00198	Train Loss 0.0157	
+Epoch: [5][4020/40689]	Per Sample Total Time 0.04794	Per Sample Data Time 0.04596	Per Sample DNN Time 0.00198	Train Loss 0.0138	
+start validation
+mAP: 0.355396
+AUC: 0.968352
+d_prime: 2.626339
+train_loss: 0.014867
+valid_loss: 0.014131
+validation finished
+Epoch-5 lr: 5e-05
+epoch 5 training time: 9936.386
+---------------
+2023-06-07 12:48:24.658784
+current #epochs=6, #steps=20350
+Epoch: [6][50/40689]	Per Sample Total Time 0.05552	Per Sample Data Time 0.05352	Per Sample DNN Time 0.00200	Train Loss 0.0149	
+Epoch: [6][150/40689]	Per Sample Total Time 0.05191	Per Sample Data Time 0.04993	Per Sample DNN Time 0.00198	Train Loss 0.0133	
+Epoch: [6][250/40689]	Per Sample Total Time 0.05222	Per Sample Data Time 0.05024	Per Sample DNN Time 0.00198	Train Loss 0.0151	
+Epoch: [6][350/40689]	Per Sample Total Time 0.05043	Per Sample Data Time 0.04846	Per Sample DNN Time 0.00198	Train Loss 0.0147	
+Epoch: [6][450/40689]	Per Sample Total Time 0.05020	Per Sample Data Time 0.04822	Per Sample DNN Time 0.00198	Train Loss 0.0129	
+Epoch: [6][550/40689]	Per Sample Total Time 0.04947	Per Sample Data Time 0.04750	Per Sample DNN Time 0.00197	Train Loss 0.0145	
+Epoch: [6][650/40689]	Per Sample Total Time 0.04933	Per Sample Data Time 0.04736	Per Sample DNN Time 0.00197	Train Loss 0.0132	
+Epoch: [6][750/40689]	Per Sample Total Time 0.04907	Per Sample Data Time 0.04709	Per Sample DNN Time 0.00197	Train Loss 0.0140	
+Epoch: [6][850/40689]	Per Sample Total Time 0.04887	Per Sample Data Time 0.04689	Per Sample DNN Time 0.00197	Train Loss 0.0147	
+Epoch: [6][950/40689]	Per Sample Total Time 0.04928	Per Sample Data Time 0.04730	Per Sample DNN Time 0.00197	Train Loss 0.0144	
+Epoch: [6][1050/40689]	Per Sample Total Time 0.04940	Per Sample Data Time 0.04742	Per Sample DNN Time 0.00197	Train Loss 0.0162	
+Epoch: [6][1150/40689]	Per Sample Total Time 0.04931	Per Sample Data Time 0.04734	Per Sample DNN Time 0.00197	Train Loss 0.0147	
+Epoch: [6][1250/40689]	Per Sample Total Time 0.04951	Per Sample Data Time 0.04753	Per Sample DNN Time 0.00197	Train Loss 0.0154	
+Epoch: [6][1350/40689]	Per Sample Total Time 0.04925	Per Sample Data Time 0.04728	Per Sample DNN Time 0.00197	Train Loss 0.0153	
+Epoch: [6][1450/40689]	Per Sample Total Time 0.04925	Per Sample Data Time 0.04728	Per Sample DNN Time 0.00197	Train Loss 0.0152	
+Epoch: [6][1550/40689]	Per Sample Total Time 0.04910	Per Sample Data Time 0.04713	Per Sample DNN Time 0.00197	Train Loss 0.0147	
+Epoch: [6][1650/40689]	Per Sample Total Time 0.04903	Per Sample Data Time 0.04705	Per Sample DNN Time 0.00198	Train Loss 0.0147	
+Epoch: [6][1750/40689]	Per Sample Total Time 0.04887	Per Sample Data Time 0.04690	Per Sample DNN Time 0.00198	Train Loss 0.0139	
+Epoch: [6][1850/40689]	Per Sample Total Time 0.04891	Per Sample Data Time 0.04694	Per Sample DNN Time 0.00198	Train Loss 0.0140	
+Epoch: [6][1950/40689]	Per Sample Total Time 0.04879	Per Sample Data Time 0.04681	Per Sample DNN Time 0.00198	Train Loss 0.0130	
+Epoch: [6][2050/40689]	Per Sample Total Time 0.04875	Per Sample Data Time 0.04677	Per Sample DNN Time 0.00198	Train Loss 0.0149	
+Epoch: [6][2150/40689]	Per Sample Total Time 0.04858	Per Sample Data Time 0.04660	Per Sample DNN Time 0.00198	Train Loss 0.0159	
+Epoch: [6][2250/40689]	Per Sample Total Time 0.04864	Per Sample Data Time 0.04666	Per Sample DNN Time 0.00198	Train Loss 0.0141	
+Epoch: [6][2350/40689]	Per Sample Total Time 0.04856	Per Sample Data Time 0.04658	Per Sample DNN Time 0.00198	Train Loss 0.0145	
+Epoch: [6][2450/40689]	Per Sample Total Time 0.04854	Per Sample Data Time 0.04656	Per Sample DNN Time 0.00198	Train Loss 0.0145	
+Epoch: [6][2550/40689]	Per Sample Total Time 0.04834	Per Sample Data Time 0.04636	Per Sample DNN Time 0.00198	Train Loss 0.0157	
+Epoch: [6][2650/40689]	Per Sample Total Time 0.04827	Per Sample Data Time 0.04629	Per Sample DNN Time 0.00198	Train Loss 0.0145	
+Epoch: [6][2750/40689]	Per Sample Total Time 0.04817	Per Sample Data Time 0.04619	Per Sample DNN Time 0.00198	Train Loss 0.0152	
+Epoch: [6][2850/40689]	Per Sample Total Time 0.04807	Per Sample Data Time 0.04609	Per Sample DNN Time 0.00198	Train Loss 0.0166	
+Epoch: [6][2950/40689]	Per Sample Total Time 0.04799	Per Sample Data Time 0.04601	Per Sample DNN Time 0.00198	Train Loss 0.0136	
+Epoch: [6][3050/40689]	Per Sample Total Time 0.04798	Per Sample Data Time 0.04600	Per Sample DNN Time 0.00198	Train Loss 0.0139	
+Epoch: [6][3150/40689]	Per Sample Total Time 0.04802	Per Sample Data Time 0.04604	Per Sample DNN Time 0.00198	Train Loss 0.0146	
+Epoch: [6][3250/40689]	Per Sample Total Time 0.04791	Per Sample Data Time 0.04593	Per Sample DNN Time 0.00198	Train Loss 0.0145	
+Epoch: [6][3350/40689]	Per Sample Total Time 0.04792	Per Sample Data Time 0.04594	Per Sample DNN Time 0.00198	Train Loss 0.0126	
+Epoch: [6][3450/40689]	Per Sample Total Time 0.04786	Per Sample Data Time 0.04588	Per Sample DNN Time 0.00198	Train Loss 0.0141	
+Epoch: [6][3550/40689]	Per Sample Total Time 0.04788	Per Sample Data Time 0.04590	Per Sample DNN Time 0.00198	Train Loss 0.0130	
+Epoch: [6][3650/40689]	Per Sample Total Time 0.04782	Per Sample Data Time 0.04584	Per Sample DNN Time 0.00198	Train Loss 0.0145	
+Epoch: [6][3750/40689]	Per Sample Total Time 0.04780	Per Sample Data Time 0.04582	Per Sample DNN Time 0.00198	Train Loss 0.0151	
+Epoch: [6][3850/40689]	Per Sample Total Time 0.04771	Per Sample Data Time 0.04573	Per Sample DNN Time 0.00198	Train Loss 0.0140	
+Epoch: [6][3950/40689]	Per Sample Total Time 0.04773	Per Sample Data Time 0.04575	Per Sample DNN Time 0.00198	Train Loss 0.0133	
+Epoch: [6][4050/40689]	Per Sample Total Time 0.04765	Per Sample Data Time 0.04567	Per Sample DNN Time 0.00198	Train Loss 0.0135	
+start validation
+mAP: 0.360933
+AUC: 0.969254
+d_prime: 2.644488
+train_loss: 0.014717
+valid_loss: 0.013998
+validation finished
+Epoch-6 lr: 5e-05
+epoch 6 training time: 9904.634
+---------------
+2023-06-07 15:33:29.292663
+current #epochs=7, #steps=24420
+Epoch: [7][80/40689]	Per Sample Total Time 0.05654	Per Sample Data Time 0.05453	Per Sample DNN Time 0.00201	Train Loss 0.0149	
+Epoch: [7][180/40689]	Per Sample Total Time 0.05419	Per Sample Data Time 0.05220	Per Sample DNN Time 0.00200	Train Loss 0.0148	
+Epoch: [7][280/40689]	Per Sample Total Time 0.05456	Per Sample Data Time 0.05257	Per Sample DNN Time 0.00199	Train Loss 0.0149	
+Epoch: [7][380/40689]	Per Sample Total Time 0.05287	Per Sample Data Time 0.05088	Per Sample DNN Time 0.00199	Train Loss 0.0161	
+Epoch: [7][480/40689]	Per Sample Total Time 0.05264	Per Sample Data Time 0.05064	Per Sample DNN Time 0.00199	Train Loss 0.0136	
+Epoch: [7][580/40689]	Per Sample Total Time 0.05157	Per Sample Data Time 0.04958	Per Sample DNN Time 0.00199	Train Loss 0.0139	
+Epoch: [7][680/40689]	Per Sample Total Time 0.05176	Per Sample Data Time 0.04976	Per Sample DNN Time 0.00200	Train Loss 0.0152	
+Epoch: [7][780/40689]	Per Sample Total Time 0.05116	Per Sample Data Time 0.04916	Per Sample DNN Time 0.00200	Train Loss 0.0151	
+Epoch: [7][880/40689]	Per Sample Total Time 0.05092	Per Sample Data Time 0.04893	Per Sample DNN Time 0.00200	Train Loss 0.0147	
+Epoch: [7][980/40689]	Per Sample Total Time 0.05048	Per Sample Data Time 0.04849	Per Sample DNN Time 0.00200	Train Loss 0.0149	
+Epoch: [7][1080/40689]	Per Sample Total Time 0.05071	Per Sample Data Time 0.04871	Per Sample DNN Time 0.00200	Train Loss 0.0160	
+Epoch: [7][1180/40689]	Per Sample Total Time 0.05030	Per Sample Data Time 0.04831	Per Sample DNN Time 0.00200	Train Loss 0.0141	
+Epoch: [7][1280/40689]	Per Sample Total Time 0.05031	Per Sample Data Time 0.04831	Per Sample DNN Time 0.00200	Train Loss 0.0160	
+Epoch: [7][1380/40689]	Per Sample Total Time 0.05021	Per Sample Data Time 0.04822	Per Sample DNN Time 0.00200	Train Loss 0.0141	
+Epoch: [7][1480/40689]	Per Sample Total Time 0.05026	Per Sample Data Time 0.04827	Per Sample DNN Time 0.00200	Train Loss 0.0159	
+Epoch: [7][1580/40689]	Per Sample Total Time 0.05020	Per Sample Data Time 0.04820	Per Sample DNN Time 0.00200	Train Loss 0.0148	
+Epoch: [7][1680/40689]	Per Sample Total Time 0.05029	Per Sample Data Time 0.04829	Per Sample DNN Time 0.00200	Train Loss 0.0156	
+Epoch: [7][1780/40689]	Per Sample Total Time 0.05010	Per Sample Data Time 0.04810	Per Sample DNN Time 0.00200	Train Loss 0.0138	
+Epoch: [7][1880/40689]	Per Sample Total Time 0.05007	Per Sample Data Time 0.04807	Per Sample DNN Time 0.00200	Train Loss 0.0156	
+Epoch: [7][1980/40689]	Per Sample Total Time 0.04992	Per Sample Data Time 0.04793	Per Sample DNN Time 0.00200	Train Loss 0.0152	
+Epoch: [7][2080/40689]	Per Sample Total Time 0.05013	Per Sample Data Time 0.04814	Per Sample DNN Time 0.00200	Train Loss 0.0146	
+Epoch: [7][2180/40689]	Per Sample Total Time 0.04997	Per Sample Data Time 0.04797	Per Sample DNN Time 0.00200	Train Loss 0.0127	
+Epoch: [7][2280/40689]	Per Sample Total Time 0.04989	Per Sample Data Time 0.04790	Per Sample DNN Time 0.00199	Train Loss 0.0145	
+Epoch: [7][2380/40689]	Per Sample Total Time 0.04989	Per Sample Data Time 0.04789	Per Sample DNN Time 0.00199	Train Loss 0.0150	
+Epoch: [7][2480/40689]	Per Sample Total Time 0.04975	Per Sample Data Time 0.04775	Per Sample DNN Time 0.00199	Train Loss 0.0141	
+Epoch: [7][2580/40689]	Per Sample Total Time 0.04971	Per Sample Data Time 0.04771	Per Sample DNN Time 0.00199	Train Loss 0.0127	
+Epoch: [7][2680/40689]	Per Sample Total Time 0.04952	Per Sample Data Time 0.04752	Per Sample DNN Time 0.00199	Train Loss 0.0164	
+Epoch: [7][2780/40689]	Per Sample Total Time 0.04947	Per Sample Data Time 0.04748	Per Sample DNN Time 0.00199	Train Loss 0.0147	
+Epoch: [7][2880/40689]	Per Sample Total Time 0.04935	Per Sample Data Time 0.04736	Per Sample DNN Time 0.00199	Train Loss 0.0131	
+Epoch: [7][2980/40689]	Per Sample Total Time 0.04924	Per Sample Data Time 0.04724	Per Sample DNN Time 0.00199	Train Loss 0.0151	
+Epoch: [7][3080/40689]	Per Sample Total Time 0.04919	Per Sample Data Time 0.04720	Per Sample DNN Time 0.00199	Train Loss 0.0149	
+Epoch: [7][3180/40689]	Per Sample Total Time 0.04910	Per Sample Data Time 0.04711	Per Sample DNN Time 0.00199	Train Loss 0.0150	
+Epoch: [7][3280/40689]	Per Sample Total Time 0.04911	Per Sample Data Time 0.04712	Per Sample DNN Time 0.00199	Train Loss 0.0149	
+Epoch: [7][3380/40689]	Per Sample Total Time 0.04904	Per Sample Data Time 0.04705	Per Sample DNN Time 0.00199	Train Loss 0.0154	
+Epoch: [7][3480/40689]	Per Sample Total Time 0.04908	Per Sample Data Time 0.04709	Per Sample DNN Time 0.00199	Train Loss 0.0154	
+Epoch: [7][3580/40689]	Per Sample Total Time 0.04901	Per Sample Data Time 0.04702	Per Sample DNN Time 0.00199	Train Loss 0.0139	
+Epoch: [7][3680/40689]	Per Sample Total Time 0.04906	Per Sample Data Time 0.04707	Per Sample DNN Time 0.00199	Train Loss 0.0144	
+Epoch: [7][3780/40689]	Per Sample Total Time 0.04898	Per Sample Data Time 0.04699	Per Sample DNN Time 0.00199	Train Loss 0.0163	
+Epoch: [7][3880/40689]	Per Sample Total Time 0.04905	Per Sample Data Time 0.04706	Per Sample DNN Time 0.00199	Train Loss 0.0127	
+Epoch: [7][3980/40689]	Per Sample Total Time 0.04896	Per Sample Data Time 0.04697	Per Sample DNN Time 0.00199	Train Loss 0.0138	
+start validation
+mAP: 0.367427
+AUC: 0.969976
+d_prime: 2.659348
+train_loss: 0.014610
+valid_loss: 0.013837
+validation finished
+Epoch-7 lr: 5e-05
+epoch 7 training time: 10139.847
+---------------
+2023-06-07 18:22:29.139945
+current #epochs=8, #steps=28490
+Epoch: [8][10/40689]	Per Sample Total Time 0.09310	Per Sample Data Time 0.09103	Per Sample DNN Time 0.00206	Train Loss 0.0137	
+Epoch: [8][110/40689]	Per Sample Total Time 0.05776	Per Sample Data Time 0.05577	Per Sample DNN Time 0.00199	Train Loss 0.0152	
+Epoch: [8][210/40689]	Per Sample Total Time 0.05485	Per Sample Data Time 0.05286	Per Sample DNN Time 0.00199	Train Loss 0.0136	
+Epoch: [8][310/40689]	Per Sample Total Time 0.05244	Per Sample Data Time 0.05045	Per Sample DNN Time 0.00199	Train Loss 0.0136	
+Epoch: [8][410/40689]	Per Sample Total Time 0.05252	Per Sample Data Time 0.05053	Per Sample DNN Time 0.00199	Train Loss 0.0145	
+Epoch: [8][510/40689]	Per Sample Total Time 0.05162	Per Sample Data Time 0.04963	Per Sample DNN Time 0.00199	Train Loss 0.0137	
+Epoch: [8][610/40689]	Per Sample Total Time 0.05183	Per Sample Data Time 0.04985	Per Sample DNN Time 0.00198	Train Loss 0.0131	
+Epoch: [8][710/40689]	Per Sample Total Time 0.05141	Per Sample Data Time 0.04943	Per Sample DNN Time 0.00198	Train Loss 0.0145	
+Epoch: [8][810/40689]	Per Sample Total Time 0.05133	Per Sample Data Time 0.04934	Per Sample DNN Time 0.00199	Train Loss 0.0144	
+Epoch: [8][910/40689]	Per Sample Total Time 0.05107	Per Sample Data Time 0.04909	Per Sample DNN Time 0.00198	Train Loss 0.0157	
+Epoch: [8][1010/40689]	Per Sample Total Time 0.05119	Per Sample Data Time 0.04920	Per Sample DNN Time 0.00198	Train Loss 0.0145	
+Epoch: [8][1110/40689]	Per Sample Total Time 0.05098	Per Sample Data Time 0.04900	Per Sample DNN Time 0.00199	Train Loss 0.0145	
+Epoch: [8][1210/40689]	Per Sample Total Time 0.05091	Per Sample Data Time 0.04893	Per Sample DNN Time 0.00199	Train Loss 0.0133	
+Epoch: [8][1310/40689]	Per Sample Total Time 0.05055	Per Sample Data Time 0.04857	Per Sample DNN Time 0.00199	Train Loss 0.0150	
+Epoch: [8][1410/40689]	Per Sample Total Time 0.05051	Per Sample Data Time 0.04852	Per Sample DNN Time 0.00199	Train Loss 0.0159	
+Epoch: [8][1510/40689]	Per Sample Total Time 0.05029	Per Sample Data Time 0.04830	Per Sample DNN Time 0.00199	Train Loss 0.0132	
+Epoch: [8][1610/40689]	Per Sample Total Time 0.05025	Per Sample Data Time 0.04826	Per Sample DNN Time 0.00199	Train Loss 0.0145	
+Epoch: [8][1710/40689]	Per Sample Total Time 0.04993	Per Sample Data Time 0.04794	Per Sample DNN Time 0.00199	Train Loss 0.0147	
+Epoch: [8][1810/40689]	Per Sample Total Time 0.04993	Per Sample Data Time 0.04794	Per Sample DNN Time 0.00199	Train Loss 0.0139	
+Epoch: [8][1910/40689]	Per Sample Total Time 0.04973	Per Sample Data Time 0.04774	Per Sample DNN Time 0.00199	Train Loss 0.0157	
+Epoch: [8][2010/40689]	Per Sample Total Time 0.04973	Per Sample Data Time 0.04774	Per Sample DNN Time 0.00199	Train Loss 0.0151	
+Epoch: [8][2110/40689]	Per Sample Total Time 0.04960	Per Sample Data Time 0.04761	Per Sample DNN Time 0.00199	Train Loss 0.0146	
+Epoch: [8][2210/40689]	Per Sample Total Time 0.04952	Per Sample Data Time 0.04753	Per Sample DNN Time 0.00199	Train Loss 0.0139	
+Epoch: [8][2310/40689]	Per Sample Total Time 0.04931	Per Sample Data Time 0.04733	Per Sample DNN Time 0.00199	Train Loss 0.0152	
+Epoch: [8][2410/40689]	Per Sample Total Time 0.04925	Per Sample Data Time 0.04727	Per Sample DNN Time 0.00199	Train Loss 0.0148	
+Epoch: [8][2510/40689]	Per Sample Total Time 0.04907	Per Sample Data Time 0.04709	Per Sample DNN Time 0.00199	Train Loss 0.0150	
+Epoch: [8][2610/40689]	Per Sample Total Time 0.04903	Per Sample Data Time 0.04704	Per Sample DNN Time 0.00199	Train Loss 0.0136	
+Epoch: [8][2710/40689]	Per Sample Total Time 0.04884	Per Sample Data Time 0.04685	Per Sample DNN Time 0.00199	Train Loss 0.0139	
+Epoch: [8][2810/40689]	Per Sample Total Time 0.04881	Per Sample Data Time 0.04682	Per Sample DNN Time 0.00199	Train Loss 0.0141	
+Epoch: [8][2910/40689]	Per Sample Total Time 0.04866	Per Sample Data Time 0.04668	Per Sample DNN Time 0.00199	Train Loss 0.0140	
+Epoch: [8][3010/40689]	Per Sample Total Time 0.04863	Per Sample Data Time 0.04664	Per Sample DNN Time 0.00199	Train Loss 0.0137	
+Epoch: [8][3110/40689]	Per Sample Total Time 0.04847	Per Sample Data Time 0.04649	Per Sample DNN Time 0.00199	Train Loss 0.0151	
+Epoch: [8][3210/40689]	Per Sample Total Time 0.04854	Per Sample Data Time 0.04655	Per Sample DNN Time 0.00199	Train Loss 0.0125	
+Epoch: [8][3310/40689]	Per Sample Total Time 0.04841	Per Sample Data Time 0.04643	Per Sample DNN Time 0.00199	Train Loss 0.0141	
+Epoch: [8][3410/40689]	Per Sample Total Time 0.04839	Per Sample Data Time 0.04640	Per Sample DNN Time 0.00199	Train Loss 0.0155	
+Epoch: [8][3510/40689]	Per Sample Total Time 0.04829	Per Sample Data Time 0.04631	Per Sample DNN Time 0.00199	Train Loss 0.0131	
+Epoch: [8][3610/40689]	Per Sample Total Time 0.04829	Per Sample Data Time 0.04630	Per Sample DNN Time 0.00199	Train Loss 0.0158	
+Epoch: [8][3710/40689]	Per Sample Total Time 0.04816	Per Sample Data Time 0.04617	Per Sample DNN Time 0.00199	Train Loss 0.0143	
+Epoch: [8][3810/40689]	Per Sample Total Time 0.04822	Per Sample Data Time 0.04623	Per Sample DNN Time 0.00199	Train Loss 0.0146	
+Epoch: [8][3910/40689]	Per Sample Total Time 0.04820	Per Sample Data Time 0.04621	Per Sample DNN Time 0.00199	Train Loss 0.0142	
+Epoch: [8][4010/40689]	Per Sample Total Time 0.04816	Per Sample Data Time 0.04617	Per Sample DNN Time 0.00199	Train Loss 0.0161	
+start validation
+mAP: 0.371815
+AUC: 0.970196
+d_prime: 2.663926
+train_loss: 0.014435
+valid_loss: 0.013838
+validation finished
+Epoch-8 lr: 5e-05
+epoch 8 training time: 9981.273
+---------------
+2023-06-07 21:08:50.413288
+current #epochs=9, #steps=32560
+Epoch: [9][40/40689]	Per Sample Total Time 0.05541	Per Sample Data Time 0.05342	Per Sample DNN Time 0.00198	Train Loss 0.0161	
+Epoch: [9][140/40689]	Per Sample Total Time 0.04971	Per Sample Data Time 0.04773	Per Sample DNN Time 0.00198	Train Loss 0.0144	
+Epoch: [9][240/40689]	Per Sample Total Time 0.04978	Per Sample Data Time 0.04781	Per Sample DNN Time 0.00198	Train Loss 0.0157	
+Epoch: [9][340/40689]	Per Sample Total Time 0.04918	Per Sample Data Time 0.04720	Per Sample DNN Time 0.00198	Train Loss 0.0147	
+Epoch: [9][440/40689]	Per Sample Total Time 0.04921	Per Sample Data Time 0.04724	Per Sample DNN Time 0.00198	Train Loss 0.0143	
+Epoch: [9][540/40689]	Per Sample Total Time 0.04924	Per Sample Data Time 0.04726	Per Sample DNN Time 0.00198	Train Loss 0.0164	
+Epoch: [9][640/40689]	Per Sample Total Time 0.04891	Per Sample Data Time 0.04693	Per Sample DNN Time 0.00198	Train Loss 0.0156	
+Epoch: [9][740/40689]	Per Sample Total Time 0.04912	Per Sample Data Time 0.04713	Per Sample DNN Time 0.00198	Train Loss 0.0139	
+Epoch: [9][840/40689]	Per Sample Total Time 0.04872	Per Sample Data Time 0.04674	Per Sample DNN Time 0.00199	Train Loss 0.0142	
+Epoch: [9][940/40689]	Per Sample Total Time 0.04877	Per Sample Data Time 0.04678	Per Sample DNN Time 0.00199	Train Loss 0.0134	
+Epoch: [9][1040/40689]	Per Sample Total Time 0.04846	Per Sample Data Time 0.04647	Per Sample DNN Time 0.00199	Train Loss 0.0144	
+Epoch: [9][1140/40689]	Per Sample Total Time 0.04840	Per Sample Data Time 0.04641	Per Sample DNN Time 0.00199	Train Loss 0.0135	
+Epoch: [9][1240/40689]	Per Sample Total Time 0.04818	Per Sample Data Time 0.04619	Per Sample DNN Time 0.00199	Train Loss 0.0157	
+Epoch: [9][1340/40689]	Per Sample Total Time 0.04815	Per Sample Data Time 0.04616	Per Sample DNN Time 0.00199	Train Loss 0.0136	
+Epoch: [9][1440/40689]	Per Sample Total Time 0.04809	Per Sample Data Time 0.04611	Per Sample DNN Time 0.00199	Train Loss 0.0147	
+Epoch: [9][1540/40689]	Per Sample Total Time 0.04803	Per Sample Data Time 0.04604	Per Sample DNN Time 0.00199	Train Loss 0.0155	
+Epoch: [9][1640/40689]	Per Sample Total Time 0.04798	Per Sample Data Time 0.04600	Per Sample DNN Time 0.00198	Train Loss 0.0130	
+Epoch: [9][1740/40689]	Per Sample Total Time 0.04792	Per Sample Data Time 0.04593	Per Sample DNN Time 0.00198	Train Loss 0.0146	
+Epoch: [9][1840/40689]	Per Sample Total Time 0.04789	Per Sample Data Time 0.04591	Per Sample DNN Time 0.00198	Train Loss 0.0162	
+Epoch: [9][1940/40689]	Per Sample Total Time 0.04789	Per Sample Data Time 0.04591	Per Sample DNN Time 0.00198	Train Loss 0.0168	
+Epoch: [9][2040/40689]	Per Sample Total Time 0.04780	Per Sample Data Time 0.04582	Per Sample DNN Time 0.00198	Train Loss 0.0146	
+Epoch: [9][2140/40689]	Per Sample Total Time 0.04770	Per Sample Data Time 0.04572	Per Sample DNN Time 0.00198	Train Loss 0.0145	
+Epoch: [9][2240/40689]	Per Sample Total Time 0.04771	Per Sample Data Time 0.04573	Per Sample DNN Time 0.00198	Train Loss 0.0135	
+Epoch: [9][2340/40689]	Per Sample Total Time 0.04765	Per Sample Data Time 0.04566	Per Sample DNN Time 0.00198	Train Loss 0.0161	
+Epoch: [9][2440/40689]	Per Sample Total Time 0.04756	Per Sample Data Time 0.04558	Per Sample DNN Time 0.00198	Train Loss 0.0151	
+Epoch: [9][2540/40689]	Per Sample Total Time 0.04760	Per Sample Data Time 0.04562	Per Sample DNN Time 0.00198	Train Loss 0.0154	
+Epoch: [9][2640/40689]	Per Sample Total Time 0.04745	Per Sample Data Time 0.04547	Per Sample DNN Time 0.00198	Train Loss 0.0140	
+Epoch: [9][2740/40689]	Per Sample Total Time 0.04746	Per Sample Data Time 0.04548	Per Sample DNN Time 0.00198	Train Loss 0.0132	
+Epoch: [9][2840/40689]	Per Sample Total Time 0.04737	Per Sample Data Time 0.04539	Per Sample DNN Time 0.00198	Train Loss 0.0140	
+Epoch: [9][2940/40689]	Per Sample Total Time 0.04737	Per Sample Data Time 0.04539	Per Sample DNN Time 0.00198	Train Loss 0.0148	
+Epoch: [9][3040/40689]	Per Sample Total Time 0.04727	Per Sample Data Time 0.04529	Per Sample DNN Time 0.00198	Train Loss 0.0142	
+Epoch: [9][3140/40689]	Per Sample Total Time 0.04730	Per Sample Data Time 0.04532	Per Sample DNN Time 0.00198	Train Loss 0.0143	
+Epoch: [9][3240/40689]	Per Sample Total Time 0.04735	Per Sample Data Time 0.04537	Per Sample DNN Time 0.00198	Train Loss 0.0144	
+Epoch: [9][3340/40689]	Per Sample Total Time 0.04738	Per Sample Data Time 0.04540	Per Sample DNN Time 0.00198	Train Loss 0.0139	
+Epoch: [9][3440/40689]	Per Sample Total Time 0.04733	Per Sample Data Time 0.04535	Per Sample DNN Time 0.00198	Train Loss 0.0148	
+Epoch: [9][3540/40689]	Per Sample Total Time 0.04736	Per Sample Data Time 0.04539	Per Sample DNN Time 0.00198	Train Loss 0.0140	
+Epoch: [9][3640/40689]	Per Sample Total Time 0.04731	Per Sample Data Time 0.04533	Per Sample DNN Time 0.00198	Train Loss 0.0141	
+Epoch: [9][3740/40689]	Per Sample Total Time 0.04734	Per Sample Data Time 0.04536	Per Sample DNN Time 0.00198	Train Loss 0.0147	
+Epoch: [9][3840/40689]	Per Sample Total Time 0.04729	Per Sample Data Time 0.04531	Per Sample DNN Time 0.00198	Train Loss 0.0142	
+Epoch: [9][3940/40689]	Per Sample Total Time 0.04731	Per Sample Data Time 0.04533	Per Sample DNN Time 0.00198	Train Loss 0.0137	
+Epoch: [9][4040/40689]	Per Sample Total Time 0.04722	Per Sample Data Time 0.04524	Per Sample DNN Time 0.00198	Train Loss 0.0148	
+start validation
+mAP: 0.374829
+AUC: 0.970427
+d_prime: 2.668773
+train_loss: 0.014348
+valid_loss: 0.013695
+validation finished
+Epoch-9 lr: 5e-05
+epoch 9 training time: 9802.732
+---------------
+2023-06-07 23:52:13.145348
+current #epochs=10, #steps=36630
+Epoch: [10][70/40689]	Per Sample Total Time 0.05125	Per Sample Data Time 0.04928	Per Sample DNN Time 0.00197	Train Loss 0.0126	
+Epoch: [10][170/40689]	Per Sample Total Time 0.05148	Per Sample Data Time 0.04951	Per Sample DNN Time 0.00197	Train Loss 0.0132	
+Epoch: [10][270/40689]	Per Sample Total Time 0.04938	Per Sample Data Time 0.04740	Per Sample DNN Time 0.00197	Train Loss 0.0122	
+Epoch: [10][370/40689]	Per Sample Total Time 0.04933	Per Sample Data Time 0.04735	Per Sample DNN Time 0.00197	Train Loss 0.0129	
+Epoch: [10][470/40689]	Per Sample Total Time 0.04896	Per Sample Data Time 0.04699	Per Sample DNN Time 0.00197	Train Loss 0.0151	
+Epoch: [10][570/40689]	Per Sample Total Time 0.04878	Per Sample Data Time 0.04680	Per Sample DNN Time 0.00197	Train Loss 0.0134	
+Epoch: [10][670/40689]	Per Sample Total Time 0.04874	Per Sample Data Time 0.04677	Per Sample DNN Time 0.00197	Train Loss 0.0143	
+Epoch: [10][770/40689]	Per Sample Total Time 0.04895	Per Sample Data Time 0.04698	Per Sample DNN Time 0.00197	Train Loss 0.0138	
+Epoch: [10][870/40689]	Per Sample Total Time 0.04918	Per Sample Data Time 0.04721	Per Sample DNN Time 0.00197	Train Loss 0.0131	
+Epoch: [10][970/40689]	Per Sample Total Time 0.04945	Per Sample Data Time 0.04748	Per Sample DNN Time 0.00197	Train Loss 0.0156	
+Epoch: [10][1070/40689]	Per Sample Total Time 0.04985	Per Sample Data Time 0.04788	Per Sample DNN Time 0.00197	Train Loss 0.0146	
+Epoch: [10][1170/40689]	Per Sample Total Time 0.04963	Per Sample Data Time 0.04766	Per Sample DNN Time 0.00197	Train Loss 0.0155	
+Epoch: [10][1270/40689]	Per Sample Total Time 0.04965	Per Sample Data Time 0.04767	Per Sample DNN Time 0.00198	Train Loss 0.0149	
+Epoch: [10][1370/40689]	Per Sample Total Time 0.04936	Per Sample Data Time 0.04738	Per Sample DNN Time 0.00198	Train Loss 0.0153	
+Epoch: [10][1470/40689]	Per Sample Total Time 0.04941	Per Sample Data Time 0.04743	Per Sample DNN Time 0.00198	Train Loss 0.0139	
+Epoch: [10][1570/40689]	Per Sample Total Time 0.04914	Per Sample Data Time 0.04716	Per Sample DNN Time 0.00198	Train Loss 0.0133	
+Epoch: [10][1670/40689]	Per Sample Total Time 0.04943	Per Sample Data Time 0.04745	Per Sample DNN Time 0.00198	Train Loss 0.0142	
+Epoch: [10][1770/40689]	Per Sample Total Time 0.04931	Per Sample Data Time 0.04732	Per Sample DNN Time 0.00198	Train Loss 0.0141	
+Epoch: [10][1870/40689]	Per Sample Total Time 0.04933	Per Sample Data Time 0.04735	Per Sample DNN Time 0.00198	Train Loss 0.0144	
+Epoch: [10][1970/40689]	Per Sample Total Time 0.04914	Per Sample Data Time 0.04716	Per Sample DNN Time 0.00198	Train Loss 0.0130	
+Epoch: [10][2070/40689]	Per Sample Total Time 0.04904	Per Sample Data Time 0.04706	Per Sample DNN Time 0.00198	Train Loss 0.0162	
+Epoch: [10][2170/40689]	Per Sample Total Time 0.04886	Per Sample Data Time 0.04687	Per Sample DNN Time 0.00198	Train Loss 0.0138	
+Epoch: [10][2270/40689]	Per Sample Total Time 0.04878	Per Sample Data Time 0.04680	Per Sample DNN Time 0.00198	Train Loss 0.0132	
+Epoch: [10][2370/40689]	Per Sample Total Time 0.04863	Per Sample Data Time 0.04665	Per Sample DNN Time 0.00198	Train Loss 0.0129	
+Epoch: [10][2470/40689]	Per Sample Total Time 0.04852	Per Sample Data Time 0.04653	Per Sample DNN Time 0.00198	Train Loss 0.0144	
+Epoch: [10][2570/40689]	Per Sample Total Time 0.04841	Per Sample Data Time 0.04642	Per Sample DNN Time 0.00198	Train Loss 0.0137	
+Epoch: [10][2670/40689]	Per Sample Total Time 0.04835	Per Sample Data Time 0.04637	Per Sample DNN Time 0.00198	Train Loss 0.0145	
+Epoch: [10][2770/40689]	Per Sample Total Time 0.04826	Per Sample Data Time 0.04627	Per Sample DNN Time 0.00198	Train Loss 0.0147	
+Epoch: [10][2870/40689]	Per Sample Total Time 0.04817	Per Sample Data Time 0.04619	Per Sample DNN Time 0.00198	Train Loss 0.0135	
+Epoch: [10][2970/40689]	Per Sample Total Time 0.04812	Per Sample Data Time 0.04613	Per Sample DNN Time 0.00198	Train Loss 0.0144	
+Epoch: [10][3070/40689]	Per Sample Total Time 0.04805	Per Sample Data Time 0.04606	Per Sample DNN Time 0.00198	Train Loss 0.0158	
+Epoch: [10][3170/40689]	Per Sample Total Time 0.04803	Per Sample Data Time 0.04605	Per Sample DNN Time 0.00198	Train Loss 0.0140	
+Epoch: [10][3270/40689]	Per Sample Total Time 0.04801	Per Sample Data Time 0.04602	Per Sample DNN Time 0.00198	Train Loss 0.0144	
+Epoch: [10][3370/40689]	Per Sample Total Time 0.04807	Per Sample Data Time 0.04609	Per Sample DNN Time 0.00198	Train Loss 0.0131	
+Epoch: [10][3470/40689]	Per Sample Total Time 0.04859	Per Sample Data Time 0.04661	Per Sample DNN Time 0.00198	Train Loss 0.0133	
+Epoch: [10][3570/40689]	Per Sample Total Time 0.04855	Per Sample Data Time 0.04657	Per Sample DNN Time 0.00198	Train Loss 0.0140	
+Epoch: [10][3670/40689]	Per Sample Total Time 0.04860	Per Sample Data Time 0.04662	Per Sample DNN Time 0.00198	Train Loss 0.0126	
+Epoch: [10][3770/40689]	Per Sample Total Time 0.04853	Per Sample Data Time 0.04655	Per Sample DNN Time 0.00198	Train Loss 0.0149	
+Epoch: [10][3870/40689]	Per Sample Total Time 0.04852	Per Sample Data Time 0.04654	Per Sample DNN Time 0.00198	Train Loss 0.0137	
+Epoch: [10][3970/40689]	Per Sample Total Time 0.04843	Per Sample Data Time 0.04645	Per Sample DNN Time 0.00198	Train Loss 0.0151	
+start validation
+mAP: 0.378593
+AUC: 0.970649
+d_prime: 2.673459
+train_loss: 0.014218
+valid_loss: 0.013699
+validation finished
+Epoch-10 lr: 5e-05
+epoch 10 training time: 10018.501
+---------------
+2023-06-08 02:39:11.646203
+current #epochs=11, #steps=40700
+Epoch: [11][0/40689]	Per Sample Total Time 0.43210	Per Sample Data Time 0.42949	Per Sample DNN Time 0.00261	Train Loss 0.0122	
+Epoch: [11][100/40689]	Per Sample Total Time 0.05024	Per Sample Data Time 0.04827	Per Sample DNN Time 0.00198	Train Loss 0.0166	
+Epoch: [11][200/40689]	Per Sample Total Time 0.05019	Per Sample Data Time 0.04821	Per Sample DNN Time 0.00197	Train Loss 0.0140	
+Epoch: [11][300/40689]	Per Sample Total Time 0.04887	Per Sample Data Time 0.04689	Per Sample DNN Time 0.00197	Train Loss 0.0130	
+Epoch: [11][400/40689]	Per Sample Total Time 0.04828	Per Sample Data Time 0.04631	Per Sample DNN Time 0.00197	Train Loss 0.0126	
+Epoch: [11][500/40689]	Per Sample Total Time 0.04829	Per Sample Data Time 0.04631	Per Sample DNN Time 0.00197	Train Loss 0.0152	
+Epoch: [11][600/40689]	Per Sample Total Time 0.04829	Per Sample Data Time 0.04632	Per Sample DNN Time 0.00197	Train Loss 0.0144	
+Epoch: [11][700/40689]	Per Sample Total Time 0.04795	Per Sample Data Time 0.04598	Per Sample DNN Time 0.00197	Train Loss 0.0168	
+Epoch: [11][800/40689]	Per Sample Total Time 0.04814	Per Sample Data Time 0.04617	Per Sample DNN Time 0.00197	Train Loss 0.0157	
+Epoch: [11][900/40689]	Per Sample Total Time 0.04804	Per Sample Data Time 0.04607	Per Sample DNN Time 0.00197	Train Loss 0.0149	
+Epoch: [11][1000/40689]	Per Sample Total Time 0.04802	Per Sample Data Time 0.04604	Per Sample DNN Time 0.00198	Train Loss 0.0141	
+Epoch: [11][1100/40689]	Per Sample Total Time 0.04771	Per Sample Data Time 0.04574	Per Sample DNN Time 0.00198	Train Loss 0.0144	
+Epoch: [11][1200/40689]	Per Sample Total Time 0.04790	Per Sample Data Time 0.04592	Per Sample DNN Time 0.00197	Train Loss 0.0135	
+Epoch: [11][1300/40689]	Per Sample Total Time 0.04761	Per Sample Data Time 0.04563	Per Sample DNN Time 0.00197	Train Loss 0.0152	
+Epoch: [11][1400/40689]	Per Sample Total Time 0.04766	Per Sample Data Time 0.04568	Per Sample DNN Time 0.00197	Train Loss 0.0158	
+Epoch: [11][1500/40689]	Per Sample Total Time 0.04765	Per Sample Data Time 0.04567	Per Sample DNN Time 0.00197	Train Loss 0.0146	
+Epoch: [11][1600/40689]	Per Sample Total Time 0.04760	Per Sample Data Time 0.04563	Per Sample DNN Time 0.00197	Train Loss 0.0134	
+Epoch: [11][1700/40689]	Per Sample Total Time 0.04756	Per Sample Data Time 0.04559	Per Sample DNN Time 0.00197	Train Loss 0.0147	
+Epoch: [11][1800/40689]	Per Sample Total Time 0.04761	Per Sample Data Time 0.04563	Per Sample DNN Time 0.00197	Train Loss 0.0131	
+Epoch: [11][1900/40689]	Per Sample Total Time 0.04747	Per Sample Data Time 0.04550	Per Sample DNN Time 0.00197	Train Loss 0.0151	
+Epoch: [11][2000/40689]	Per Sample Total Time 0.04759	Per Sample Data Time 0.04561	Per Sample DNN Time 0.00197	Train Loss 0.0127	
+Epoch: [11][2100/40689]	Per Sample Total Time 0.04749	Per Sample Data Time 0.04551	Per Sample DNN Time 0.00197	Train Loss 0.0143	
+Epoch: [11][2200/40689]	Per Sample Total Time 0.04748	Per Sample Data Time 0.04550	Per Sample DNN Time 0.00197	Train Loss 0.0128	
+Epoch: [11][2300/40689]	Per Sample Total Time 0.04734	Per Sample Data Time 0.04537	Per Sample DNN Time 0.00198	Train Loss 0.0138	
+Epoch: [11][2400/40689]	Per Sample Total Time 0.04738	Per Sample Data Time 0.04540	Per Sample DNN Time 0.00198	Train Loss 0.0144	
+Epoch: [11][2500/40689]	Per Sample Total Time 0.04727	Per Sample Data Time 0.04529	Per Sample DNN Time 0.00198	Train Loss 0.0145	
+Epoch: [11][2600/40689]	Per Sample Total Time 0.04735	Per Sample Data Time 0.04537	Per Sample DNN Time 0.00198	Train Loss 0.0136	
+Epoch: [11][2700/40689]	Per Sample Total Time 0.04720	Per Sample Data Time 0.04523	Per Sample DNN Time 0.00198	Train Loss 0.0151	
+Epoch: [11][2800/40689]	Per Sample Total Time 0.04718	Per Sample Data Time 0.04521	Per Sample DNN Time 0.00198	Train Loss 0.0142	
+Epoch: [11][2900/40689]	Per Sample Total Time 0.04729	Per Sample Data Time 0.04531	Per Sample DNN Time 0.00198	Train Loss 0.0137	
+Epoch: [11][3000/40689]	Per Sample Total Time 0.04735	Per Sample Data Time 0.04538	Per Sample DNN Time 0.00198	Train Loss 0.0145	
+Epoch: [11][3100/40689]	Per Sample Total Time 0.04745	Per Sample Data Time 0.04547	Per Sample DNN Time 0.00198	Train Loss 0.0134	
+Epoch: [11][3200/40689]	Per Sample Total Time 0.04749	Per Sample Data Time 0.04551	Per Sample DNN Time 0.00198	Train Loss 0.0128	
+Epoch: [11][3300/40689]	Per Sample Total Time 0.04744	Per Sample Data Time 0.04546	Per Sample DNN Time 0.00198	Train Loss 0.0157	
+Epoch: [11][3400/40689]	Per Sample Total Time 0.04742	Per Sample Data Time 0.04545	Per Sample DNN Time 0.00198	Train Loss 0.0137	
+Epoch: [11][3500/40689]	Per Sample Total Time 0.04734	Per Sample Data Time 0.04537	Per Sample DNN Time 0.00198	Train Loss 0.0142	
+Epoch: [11][3600/40689]	Per Sample Total Time 0.04734	Per Sample Data Time 0.04536	Per Sample DNN Time 0.00198	Train Loss 0.0147	
+Epoch: [11][3700/40689]	Per Sample Total Time 0.04724	Per Sample Data Time 0.04526	Per Sample DNN Time 0.00198	Train Loss 0.0134	
+Epoch: [11][3800/40689]	Per Sample Total Time 0.04729	Per Sample Data Time 0.04531	Per Sample DNN Time 0.00198	Train Loss 0.0157	
+Epoch: [11][3900/40689]	Per Sample Total Time 0.04721	Per Sample Data Time 0.04523	Per Sample DNN Time 0.00198	Train Loss 0.0137	
+Epoch: [11][4000/40689]	Per Sample Total Time 0.04721	Per Sample Data Time 0.04523	Per Sample DNN Time 0.00198	Train Loss 0.0154	
+start validation
+mAP: 0.382312
+AUC: 0.970310
+d_prime: 2.666320
+train_loss: 0.014153
+valid_loss: 0.013566
+validation finished
+Epoch-11 lr: 5e-05
+epoch 11 training time: 9792.258
+---------------
+2023-06-08 05:22:23.904726
+current #epochs=12, #steps=44770
+Epoch: [12][30/40689]	Per Sample Total Time 0.05410	Per Sample Data Time 0.05212	Per Sample DNN Time 0.00198	Train Loss 0.0143	
+Epoch: [12][130/40689]	Per Sample Total Time 0.05039	Per Sample Data Time 0.04842	Per Sample DNN Time 0.00197	Train Loss 0.0143	
+Epoch: [12][230/40689]	Per Sample Total Time 0.04901	Per Sample Data Time 0.04704	Per Sample DNN Time 0.00197	Train Loss 0.0138	
+Epoch: [12][330/40689]	Per Sample Total Time 0.04972	Per Sample Data Time 0.04774	Per Sample DNN Time 0.00198	Train Loss 0.0153	
+Epoch: [12][430/40689]	Per Sample Total Time 0.04916	Per Sample Data Time 0.04718	Per Sample DNN Time 0.00198	Train Loss 0.0143	
+Epoch: [12][530/40689]	Per Sample Total Time 0.04932	Per Sample Data Time 0.04733	Per Sample DNN Time 0.00199	Train Loss 0.0141	
+Epoch: [12][630/40689]	Per Sample Total Time 0.04877	Per Sample Data Time 0.04679	Per Sample DNN Time 0.00199	Train Loss 0.0129	
+Epoch: [12][730/40689]	Per Sample Total Time 0.04878	Per Sample Data Time 0.04680	Per Sample DNN Time 0.00198	Train Loss 0.0130	
+Epoch: [12][830/40689]	Per Sample Total Time 0.04840	Per Sample Data Time 0.04641	Per Sample DNN Time 0.00199	Train Loss 0.0124	
+Epoch: [12][930/40689]	Per Sample Total Time 0.04841	Per Sample Data Time 0.04643	Per Sample DNN Time 0.00199	Train Loss 0.0141	
+Epoch: [12][1030/40689]	Per Sample Total Time 0.04813	Per Sample Data Time 0.04614	Per Sample DNN Time 0.00199	Train Loss 0.0128	
+Epoch: [12][1130/40689]	Per Sample Total Time 0.04817	Per Sample Data Time 0.04618	Per Sample DNN Time 0.00199	Train Loss 0.0153	
+Epoch: [12][1230/40689]	Per Sample Total Time 0.04801	Per Sample Data Time 0.04602	Per Sample DNN Time 0.00198	Train Loss 0.0136	
+Epoch: [12][1330/40689]	Per Sample Total Time 0.04797	Per Sample Data Time 0.04598	Per Sample DNN Time 0.00198	Train Loss 0.0137	
+Epoch: [12][1430/40689]	Per Sample Total Time 0.04786	Per Sample Data Time 0.04587	Per Sample DNN Time 0.00198	Train Loss 0.0158	
+Epoch: [12][1530/40689]	Per Sample Total Time 0.04790	Per Sample Data Time 0.04591	Per Sample DNN Time 0.00198	Train Loss 0.0147	
+Epoch: [12][1630/40689]	Per Sample Total Time 0.04779	Per Sample Data Time 0.04581	Per Sample DNN Time 0.00198	Train Loss 0.0136	
+Epoch: [12][1730/40689]	Per Sample Total Time 0.04796	Per Sample Data Time 0.04598	Per Sample DNN Time 0.00198	Train Loss 0.0138	
+Epoch: [12][1830/40689]	Per Sample Total Time 0.04783	Per Sample Data Time 0.04585	Per Sample DNN Time 0.00198	Train Loss 0.0121	
+Epoch: [12][1930/40689]	Per Sample Total Time 0.04785	Per Sample Data Time 0.04587	Per Sample DNN Time 0.00198	Train Loss 0.0154	
+Epoch: [12][2030/40689]	Per Sample Total Time 0.04775	Per Sample Data Time 0.04577	Per Sample DNN Time 0.00198	Train Loss 0.0127	
+Epoch: [12][2130/40689]	Per Sample Total Time 0.04777	Per Sample Data Time 0.04579	Per Sample DNN Time 0.00198	Train Loss 0.0146	
+Epoch: [12][2230/40689]	Per Sample Total Time 0.04762	Per Sample Data Time 0.04564	Per Sample DNN Time 0.00198	Train Loss 0.0124	
+Epoch: [12][2330/40689]	Per Sample Total Time 0.04763	Per Sample Data Time 0.04565	Per Sample DNN Time 0.00198	Train Loss 0.0123	
+Epoch: [12][2430/40689]	Per Sample Total Time 0.04750	Per Sample Data Time 0.04552	Per Sample DNN Time 0.00198	Train Loss 0.0132	
+Epoch: [12][2530/40689]	Per Sample Total Time 0.04753	Per Sample Data Time 0.04555	Per Sample DNN Time 0.00198	Train Loss 0.0135	
+Epoch: [12][2630/40689]	Per Sample Total Time 0.04741	Per Sample Data Time 0.04543	Per Sample DNN Time 0.00198	Train Loss 0.0139	
+Epoch: [12][2730/40689]	Per Sample Total Time 0.04742	Per Sample Data Time 0.04544	Per Sample DNN Time 0.00198	Train Loss 0.0142	
+Epoch: [12][2830/40689]	Per Sample Total Time 0.04730	Per Sample Data Time 0.04532	Per Sample DNN Time 0.00198	Train Loss 0.0140	
+Epoch: [12][2930/40689]	Per Sample Total Time 0.04737	Per Sample Data Time 0.04539	Per Sample DNN Time 0.00198	Train Loss 0.0133	
+Epoch: [12][3030/40689]	Per Sample Total Time 0.04722	Per Sample Data Time 0.04524	Per Sample DNN Time 0.00198	Train Loss 0.0147	
+Epoch: [12][3130/40689]	Per Sample Total Time 0.04722	Per Sample Data Time 0.04524	Per Sample DNN Time 0.00198	Train Loss 0.0151	
+Epoch: [12][3230/40689]	Per Sample Total Time 0.04715	Per Sample Data Time 0.04517	Per Sample DNN Time 0.00198	Train Loss 0.0171	
+Epoch: [12][3330/40689]	Per Sample Total Time 0.04720	Per Sample Data Time 0.04522	Per Sample DNN Time 0.00198	Train Loss 0.0148	
+Epoch: [12][3430/40689]	Per Sample Total Time 0.04712	Per Sample Data Time 0.04514	Per Sample DNN Time 0.00198	Train Loss 0.0140	
+Epoch: [12][3530/40689]	Per Sample Total Time 0.04710	Per Sample Data Time 0.04512	Per Sample DNN Time 0.00198	Train Loss 0.0132	
+Epoch: [12][3630/40689]	Per Sample Total Time 0.04705	Per Sample Data Time 0.04507	Per Sample DNN Time 0.00198	Train Loss 0.0142	
+Epoch: [12][3730/40689]	Per Sample Total Time 0.04708	Per Sample Data Time 0.04510	Per Sample DNN Time 0.00198	Train Loss 0.0143	
+Epoch: [12][3830/40689]	Per Sample Total Time 0.04700	Per Sample Data Time 0.04502	Per Sample DNN Time 0.00198	Train Loss 0.0136	
+Epoch: [12][3930/40689]	Per Sample Total Time 0.04704	Per Sample Data Time 0.04506	Per Sample DNN Time 0.00198	Train Loss 0.0124	
+Epoch: [12][4030/40689]	Per Sample Total Time 0.04697	Per Sample Data Time 0.04499	Per Sample DNN Time 0.00198	Train Loss 0.0139	
+start validation
+mAP: 0.381486
+AUC: 0.970234
+d_prime: 2.664720
+train_loss: 0.014057
+valid_loss: 0.013642
+validation finished
+Epoch-12 lr: 5e-05
+epoch 12 training time: 9742.206
+---------------
+2023-06-08 08:04:46.111076
+current #epochs=13, #steps=48840
+Epoch: [13][60/40689]	Per Sample Total Time 0.05114	Per Sample Data Time 0.04917	Per Sample DNN Time 0.00197	Train Loss 0.0122	
+Epoch: [13][160/40689]	Per Sample Total Time 0.04988	Per Sample Data Time 0.04791	Per Sample DNN Time 0.00197	Train Loss 0.0147	
+Epoch: [13][260/40689]	Per Sample Total Time 0.04975	Per Sample Data Time 0.04778	Per Sample DNN Time 0.00197	Train Loss 0.0132	
+Epoch: [13][360/40689]	Per Sample Total Time 0.04936	Per Sample Data Time 0.04738	Per Sample DNN Time 0.00198	Train Loss 0.0145	
+Epoch: [13][460/40689]	Per Sample Total Time 0.04927	Per Sample Data Time 0.04729	Per Sample DNN Time 0.00198	Train Loss 0.0129	
+Epoch: [13][560/40689]	Per Sample Total Time 0.04857	Per Sample Data Time 0.04659	Per Sample DNN Time 0.00198	Train Loss 0.0140	
+Epoch: [13][660/40689]	Per Sample Total Time 0.04883	Per Sample Data Time 0.04685	Per Sample DNN Time 0.00198	Train Loss 0.0155	
+Epoch: [13][760/40689]	Per Sample Total Time 0.04863	Per Sample Data Time 0.04665	Per Sample DNN Time 0.00198	Train Loss 0.0150	
+Epoch: [13][860/40689]	Per Sample Total Time 0.04862	Per Sample Data Time 0.04664	Per Sample DNN Time 0.00198	Train Loss 0.0144	
+Epoch: [13][960/40689]	Per Sample Total Time 0.04856	Per Sample Data Time 0.04658	Per Sample DNN Time 0.00198	Train Loss 0.0133	
+Epoch: [13][1060/40689]	Per Sample Total Time 0.04837	Per Sample Data Time 0.04639	Per Sample DNN Time 0.00198	Train Loss 0.0140	
+Epoch: [13][1160/40689]	Per Sample Total Time 0.04824	Per Sample Data Time 0.04626	Per Sample DNN Time 0.00198	Train Loss 0.0139	
+Epoch: [13][1260/40689]	Per Sample Total Time 0.04830	Per Sample Data Time 0.04632	Per Sample DNN Time 0.00198	Train Loss 0.0129	
+Epoch: [13][1360/40689]	Per Sample Total Time 0.04805	Per Sample Data Time 0.04608	Per Sample DNN Time 0.00198	Train Loss 0.0143	
+Epoch: [13][1460/40689]	Per Sample Total Time 0.04814	Per Sample Data Time 0.04617	Per Sample DNN Time 0.00198	Train Loss 0.0145	
+Epoch: [13][1560/40689]	Per Sample Total Time 0.04811	Per Sample Data Time 0.04613	Per Sample DNN Time 0.00198	Train Loss 0.0139	
+Epoch: [13][1660/40689]	Per Sample Total Time 0.04808	Per Sample Data Time 0.04611	Per Sample DNN Time 0.00198	Train Loss 0.0129	
+Epoch: [13][1760/40689]	Per Sample Total Time 0.04801	Per Sample Data Time 0.04603	Per Sample DNN Time 0.00198	Train Loss 0.0143	
+Epoch: [13][1860/40689]	Per Sample Total Time 0.04795	Per Sample Data Time 0.04598	Per Sample DNN Time 0.00198	Train Loss 0.0128	
+Epoch: [13][1960/40689]	Per Sample Total Time 0.04788	Per Sample Data Time 0.04590	Per Sample DNN Time 0.00198	Train Loss 0.0143	
+Epoch: [13][2060/40689]	Per Sample Total Time 0.04782	Per Sample Data Time 0.04585	Per Sample DNN Time 0.00198	Train Loss 0.0128	
+Epoch: [13][2160/40689]	Per Sample Total Time 0.04780	Per Sample Data Time 0.04582	Per Sample DNN Time 0.00198	Train Loss 0.0152	
+Epoch: [13][2260/40689]	Per Sample Total Time 0.04777	Per Sample Data Time 0.04580	Per Sample DNN Time 0.00198	Train Loss 0.0121	
+Epoch: [13][2360/40689]	Per Sample Total Time 0.04765	Per Sample Data Time 0.04567	Per Sample DNN Time 0.00198	Train Loss 0.0133	
+Epoch: [13][2460/40689]	Per Sample Total Time 0.04769	Per Sample Data Time 0.04571	Per Sample DNN Time 0.00198	Train Loss 0.0149	
+Epoch: [13][2560/40689]	Per Sample Total Time 0.04760	Per Sample Data Time 0.04563	Per Sample DNN Time 0.00198	Train Loss 0.0141	
+Epoch: [13][2660/40689]	Per Sample Total Time 0.04757	Per Sample Data Time 0.04559	Per Sample DNN Time 0.00198	Train Loss 0.0137	
+Epoch: [13][2760/40689]	Per Sample Total Time 0.04741	Per Sample Data Time 0.04544	Per Sample DNN Time 0.00198	Train Loss 0.0141	
+Epoch: [13][2860/40689]	Per Sample Total Time 0.04745	Per Sample Data Time 0.04547	Per Sample DNN Time 0.00198	Train Loss 0.0130	
+Epoch: [13][2960/40689]	Per Sample Total Time 0.04737	Per Sample Data Time 0.04539	Per Sample DNN Time 0.00198	Train Loss 0.0139	
+Epoch: [13][3060/40689]	Per Sample Total Time 0.04741	Per Sample Data Time 0.04543	Per Sample DNN Time 0.00198	Train Loss 0.0131	
+Epoch: [13][3160/40689]	Per Sample Total Time 0.04730	Per Sample Data Time 0.04532	Per Sample DNN Time 0.00198	Train Loss 0.0126	
+Epoch: [13][3260/40689]	Per Sample Total Time 0.04730	Per Sample Data Time 0.04533	Per Sample DNN Time 0.00197	Train Loss 0.0158	
+Epoch: [13][3360/40689]	Per Sample Total Time 0.04725	Per Sample Data Time 0.04527	Per Sample DNN Time 0.00197	Train Loss 0.0145	
+Epoch: [13][3460/40689]	Per Sample Total Time 0.04727	Per Sample Data Time 0.04529	Per Sample DNN Time 0.00197	Train Loss 0.0145	
+Epoch: [13][3560/40689]	Per Sample Total Time 0.04723	Per Sample Data Time 0.04526	Per Sample DNN Time 0.00197	Train Loss 0.0133	
+Epoch: [13][3660/40689]	Per Sample Total Time 0.04723	Per Sample Data Time 0.04525	Per Sample DNN Time 0.00197	Train Loss 0.0135	
+Epoch: [13][3760/40689]	Per Sample Total Time 0.04717	Per Sample Data Time 0.04519	Per Sample DNN Time 0.00197	Train Loss 0.0144	
+Epoch: [13][3860/40689]	Per Sample Total Time 0.04721	Per Sample Data Time 0.04523	Per Sample DNN Time 0.00197	Train Loss 0.0137	
+Epoch: [13][3960/40689]	Per Sample Total Time 0.04718	Per Sample Data Time 0.04521	Per Sample DNN Time 0.00197	Train Loss 0.0127	
+Epoch: [13][4060/40689]	Per Sample Total Time 0.04717	Per Sample Data Time 0.04520	Per Sample DNN Time 0.00198	Train Loss 0.0134	
+start validation
+mAP: 0.384290
+AUC: 0.970490
+d_prime: 2.670099
+train_loss: 0.013960
+valid_loss: 0.013668
+validation finished
+Epoch-13 lr: 5e-05
+epoch 13 training time: 9789.022
+---------------
+2023-06-08 10:47:55.133142
+current #epochs=14, #steps=52910
+Epoch: [14][90/40689]	Per Sample Total Time 0.05302	Per Sample Data Time 0.05104	Per Sample DNN Time 0.00198	Train Loss 0.0141	
+Epoch: [14][190/40689]	Per Sample Total Time 0.05034	Per Sample Data Time 0.04836	Per Sample DNN Time 0.00198	Train Loss 0.0139	
+Epoch: [14][290/40689]	Per Sample Total Time 0.05049	Per Sample Data Time 0.04851	Per Sample DNN Time 0.00198	Train Loss 0.0136	
+Epoch: [14][390/40689]	Per Sample Total Time 0.05024	Per Sample Data Time 0.04826	Per Sample DNN Time 0.00198	Train Loss 0.0148	
+Epoch: [14][490/40689]	Per Sample Total Time 0.04997	Per Sample Data Time 0.04799	Per Sample DNN Time 0.00198	Train Loss 0.0138	
+Epoch: [14][590/40689]	Per Sample Total Time 0.05015	Per Sample Data Time 0.04817	Per Sample DNN Time 0.00198	Train Loss 0.0134	
+Epoch: [14][690/40689]	Per Sample Total Time 0.05021	Per Sample Data Time 0.04822	Per Sample DNN Time 0.00199	Train Loss 0.0152	
+Epoch: [14][790/40689]	Per Sample Total Time 0.05105	Per Sample Data Time 0.04906	Per Sample DNN Time 0.00199	Train Loss 0.0125	
+Epoch: [14][890/40689]	Per Sample Total Time 0.05103	Per Sample Data Time 0.04905	Per Sample DNN Time 0.00199	Train Loss 0.0148	
+Epoch: [14][990/40689]	Per Sample Total Time 0.05103	Per Sample Data Time 0.04904	Per Sample DNN Time 0.00199	Train Loss 0.0150	
+Epoch: [14][1090/40689]	Per Sample Total Time 0.05078	Per Sample Data Time 0.04879	Per Sample DNN Time 0.00199	Train Loss 0.0141	
+Epoch: [14][1190/40689]	Per Sample Total Time 0.05071	Per Sample Data Time 0.04872	Per Sample DNN Time 0.00199	Train Loss 0.0137	
+Epoch: [14][1290/40689]	Per Sample Total Time 0.05039	Per Sample Data Time 0.04840	Per Sample DNN Time 0.00199	Train Loss 0.0129	
+Epoch: [14][1390/40689]	Per Sample Total Time 0.05033	Per Sample Data Time 0.04835	Per Sample DNN Time 0.00199	Train Loss 0.0145	
+Epoch: [14][1490/40689]	Per Sample Total Time 0.05001	Per Sample Data Time 0.04802	Per Sample DNN Time 0.00199	Train Loss 0.0136	
+Epoch: [14][1590/40689]	Per Sample Total Time 0.04994	Per Sample Data Time 0.04795	Per Sample DNN Time 0.00199	Train Loss 0.0141	
+Epoch: [14][1690/40689]	Per Sample Total Time 0.04977	Per Sample Data Time 0.04778	Per Sample DNN Time 0.00199	Train Loss 0.0145	
+Epoch: [14][1790/40689]	Per Sample Total Time 0.04965	Per Sample Data Time 0.04766	Per Sample DNN Time 0.00199	Train Loss 0.0132	
+Epoch: [14][1890/40689]	Per Sample Total Time 0.04940	Per Sample Data Time 0.04742	Per Sample DNN Time 0.00199	Train Loss 0.0137	
+Epoch: [14][1990/40689]	Per Sample Total Time 0.04930	Per Sample Data Time 0.04732	Per Sample DNN Time 0.00199	Train Loss 0.0127	
+Epoch: [14][2090/40689]	Per Sample Total Time 0.04911	Per Sample Data Time 0.04713	Per Sample DNN Time 0.00199	Train Loss 0.0136	
+Epoch: [14][2190/40689]	Per Sample Total Time 0.04911	Per Sample Data Time 0.04712	Per Sample DNN Time 0.00199	Train Loss 0.0115	
+Epoch: [14][2290/40689]	Per Sample Total Time 0.04894	Per Sample Data Time 0.04695	Per Sample DNN Time 0.00199	Train Loss 0.0127	
+Epoch: [14][2390/40689]	Per Sample Total Time 0.04889	Per Sample Data Time 0.04690	Per Sample DNN Time 0.00199	Train Loss 0.0142	
+Epoch: [14][2490/40689]	Per Sample Total Time 0.04872	Per Sample Data Time 0.04673	Per Sample DNN Time 0.00199	Train Loss 0.0146	
+Epoch: [14][2590/40689]	Per Sample Total Time 0.04871	Per Sample Data Time 0.04672	Per Sample DNN Time 0.00199	Train Loss 0.0123	
+Epoch: [14][2690/40689]	Per Sample Total Time 0.04849	Per Sample Data Time 0.04651	Per Sample DNN Time 0.00199	Train Loss 0.0147	
+Epoch: [14][2790/40689]	Per Sample Total Time 0.04849	Per Sample Data Time 0.04651	Per Sample DNN Time 0.00199	Train Loss 0.0165	
+Epoch: [14][2890/40689]	Per Sample Total Time 0.04849	Per Sample Data Time 0.04650	Per Sample DNN Time 0.00199	Train Loss 0.0137	
+Epoch: [14][2990/40689]	Per Sample Total Time 0.04838	Per Sample Data Time 0.04639	Per Sample DNN Time 0.00199	Train Loss 0.0149	
+Epoch: [14][3090/40689]	Per Sample Total Time 0.04824	Per Sample Data Time 0.04625	Per Sample DNN Time 0.00199	Train Loss 0.0141	
+Epoch: [14][3190/40689]	Per Sample Total Time 0.04821	Per Sample Data Time 0.04622	Per Sample DNN Time 0.00199	Train Loss 0.0144	
+Epoch: [14][3290/40689]	Per Sample Total Time 0.04808	Per Sample Data Time 0.04609	Per Sample DNN Time 0.00199	Train Loss 0.0139	
+Epoch: [14][3390/40689]	Per Sample Total Time 0.04807	Per Sample Data Time 0.04608	Per Sample DNN Time 0.00199	Train Loss 0.0140	
+Epoch: [14][3490/40689]	Per Sample Total Time 0.04798	Per Sample Data Time 0.04600	Per Sample DNN Time 0.00199	Train Loss 0.0148	
+Epoch: [14][3590/40689]	Per Sample Total Time 0.04794	Per Sample Data Time 0.04595	Per Sample DNN Time 0.00199	Train Loss 0.0133	
+Epoch: [14][3690/40689]	Per Sample Total Time 0.04784	Per Sample Data Time 0.04586	Per Sample DNN Time 0.00199	Train Loss 0.0135	
+Epoch: [14][3790/40689]	Per Sample Total Time 0.04782	Per Sample Data Time 0.04583	Per Sample DNN Time 0.00199	Train Loss 0.0143	
+Epoch: [14][3890/40689]	Per Sample Total Time 0.04776	Per Sample Data Time 0.04577	Per Sample DNN Time 0.00199	Train Loss 0.0133	
+Epoch: [14][3990/40689]	Per Sample Total Time 0.04775	Per Sample Data Time 0.04577	Per Sample DNN Time 0.00199	Train Loss 0.0159	
+start validation
+mAP: 0.384530
+AUC: 0.970341
+d_prime: 2.666968
+train_loss: 0.013897
+valid_loss: 0.013608
+validation finished
+Epoch-14 lr: 5e-05
+epoch 14 training time: 9822.822
+---------------
+2023-06-08 13:31:37.955097
+current #epochs=15, #steps=56980
+Epoch: [15][20/40689]	Per Sample Total Time 0.05662	Per Sample Data Time 0.05460	Per Sample DNN Time 0.00202	Train Loss 0.0141	
+Epoch: [15][120/40689]	Per Sample Total Time 0.04863	Per Sample Data Time 0.04665	Per Sample DNN Time 0.00198	Train Loss 0.0149	
+Epoch: [15][220/40689]	Per Sample Total Time 0.04805	Per Sample Data Time 0.04607	Per Sample DNN Time 0.00198	Train Loss 0.0141	
+Epoch: [15][320/40689]	Per Sample Total Time 0.04715	Per Sample Data Time 0.04518	Per Sample DNN Time 0.00198	Train Loss 0.0124	
+Epoch: [15][420/40689]	Per Sample Total Time 0.04754	Per Sample Data Time 0.04556	Per Sample DNN Time 0.00198	Train Loss 0.0119	
+Epoch: [15][520/40689]	Per Sample Total Time 0.04683	Per Sample Data Time 0.04484	Per Sample DNN Time 0.00199	Train Loss 0.0143	
+Epoch: [15][620/40689]	Per Sample Total Time 0.04691	Per Sample Data Time 0.04492	Per Sample DNN Time 0.00199	Train Loss 0.0137	
+Epoch: [15][720/40689]	Per Sample Total Time 0.04673	Per Sample Data Time 0.04474	Per Sample DNN Time 0.00199	Train Loss 0.0125	
+Epoch: [15][820/40689]	Per Sample Total Time 0.04677	Per Sample Data Time 0.04478	Per Sample DNN Time 0.00199	Train Loss 0.0135	
+Epoch: [15][920/40689]	Per Sample Total Time 0.04639	Per Sample Data Time 0.04441	Per Sample DNN Time 0.00199	Train Loss 0.0126	
+Epoch: [15][1020/40689]	Per Sample Total Time 0.04659	Per Sample Data Time 0.04461	Per Sample DNN Time 0.00199	Train Loss 0.0146	
+Epoch: [15][1120/40689]	Per Sample Total Time 0.04636	Per Sample Data Time 0.04437	Per Sample DNN Time 0.00199	Train Loss 0.0136	
+Epoch: [15][1220/40689]	Per Sample Total Time 0.04645	Per Sample Data Time 0.04446	Per Sample DNN Time 0.00199	Train Loss 0.0145	
+Epoch: [15][1320/40689]	Per Sample Total Time 0.04626	Per Sample Data Time 0.04427	Per Sample DNN Time 0.00199	Train Loss 0.0129	
+Epoch: [15][1420/40689]	Per Sample Total Time 0.04626	Per Sample Data Time 0.04427	Per Sample DNN Time 0.00199	Train Loss 0.0135	
+Epoch: [15][1520/40689]	Per Sample Total Time 0.04614	Per Sample Data Time 0.04415	Per Sample DNN Time 0.00199	Train Loss 0.0147	
+Epoch: [15][1620/40689]	Per Sample Total Time 0.04620	Per Sample Data Time 0.04421	Per Sample DNN Time 0.00199	Train Loss 0.0147	
+Epoch: [15][1720/40689]	Per Sample Total Time 0.04604	Per Sample Data Time 0.04406	Per Sample DNN Time 0.00199	Train Loss 0.0135	
+Epoch: [15][1820/40689]	Per Sample Total Time 0.04601	Per Sample Data Time 0.04402	Per Sample DNN Time 0.00199	Train Loss 0.0141	
+Epoch: [15][1920/40689]	Per Sample Total Time 0.04597	Per Sample Data Time 0.04398	Per Sample DNN Time 0.00199	Train Loss 0.0148	
+Epoch: [15][2020/40689]	Per Sample Total Time 0.04596	Per Sample Data Time 0.04397	Per Sample DNN Time 0.00199	Train Loss 0.0147	
+Epoch: [15][2120/40689]	Per Sample Total Time 0.04586	Per Sample Data Time 0.04387	Per Sample DNN Time 0.00199	Train Loss 0.0127	
+Epoch: [15][2220/40689]	Per Sample Total Time 0.04593	Per Sample Data Time 0.04395	Per Sample DNN Time 0.00199	Train Loss 0.0136	
+Epoch: [15][2320/40689]	Per Sample Total Time 0.04587	Per Sample Data Time 0.04389	Per Sample DNN Time 0.00199	Train Loss 0.0154	
+Epoch: [15][2420/40689]	Per Sample Total Time 0.04591	Per Sample Data Time 0.04392	Per Sample DNN Time 0.00199	Train Loss 0.0132	
+Epoch: [15][2520/40689]	Per Sample Total Time 0.04578	Per Sample Data Time 0.04379	Per Sample DNN Time 0.00199	Train Loss 0.0130	
+Epoch: [15][2620/40689]	Per Sample Total Time 0.04585	Per Sample Data Time 0.04386	Per Sample DNN Time 0.00199	Train Loss 0.0138	
+Epoch: [15][2720/40689]	Per Sample Total Time 0.04575	Per Sample Data Time 0.04376	Per Sample DNN Time 0.00199	Train Loss 0.0149	
+Epoch: [15][2820/40689]	Per Sample Total Time 0.04579	Per Sample Data Time 0.04381	Per Sample DNN Time 0.00199	Train Loss 0.0137	
+Epoch: [15][2920/40689]	Per Sample Total Time 0.04571	Per Sample Data Time 0.04373	Per Sample DNN Time 0.00199	Train Loss 0.0125	
+Epoch: [15][3020/40689]	Per Sample Total Time 0.04576	Per Sample Data Time 0.04377	Per Sample DNN Time 0.00199	Train Loss 0.0150	
+Epoch: [15][3120/40689]	Per Sample Total Time 0.04570	Per Sample Data Time 0.04372	Per Sample DNN Time 0.00199	Train Loss 0.0130	
+Epoch: [15][3220/40689]	Per Sample Total Time 0.04569	Per Sample Data Time 0.04370	Per Sample DNN Time 0.00199	Train Loss 0.0128	
+Epoch: [15][3320/40689]	Per Sample Total Time 0.04564	Per Sample Data Time 0.04366	Per Sample DNN Time 0.00199	Train Loss 0.0119	
+Epoch: [15][3420/40689]	Per Sample Total Time 0.04565	Per Sample Data Time 0.04366	Per Sample DNN Time 0.00199	Train Loss 0.0151	
+Epoch: [15][3520/40689]	Per Sample Total Time 0.04568	Per Sample Data Time 0.04370	Per Sample DNN Time 0.00199	Train Loss 0.0139	
+Epoch: [15][3620/40689]	Per Sample Total Time 0.04565	Per Sample Data Time 0.04367	Per Sample DNN Time 0.00199	Train Loss 0.0152	
+Epoch: [15][3720/40689]	Per Sample Total Time 0.04562	Per Sample Data Time 0.04363	Per Sample DNN Time 0.00199	Train Loss 0.0140	
+Epoch: [15][3820/40689]	Per Sample Total Time 0.04561	Per Sample Data Time 0.04363	Per Sample DNN Time 0.00199	Train Loss 0.0137	
+Epoch: [15][3920/40689]	Per Sample Total Time 0.04557	Per Sample Data Time 0.04358	Per Sample DNN Time 0.00199	Train Loss 0.0114	
+Epoch: [15][4020/40689]	Per Sample Total Time 0.04559	Per Sample Data Time 0.04360	Per Sample DNN Time 0.00198	Train Loss 0.0122	
+start validation
+mAP: 0.386579
+AUC: 0.970041
+d_prime: 2.660692
+train_loss: 0.013827
+valid_loss: 0.013531
+validation finished
+Epoch-15 lr: 3.7500000000000003e-05
+epoch 15 training time: 9453.683
+---------------
+2023-06-08 16:09:11.637979
+current #epochs=16, #steps=61050
+Epoch: [16][50/40689]	Per Sample Total Time 0.05054	Per Sample Data Time 0.04853	Per Sample DNN Time 0.00202	Train Loss 0.0132	
+Epoch: [16][150/40689]	Per Sample Total Time 0.04886	Per Sample Data Time 0.04687	Per Sample DNN Time 0.00199	Train Loss 0.0139	
+Epoch: [16][250/40689]	Per Sample Total Time 0.04856	Per Sample Data Time 0.04658	Per Sample DNN Time 0.00198	Train Loss 0.0136	
+Epoch: [16][350/40689]	Per Sample Total Time 0.04776	Per Sample Data Time 0.04578	Per Sample DNN Time 0.00198	Train Loss 0.0143	
+Epoch: [16][450/40689]	Per Sample Total Time 0.04765	Per Sample Data Time 0.04567	Per Sample DNN Time 0.00198	Train Loss 0.0135	
+Epoch: [16][550/40689]	Per Sample Total Time 0.04746	Per Sample Data Time 0.04548	Per Sample DNN Time 0.00198	Train Loss 0.0139	
+Epoch: [16][650/40689]	Per Sample Total Time 0.04708	Per Sample Data Time 0.04510	Per Sample DNN Time 0.00198	Train Loss 0.0138	
+Epoch: [16][750/40689]	Per Sample Total Time 0.04723	Per Sample Data Time 0.04525	Per Sample DNN Time 0.00198	Train Loss 0.0129	
+Epoch: [16][850/40689]	Per Sample Total Time 0.04701	Per Sample Data Time 0.04503	Per Sample DNN Time 0.00198	Train Loss 0.0126	
+Epoch: [16][950/40689]	Per Sample Total Time 0.04713	Per Sample Data Time 0.04515	Per Sample DNN Time 0.00198	Train Loss 0.0136	
+Epoch: [16][1050/40689]	Per Sample Total Time 0.04705	Per Sample Data Time 0.04506	Per Sample DNN Time 0.00198	Train Loss 0.0140	
+Epoch: [16][1150/40689]	Per Sample Total Time 0.04703	Per Sample Data Time 0.04505	Per Sample DNN Time 0.00198	Train Loss 0.0129	
+Epoch: [16][1250/40689]	Per Sample Total Time 0.04674	Per Sample Data Time 0.04476	Per Sample DNN Time 0.00198	Train Loss 0.0145	
+Epoch: [16][1350/40689]	Per Sample Total Time 0.04680	Per Sample Data Time 0.04482	Per Sample DNN Time 0.00198	Train Loss 0.0139	
+Epoch: [16][1450/40689]	Per Sample Total Time 0.04668	Per Sample Data Time 0.04469	Per Sample DNN Time 0.00198	Train Loss 0.0134	
+Epoch: [16][1550/40689]	Per Sample Total Time 0.04666	Per Sample Data Time 0.04468	Per Sample DNN Time 0.00198	Train Loss 0.0130	
+Epoch: [16][1650/40689]	Per Sample Total Time 0.04658	Per Sample Data Time 0.04459	Per Sample DNN Time 0.00198	Train Loss 0.0122	
+Epoch: [16][1750/40689]	Per Sample Total Time 0.04658	Per Sample Data Time 0.04459	Per Sample DNN Time 0.00198	Train Loss 0.0139	
+Epoch: [16][1850/40689]	Per Sample Total Time 0.04644	Per Sample Data Time 0.04445	Per Sample DNN Time 0.00198	Train Loss 0.0124	
+Epoch: [16][1950/40689]	Per Sample Total Time 0.04643	Per Sample Data Time 0.04445	Per Sample DNN Time 0.00198	Train Loss 0.0123	
+Epoch: [16][2050/40689]	Per Sample Total Time 0.04636	Per Sample Data Time 0.04437	Per Sample DNN Time 0.00198	Train Loss 0.0131	
+Epoch: [16][2150/40689]	Per Sample Total Time 0.04635	Per Sample Data Time 0.04437	Per Sample DNN Time 0.00198	Train Loss 0.0132	
+Epoch: [16][2250/40689]	Per Sample Total Time 0.04621	Per Sample Data Time 0.04423	Per Sample DNN Time 0.00198	Train Loss 0.0128	
+Epoch: [16][2350/40689]	Per Sample Total Time 0.04629	Per Sample Data Time 0.04430	Per Sample DNN Time 0.00198	Train Loss 0.0157	
+Epoch: [16][2450/40689]	Per Sample Total Time 0.04614	Per Sample Data Time 0.04416	Per Sample DNN Time 0.00198	Train Loss 0.0120	
+Epoch: [16][2550/40689]	Per Sample Total Time 0.04613	Per Sample Data Time 0.04415	Per Sample DNN Time 0.00198	Train Loss 0.0133	
+Epoch: [16][2650/40689]	Per Sample Total Time 0.04603	Per Sample Data Time 0.04405	Per Sample DNN Time 0.00198	Train Loss 0.0136	
+Epoch: [16][2750/40689]	Per Sample Total Time 0.04619	Per Sample Data Time 0.04420	Per Sample DNN Time 0.00198	Train Loss 0.0139	
+Epoch: [16][2850/40689]	Per Sample Total Time 0.04618	Per Sample Data Time 0.04420	Per Sample DNN Time 0.00198	Train Loss 0.0129	
+Epoch: [16][2950/40689]	Per Sample Total Time 0.04622	Per Sample Data Time 0.04424	Per Sample DNN Time 0.00198	Train Loss 0.0137	
+Epoch: [16][3050/40689]	Per Sample Total Time 0.04614	Per Sample Data Time 0.04416	Per Sample DNN Time 0.00198	Train Loss 0.0136	
+Epoch: [16][3150/40689]	Per Sample Total Time 0.04618	Per Sample Data Time 0.04420	Per Sample DNN Time 0.00198	Train Loss 0.0135	
+Epoch: [16][3250/40689]	Per Sample Total Time 0.04608	Per Sample Data Time 0.04409	Per Sample DNN Time 0.00198	Train Loss 0.0144	
+Epoch: [16][3350/40689]	Per Sample Total Time 0.04610	Per Sample Data Time 0.04411	Per Sample DNN Time 0.00198	Train Loss 0.0140	
+Epoch: [16][3450/40689]	Per Sample Total Time 0.04604	Per Sample Data Time 0.04406	Per Sample DNN Time 0.00198	Train Loss 0.0143	
+Epoch: [16][3550/40689]	Per Sample Total Time 0.04606	Per Sample Data Time 0.04408	Per Sample DNN Time 0.00198	Train Loss 0.0130	
+Epoch: [16][3650/40689]	Per Sample Total Time 0.04599	Per Sample Data Time 0.04400	Per Sample DNN Time 0.00199	Train Loss 0.0141	
+Epoch: [16][3750/40689]	Per Sample Total Time 0.04596	Per Sample Data Time 0.04397	Per Sample DNN Time 0.00198	Train Loss 0.0125	
+Epoch: [16][3850/40689]	Per Sample Total Time 0.04592	Per Sample Data Time 0.04394	Per Sample DNN Time 0.00198	Train Loss 0.0147	
+Epoch: [16][3950/40689]	Per Sample Total Time 0.04596	Per Sample Data Time 0.04397	Per Sample DNN Time 0.00198	Train Loss 0.0127	
+Epoch: [16][4050/40689]	Per Sample Total Time 0.04586	Per Sample Data Time 0.04387	Per Sample DNN Time 0.00198	Train Loss 0.0132	
+start validation
+mAP: 0.391989
+AUC: 0.970503
+d_prime: 2.670374
+train_loss: 0.013599
+valid_loss: 0.013453
+validation finished
+Epoch-16 lr: 3.7500000000000003e-05
+epoch 16 training time: 9513.012
+---------------
+2023-06-08 18:47:44.649464
+current #epochs=17, #steps=65120
+Epoch: [17][80/40689]	Per Sample Total Time 0.05205	Per Sample Data Time 0.05006	Per Sample DNN Time 0.00199	Train Loss 0.0124	
+Epoch: [17][180/40689]	Per Sample Total Time 0.04865	Per Sample Data Time 0.04666	Per Sample DNN Time 0.00199	Train Loss 0.0139	
+Epoch: [17][280/40689]	Per Sample Total Time 0.04876	Per Sample Data Time 0.04677	Per Sample DNN Time 0.00199	Train Loss 0.0125	
+Epoch: [17][380/40689]	Per Sample Total Time 0.04791	Per Sample Data Time 0.04593	Per Sample DNN Time 0.00199	Train Loss 0.0141	
+Epoch: [17][480/40689]	Per Sample Total Time 0.04766	Per Sample Data Time 0.04568	Per Sample DNN Time 0.00198	Train Loss 0.0135	
+Epoch: [17][580/40689]	Per Sample Total Time 0.04760	Per Sample Data Time 0.04561	Per Sample DNN Time 0.00198	Train Loss 0.0134	
+Epoch: [17][680/40689]	Per Sample Total Time 0.04719	Per Sample Data Time 0.04521	Per Sample DNN Time 0.00198	Train Loss 0.0141	
+Epoch: [17][780/40689]	Per Sample Total Time 0.04734	Per Sample Data Time 0.04535	Per Sample DNN Time 0.00198	Train Loss 0.0149	
+Epoch: [17][880/40689]	Per Sample Total Time 0.04709	Per Sample Data Time 0.04510	Per Sample DNN Time 0.00198	Train Loss 0.0123	
+Epoch: [17][980/40689]	Per Sample Total Time 0.04698	Per Sample Data Time 0.04500	Per Sample DNN Time 0.00198	Train Loss 0.0130	
+Epoch: [17][1080/40689]	Per Sample Total Time 0.04679	Per Sample Data Time 0.04481	Per Sample DNN Time 0.00198	Train Loss 0.0128	
+Epoch: [17][1180/40689]	Per Sample Total Time 0.04664	Per Sample Data Time 0.04466	Per Sample DNN Time 0.00198	Train Loss 0.0142	
+Epoch: [17][1280/40689]	Per Sample Total Time 0.04671	Per Sample Data Time 0.04473	Per Sample DNN Time 0.00198	Train Loss 0.0109	
+Epoch: [17][1380/40689]	Per Sample Total Time 0.04646	Per Sample Data Time 0.04448	Per Sample DNN Time 0.00198	Train Loss 0.0124	
+Epoch: [17][1480/40689]	Per Sample Total Time 0.04652	Per Sample Data Time 0.04453	Per Sample DNN Time 0.00198	Train Loss 0.0132	
+Epoch: [17][1580/40689]	Per Sample Total Time 0.04638	Per Sample Data Time 0.04440	Per Sample DNN Time 0.00198	Train Loss 0.0130	
+Epoch: [17][1680/40689]	Per Sample Total Time 0.04646	Per Sample Data Time 0.04448	Per Sample DNN Time 0.00198	Train Loss 0.0159	
+Epoch: [17][1780/40689]	Per Sample Total Time 0.04631	Per Sample Data Time 0.04433	Per Sample DNN Time 0.00198	Train Loss 0.0140	
+Epoch: [17][1880/40689]	Per Sample Total Time 0.04635	Per Sample Data Time 0.04437	Per Sample DNN Time 0.00198	Train Loss 0.0150	
+Epoch: [17][1980/40689]	Per Sample Total Time 0.04628	Per Sample Data Time 0.04430	Per Sample DNN Time 0.00198	Train Loss 0.0134	
+Epoch: [17][2080/40689]	Per Sample Total Time 0.04628	Per Sample Data Time 0.04430	Per Sample DNN Time 0.00198	Train Loss 0.0135	
+Epoch: [17][2180/40689]	Per Sample Total Time 0.04627	Per Sample Data Time 0.04429	Per Sample DNN Time 0.00198	Train Loss 0.0143	
+Epoch: [17][2280/40689]	Per Sample Total Time 0.04617	Per Sample Data Time 0.04419	Per Sample DNN Time 0.00198	Train Loss 0.0135	
+Epoch: [17][2380/40689]	Per Sample Total Time 0.04607	Per Sample Data Time 0.04409	Per Sample DNN Time 0.00198	Train Loss 0.0138	
+Epoch: [17][2480/40689]	Per Sample Total Time 0.04604	Per Sample Data Time 0.04406	Per Sample DNN Time 0.00198	Train Loss 0.0145	
+Epoch: [17][2580/40689]	Per Sample Total Time 0.04594	Per Sample Data Time 0.04396	Per Sample DNN Time 0.00198	Train Loss 0.0130	
+Epoch: [17][2680/40689]	Per Sample Total Time 0.04592	Per Sample Data Time 0.04394	Per Sample DNN Time 0.00198	Train Loss 0.0124	
+Epoch: [17][2780/40689]	Per Sample Total Time 0.04574	Per Sample Data Time 0.04376	Per Sample DNN Time 0.00198	Train Loss 0.0138	
+Epoch: [17][2880/40689]	Per Sample Total Time 0.04571	Per Sample Data Time 0.04373	Per Sample DNN Time 0.00198	Train Loss 0.0136	
+Epoch: [17][2980/40689]	Per Sample Total Time 0.04561	Per Sample Data Time 0.04363	Per Sample DNN Time 0.00198	Train Loss 0.0140	
+Epoch: [17][3080/40689]	Per Sample Total Time 0.04549	Per Sample Data Time 0.04351	Per Sample DNN Time 0.00198	Train Loss 0.0128	
+Epoch: [17][3180/40689]	Per Sample Total Time 0.04545	Per Sample Data Time 0.04347	Per Sample DNN Time 0.00198	Train Loss 0.0146	
+Epoch: [17][3280/40689]	Per Sample Total Time 0.04538	Per Sample Data Time 0.04340	Per Sample DNN Time 0.00198	Train Loss 0.0148	
+Epoch: [17][3380/40689]	Per Sample Total Time 0.04540	Per Sample Data Time 0.04342	Per Sample DNN Time 0.00198	Train Loss 0.0135	
+Epoch: [17][3480/40689]	Per Sample Total Time 0.04533	Per Sample Data Time 0.04335	Per Sample DNN Time 0.00198	Train Loss 0.0129	
+Epoch: [17][3580/40689]	Per Sample Total Time 0.04535	Per Sample Data Time 0.04336	Per Sample DNN Time 0.00198	Train Loss 0.0123	
+Epoch: [17][3680/40689]	Per Sample Total Time 0.04526	Per Sample Data Time 0.04328	Per Sample DNN Time 0.00198	Train Loss 0.0115	
+Epoch: [17][3780/40689]	Per Sample Total Time 0.04525	Per Sample Data Time 0.04327	Per Sample DNN Time 0.00198	Train Loss 0.0128	
+Epoch: [17][3880/40689]	Per Sample Total Time 0.04513	Per Sample Data Time 0.04315	Per Sample DNN Time 0.00198	Train Loss 0.0145	
+Epoch: [17][3980/40689]	Per Sample Total Time 0.04512	Per Sample Data Time 0.04314	Per Sample DNN Time 0.00198	Train Loss 0.0143	
+start validation
+mAP: 0.390326
+AUC: 0.969924
+d_prime: 2.658270
+train_loss: 0.013499
+valid_loss: 0.013437
+validation finished
+Epoch-17 lr: 3.7500000000000003e-05
+epoch 17 training time: 9319.873
+---------------
+2023-06-08 21:23:04.522926
+current #epochs=18, #steps=69190
+Epoch: [18][10/40689]	Per Sample Total Time 0.07217	Per Sample Data Time 0.07016	Per Sample DNN Time 0.00201	Train Loss 0.0135	
+Epoch: [18][110/40689]	Per Sample Total Time 0.04651	Per Sample Data Time 0.04453	Per Sample DNN Time 0.00198	Train Loss 0.0136	
+Epoch: [18][210/40689]	Per Sample Total Time 0.04747	Per Sample Data Time 0.04548	Per Sample DNN Time 0.00199	Train Loss 0.0147	
+Epoch: [18][310/40689]	Per Sample Total Time 0.04627	Per Sample Data Time 0.04428	Per Sample DNN Time 0.00199	Train Loss 0.0142	
+Epoch: [18][410/40689]	Per Sample Total Time 0.04591	Per Sample Data Time 0.04393	Per Sample DNN Time 0.00199	Train Loss 0.0144	
+Epoch: [18][510/40689]	Per Sample Total Time 0.04539	Per Sample Data Time 0.04341	Per Sample DNN Time 0.00198	Train Loss 0.0134	
+Epoch: [18][610/40689]	Per Sample Total Time 0.04560	Per Sample Data Time 0.04361	Per Sample DNN Time 0.00198	Train Loss 0.0137	
+Epoch: [18][710/40689]	Per Sample Total Time 0.04536	Per Sample Data Time 0.04338	Per Sample DNN Time 0.00198	Train Loss 0.0144	
+Epoch: [18][810/40689]	Per Sample Total Time 0.04562	Per Sample Data Time 0.04364	Per Sample DNN Time 0.00198	Train Loss 0.0122	
+Epoch: [18][910/40689]	Per Sample Total Time 0.04525	Per Sample Data Time 0.04326	Per Sample DNN Time 0.00198	Train Loss 0.0141	
+Epoch: [18][1010/40689]	Per Sample Total Time 0.04534	Per Sample Data Time 0.04335	Per Sample DNN Time 0.00198	Train Loss 0.0129	
+Epoch: [18][1110/40689]	Per Sample Total Time 0.04520	Per Sample Data Time 0.04321	Per Sample DNN Time 0.00198	Train Loss 0.0133	
+Epoch: [18][1210/40689]	Per Sample Total Time 0.04516	Per Sample Data Time 0.04318	Per Sample DNN Time 0.00198	Train Loss 0.0130	
+Epoch: [18][1310/40689]	Per Sample Total Time 0.04497	Per Sample Data Time 0.04299	Per Sample DNN Time 0.00198	Train Loss 0.0137	
+Epoch: [18][1410/40689]	Per Sample Total Time 0.04519	Per Sample Data Time 0.04321	Per Sample DNN Time 0.00198	Train Loss 0.0127	
+Epoch: [18][1510/40689]	Per Sample Total Time 0.04525	Per Sample Data Time 0.04327	Per Sample DNN Time 0.00198	Train Loss 0.0138	
+Epoch: [18][1610/40689]	Per Sample Total Time 0.04515	Per Sample Data Time 0.04318	Per Sample DNN Time 0.00198	Train Loss 0.0129	
+Epoch: [18][1710/40689]	Per Sample Total Time 0.04515	Per Sample Data Time 0.04317	Per Sample DNN Time 0.00198	Train Loss 0.0152	
+Epoch: [18][1810/40689]	Per Sample Total Time 0.04505	Per Sample Data Time 0.04307	Per Sample DNN Time 0.00198	Train Loss 0.0137	
+Epoch: [18][1910/40689]	Per Sample Total Time 0.04519	Per Sample Data Time 0.04322	Per Sample DNN Time 0.00198	Train Loss 0.0134	
+Epoch: [18][2010/40689]	Per Sample Total Time 0.04510	Per Sample Data Time 0.04312	Per Sample DNN Time 0.00198	Train Loss 0.0131	
+Epoch: [18][2110/40689]	Per Sample Total Time 0.04514	Per Sample Data Time 0.04316	Per Sample DNN Time 0.00198	Train Loss 0.0115	
+Epoch: [18][2210/40689]	Per Sample Total Time 0.04499	Per Sample Data Time 0.04301	Per Sample DNN Time 0.00198	Train Loss 0.0127	
+Epoch: [18][2310/40689]	Per Sample Total Time 0.04498	Per Sample Data Time 0.04300	Per Sample DNN Time 0.00198	Train Loss 0.0138	
+Epoch: [18][2410/40689]	Per Sample Total Time 0.04490	Per Sample Data Time 0.04292	Per Sample DNN Time 0.00198	Train Loss 0.0128	
+Epoch: [18][2510/40689]	Per Sample Total Time 0.04491	Per Sample Data Time 0.04294	Per Sample DNN Time 0.00198	Train Loss 0.0146	
+Epoch: [18][2610/40689]	Per Sample Total Time 0.04485	Per Sample Data Time 0.04287	Per Sample DNN Time 0.00198	Train Loss 0.0143	
+Epoch: [18][2710/40689]	Per Sample Total Time 0.04486	Per Sample Data Time 0.04288	Per Sample DNN Time 0.00198	Train Loss 0.0128	
+Epoch: [18][2810/40689]	Per Sample Total Time 0.04474	Per Sample Data Time 0.04277	Per Sample DNN Time 0.00198	Train Loss 0.0127	
+Epoch: [18][2910/40689]	Per Sample Total Time 0.04480	Per Sample Data Time 0.04282	Per Sample DNN Time 0.00198	Train Loss 0.0130	
+Epoch: [18][3010/40689]	Per Sample Total Time 0.04466	Per Sample Data Time 0.04268	Per Sample DNN Time 0.00198	Train Loss 0.0114	
+Epoch: [18][3110/40689]	Per Sample Total Time 0.04468	Per Sample Data Time 0.04270	Per Sample DNN Time 0.00198	Train Loss 0.0126	
+Epoch: [18][3210/40689]	Per Sample Total Time 0.04461	Per Sample Data Time 0.04263	Per Sample DNN Time 0.00198	Train Loss 0.0130	
+Epoch: [18][3310/40689]	Per Sample Total Time 0.04464	Per Sample Data Time 0.04266	Per Sample DNN Time 0.00198	Train Loss 0.0125	
+Epoch: [18][3410/40689]	Per Sample Total Time 0.04456	Per Sample Data Time 0.04258	Per Sample DNN Time 0.00198	Train Loss 0.0138	
+Epoch: [18][3510/40689]	Per Sample Total Time 0.04456	Per Sample Data Time 0.04258	Per Sample DNN Time 0.00198	Train Loss 0.0158	
+Epoch: [18][3610/40689]	Per Sample Total Time 0.04448	Per Sample Data Time 0.04250	Per Sample DNN Time 0.00198	Train Loss 0.0131	
+Epoch: [18][3710/40689]	Per Sample Total Time 0.04453	Per Sample Data Time 0.04255	Per Sample DNN Time 0.00198	Train Loss 0.0139	
+Epoch: [18][3810/40689]	Per Sample Total Time 0.04448	Per Sample Data Time 0.04250	Per Sample DNN Time 0.00198	Train Loss 0.0127	
+Epoch: [18][3910/40689]	Per Sample Total Time 0.04450	Per Sample Data Time 0.04252	Per Sample DNN Time 0.00198	Train Loss 0.0130	
+Epoch: [18][4010/40689]	Per Sample Total Time 0.04443	Per Sample Data Time 0.04245	Per Sample DNN Time 0.00198	Train Loss 0.0128	
+start validation
+mAP: 0.395847
+AUC: 0.969984
+d_prime: 2.659508
+train_loss: 0.013447
+valid_loss: 0.013380
+validation finished
+Epoch-18 lr: 3.7500000000000003e-05
+epoch 18 training time: 9159.375
+---------------
+2023-06-08 23:55:43.897566
+current #epochs=19, #steps=73260
+Epoch: [19][40/40689]	Per Sample Total Time 0.05309	Per Sample Data Time 0.05110	Per Sample DNN Time 0.00199	Train Loss 0.0131	
+Epoch: [19][140/40689]	Per Sample Total Time 0.04659	Per Sample Data Time 0.04461	Per Sample DNN Time 0.00198	Train Loss 0.0150	
+Epoch: [19][240/40689]	Per Sample Total Time 0.04563	Per Sample Data Time 0.04365	Per Sample DNN Time 0.00198	Train Loss 0.0138	
+Epoch: [19][340/40689]	Per Sample Total Time 0.04630	Per Sample Data Time 0.04432	Per Sample DNN Time 0.00198	Train Loss 0.0140	
+Epoch: [19][440/40689]	Per Sample Total Time 0.04552	Per Sample Data Time 0.04354	Per Sample DNN Time 0.00198	Train Loss 0.0138	
+Epoch: [19][540/40689]	Per Sample Total Time 0.04575	Per Sample Data Time 0.04377	Per Sample DNN Time 0.00198	Train Loss 0.0135	
+Epoch: [19][640/40689]	Per Sample Total Time 0.04556	Per Sample Data Time 0.04358	Per Sample DNN Time 0.00198	Train Loss 0.0140	
+Epoch: [19][740/40689]	Per Sample Total Time 0.04587	Per Sample Data Time 0.04389	Per Sample DNN Time 0.00198	Train Loss 0.0141	
+Epoch: [19][840/40689]	Per Sample Total Time 0.04580	Per Sample Data Time 0.04382	Per Sample DNN Time 0.00198	Train Loss 0.0149	
+Epoch: [19][940/40689]	Per Sample Total Time 0.04584	Per Sample Data Time 0.04385	Per Sample DNN Time 0.00198	Train Loss 0.0132	
+Epoch: [19][1040/40689]	Per Sample Total Time 0.04546	Per Sample Data Time 0.04348	Per Sample DNN Time 0.00198	Train Loss 0.0129	
+Epoch: [19][1140/40689]	Per Sample Total Time 0.04561	Per Sample Data Time 0.04363	Per Sample DNN Time 0.00198	Train Loss 0.0146	
+Epoch: [19][1240/40689]	Per Sample Total Time 0.04538	Per Sample Data Time 0.04340	Per Sample DNN Time 0.00198	Train Loss 0.0120	
+Epoch: [19][1340/40689]	Per Sample Total Time 0.04540	Per Sample Data Time 0.04342	Per Sample DNN Time 0.00198	Train Loss 0.0120	
+Epoch: [19][1440/40689]	Per Sample Total Time 0.04533	Per Sample Data Time 0.04335	Per Sample DNN Time 0.00198	Train Loss 0.0140	
+Epoch: [19][1540/40689]	Per Sample Total Time 0.04541	Per Sample Data Time 0.04343	Per Sample DNN Time 0.00198	Train Loss 0.0130	
+Epoch: [19][1640/40689]	Per Sample Total Time 0.04527	Per Sample Data Time 0.04329	Per Sample DNN Time 0.00198	Train Loss 0.0125	
+Epoch: [19][1740/40689]	Per Sample Total Time 0.04529	Per Sample Data Time 0.04330	Per Sample DNN Time 0.00198	Train Loss 0.0132	
+Epoch: [19][1840/40689]	Per Sample Total Time 0.04515	Per Sample Data Time 0.04317	Per Sample DNN Time 0.00198	Train Loss 0.0135	
+Epoch: [19][1940/40689]	Per Sample Total Time 0.04512	Per Sample Data Time 0.04313	Per Sample DNN Time 0.00198	Train Loss 0.0118	
+Epoch: [19][2040/40689]	Per Sample Total Time 0.04503	Per Sample Data Time 0.04304	Per Sample DNN Time 0.00198	Train Loss 0.0126	
+Epoch: [19][2140/40689]	Per Sample Total Time 0.04495	Per Sample Data Time 0.04297	Per Sample DNN Time 0.00198	Train Loss 0.0124	
+Epoch: [19][2240/40689]	Per Sample Total Time 0.04490	Per Sample Data Time 0.04292	Per Sample DNN Time 0.00198	Train Loss 0.0117	
+Epoch: [19][2340/40689]	Per Sample Total Time 0.04486	Per Sample Data Time 0.04288	Per Sample DNN Time 0.00198	Train Loss 0.0138	
+Epoch: [19][2440/40689]	Per Sample Total Time 0.04475	Per Sample Data Time 0.04277	Per Sample DNN Time 0.00198	Train Loss 0.0144	
+Epoch: [19][2540/40689]	Per Sample Total Time 0.04474	Per Sample Data Time 0.04276	Per Sample DNN Time 0.00198	Train Loss 0.0138	
+Epoch: [19][2640/40689]	Per Sample Total Time 0.04464	Per Sample Data Time 0.04266	Per Sample DNN Time 0.00198	Train Loss 0.0123	
+Epoch: [19][2740/40689]	Per Sample Total Time 0.04470	Per Sample Data Time 0.04272	Per Sample DNN Time 0.00198	Train Loss 0.0130	
+Epoch: [19][2840/40689]	Per Sample Total Time 0.04457	Per Sample Data Time 0.04259	Per Sample DNN Time 0.00198	Train Loss 0.0116	
+Epoch: [19][2940/40689]	Per Sample Total Time 0.04460	Per Sample Data Time 0.04261	Per Sample DNN Time 0.00198	Train Loss 0.0120	
+Epoch: [19][3040/40689]	Per Sample Total Time 0.04449	Per Sample Data Time 0.04251	Per Sample DNN Time 0.00198	Train Loss 0.0143	
+Epoch: [19][3140/40689]	Per Sample Total Time 0.04453	Per Sample Data Time 0.04254	Per Sample DNN Time 0.00198	Train Loss 0.0126	
+Epoch: [19][3240/40689]	Per Sample Total Time 0.04445	Per Sample Data Time 0.04247	Per Sample DNN Time 0.00198	Train Loss 0.0155	
+Epoch: [19][3340/40689]	Per Sample Total Time 0.04449	Per Sample Data Time 0.04250	Per Sample DNN Time 0.00198	Train Loss 0.0139	
+Epoch: [19][3440/40689]	Per Sample Total Time 0.04439	Per Sample Data Time 0.04241	Per Sample DNN Time 0.00198	Train Loss 0.0134	
+Epoch: [19][3540/40689]	Per Sample Total Time 0.04441	Per Sample Data Time 0.04243	Per Sample DNN Time 0.00198	Train Loss 0.0125	
+Epoch: [19][3640/40689]	Per Sample Total Time 0.04432	Per Sample Data Time 0.04234	Per Sample DNN Time 0.00198	Train Loss 0.0130	
+Epoch: [19][3740/40689]	Per Sample Total Time 0.04435	Per Sample Data Time 0.04237	Per Sample DNN Time 0.00198	Train Loss 0.0134	
+Epoch: [19][3840/40689]	Per Sample Total Time 0.04430	Per Sample Data Time 0.04232	Per Sample DNN Time 0.00198	Train Loss 0.0133	
+Epoch: [19][3940/40689]	Per Sample Total Time 0.04432	Per Sample Data Time 0.04234	Per Sample DNN Time 0.00198	Train Loss 0.0151	
+Epoch: [19][4040/40689]	Per Sample Total Time 0.04424	Per Sample Data Time 0.04226	Per Sample DNN Time 0.00198	Train Loss 0.0139	
+start validation
+mAP: 0.394728
+AUC: 0.969811
+d_prime: 2.655934
+train_loss: 0.013387
+valid_loss: 0.013432
+validation finished
+Epoch-19 lr: 3.7500000000000003e-05
+epoch 19 training time: 9163.472
+---------------
+2023-06-09 02:28:27.369459
+current #epochs=20, #steps=77330
+Epoch: [20][70/40689]	Per Sample Total Time 0.04965	Per Sample Data Time 0.04766	Per Sample DNN Time 0.00199	Train Loss 0.0139	
+Epoch: [20][170/40689]	Per Sample Total Time 0.04967	Per Sample Data Time 0.04768	Per Sample DNN Time 0.00198	Train Loss 0.0121	
+Epoch: [20][270/40689]	Per Sample Total Time 0.04659	Per Sample Data Time 0.04461	Per Sample DNN Time 0.00198	Train Loss 0.0121	
+Epoch: [20][370/40689]	Per Sample Total Time 0.04661	Per Sample Data Time 0.04463	Per Sample DNN Time 0.00198	Train Loss 0.0144	
+Epoch: [20][470/40689]	Per Sample Total Time 0.04600	Per Sample Data Time 0.04402	Per Sample DNN Time 0.00198	Train Loss 0.0120	
+Epoch: [20][570/40689]	Per Sample Total Time 0.04609	Per Sample Data Time 0.04411	Per Sample DNN Time 0.00198	Train Loss 0.0134	
+Epoch: [20][670/40689]	Per Sample Total Time 0.04562	Per Sample Data Time 0.04364	Per Sample DNN Time 0.00198	Train Loss 0.0124	
+Epoch: [20][770/40689]	Per Sample Total Time 0.04575	Per Sample Data Time 0.04377	Per Sample DNN Time 0.00198	Train Loss 0.0107	
+Epoch: [20][870/40689]	Per Sample Total Time 0.04540	Per Sample Data Time 0.04342	Per Sample DNN Time 0.00198	Train Loss 0.0142	
+Epoch: [20][970/40689]	Per Sample Total Time 0.04544	Per Sample Data Time 0.04346	Per Sample DNN Time 0.00198	Train Loss 0.0145	
+Epoch: [20][1070/40689]	Per Sample Total Time 0.04532	Per Sample Data Time 0.04334	Per Sample DNN Time 0.00198	Train Loss 0.0126	
+Epoch: [20][1170/40689]	Per Sample Total Time 0.04529	Per Sample Data Time 0.04331	Per Sample DNN Time 0.00198	Train Loss 0.0137	
+Epoch: [20][1270/40689]	Per Sample Total Time 0.04526	Per Sample Data Time 0.04328	Per Sample DNN Time 0.00198	Train Loss 0.0126	
+Epoch: [20][1370/40689]	Per Sample Total Time 0.04507	Per Sample Data Time 0.04309	Per Sample DNN Time 0.00198	Train Loss 0.0136	
+Epoch: [20][1470/40689]	Per Sample Total Time 0.04518	Per Sample Data Time 0.04319	Per Sample DNN Time 0.00198	Train Loss 0.0148	
+Epoch: [20][1570/40689]	Per Sample Total Time 0.04501	Per Sample Data Time 0.04303	Per Sample DNN Time 0.00198	Train Loss 0.0130	
+Epoch: [20][1670/40689]	Per Sample Total Time 0.04495	Per Sample Data Time 0.04297	Per Sample DNN Time 0.00198	Train Loss 0.0135	
+Epoch: [20][1770/40689]	Per Sample Total Time 0.04490	Per Sample Data Time 0.04292	Per Sample DNN Time 0.00198	Train Loss 0.0139	
+Epoch: [20][1870/40689]	Per Sample Total Time 0.04490	Per Sample Data Time 0.04292	Per Sample DNN Time 0.00198	Train Loss 0.0129	
+Epoch: [20][1970/40689]	Per Sample Total Time 0.04488	Per Sample Data Time 0.04290	Per Sample DNN Time 0.00198	Train Loss 0.0120	
+Epoch: [20][2070/40689]	Per Sample Total Time 0.04476	Per Sample Data Time 0.04278	Per Sample DNN Time 0.00198	Train Loss 0.0127	
+Epoch: [20][2170/40689]	Per Sample Total Time 0.04483	Per Sample Data Time 0.04285	Per Sample DNN Time 0.00198	Train Loss 0.0130	
+Epoch: [20][2270/40689]	Per Sample Total Time 0.04473	Per Sample Data Time 0.04275	Per Sample DNN Time 0.00198	Train Loss 0.0125	
+Epoch: [20][2370/40689]	Per Sample Total Time 0.04476	Per Sample Data Time 0.04278	Per Sample DNN Time 0.00198	Train Loss 0.0126	
+Epoch: [20][2470/40689]	Per Sample Total Time 0.04460	Per Sample Data Time 0.04262	Per Sample DNN Time 0.00198	Train Loss 0.0134	
+Epoch: [20][2570/40689]	Per Sample Total Time 0.04461	Per Sample Data Time 0.04263	Per Sample DNN Time 0.00198	Train Loss 0.0132	
+Epoch: [20][2670/40689]	Per Sample Total Time 0.04452	Per Sample Data Time 0.04254	Per Sample DNN Time 0.00198	Train Loss 0.0156	
+Epoch: [20][2770/40689]	Per Sample Total Time 0.04454	Per Sample Data Time 0.04256	Per Sample DNN Time 0.00198	Train Loss 0.0128	
+Epoch: [20][2870/40689]	Per Sample Total Time 0.04439	Per Sample Data Time 0.04241	Per Sample DNN Time 0.00198	Train Loss 0.0134	
+Epoch: [20][2970/40689]	Per Sample Total Time 0.04441	Per Sample Data Time 0.04243	Per Sample DNN Time 0.00198	Train Loss 0.0136	
+Epoch: [20][3070/40689]	Per Sample Total Time 0.04435	Per Sample Data Time 0.04236	Per Sample DNN Time 0.00198	Train Loss 0.0124	
+Epoch: [20][3170/40689]	Per Sample Total Time 0.04430	Per Sample Data Time 0.04232	Per Sample DNN Time 0.00198	Train Loss 0.0127	
+Epoch: [20][3270/40689]	Per Sample Total Time 0.04424	Per Sample Data Time 0.04226	Per Sample DNN Time 0.00198	Train Loss 0.0143	
+Epoch: [20][3370/40689]	Per Sample Total Time 0.04422	Per Sample Data Time 0.04224	Per Sample DNN Time 0.00198	Train Loss 0.0124	
+Epoch: [20][3470/40689]	Per Sample Total Time 0.04415	Per Sample Data Time 0.04217	Per Sample DNN Time 0.00198	Train Loss 0.0134	
+Epoch: [20][3570/40689]	Per Sample Total Time 0.04415	Per Sample Data Time 0.04217	Per Sample DNN Time 0.00198	Train Loss 0.0123	
+Epoch: [20][3670/40689]	Per Sample Total Time 0.04408	Per Sample Data Time 0.04210	Per Sample DNN Time 0.00198	Train Loss 0.0122	
+Epoch: [20][3770/40689]	Per Sample Total Time 0.04411	Per Sample Data Time 0.04213	Per Sample DNN Time 0.00198	Train Loss 0.0125	
+Epoch: [20][3870/40689]	Per Sample Total Time 0.04410	Per Sample Data Time 0.04212	Per Sample DNN Time 0.00198	Train Loss 0.0140	
+Epoch: [20][3970/40689]	Per Sample Total Time 0.04417	Per Sample Data Time 0.04219	Per Sample DNN Time 0.00198	Train Loss 0.0131	
+start validation
+mAP: 0.393627
+AUC: 0.969029
+d_prime: 2.639935
+train_loss: 0.013308
+valid_loss: 0.013552
+validation finished
+Epoch-20 lr: 2.8125000000000003e-05
+epoch 20 training time: 9075.014
+---------------
+2023-06-09 04:59:42.384036
+current #epochs=21, #steps=81400
+Epoch: [21][0/40689]	Per Sample Total Time 0.38955	Per Sample Data Time 0.38735	Per Sample DNN Time 0.00219	Train Loss 0.0151	
+Epoch: [21][100/40689]	Per Sample Total Time 0.04763	Per Sample Data Time 0.04564	Per Sample DNN Time 0.00199	Train Loss 0.0117	
+Epoch: [21][200/40689]	Per Sample Total Time 0.04678	Per Sample Data Time 0.04480	Per Sample DNN Time 0.00199	Train Loss 0.0119	
+Epoch: [21][300/40689]	Per Sample Total Time 0.04564	Per Sample Data Time 0.04365	Per Sample DNN Time 0.00198	Train Loss 0.0146	
+Epoch: [21][400/40689]	Per Sample Total Time 0.04532	Per Sample Data Time 0.04333	Per Sample DNN Time 0.00198	Train Loss 0.0134	
+Epoch: [21][500/40689]	Per Sample Total Time 0.04499	Per Sample Data Time 0.04301	Per Sample DNN Time 0.00198	Train Loss 0.0131	
+Epoch: [21][600/40689]	Per Sample Total Time 0.04490	Per Sample Data Time 0.04292	Per Sample DNN Time 0.00198	Train Loss 0.0129	
+Epoch: [21][700/40689]	Per Sample Total Time 0.04491	Per Sample Data Time 0.04293	Per Sample DNN Time 0.00198	Train Loss 0.0133	
+Epoch: [21][800/40689]	Per Sample Total Time 0.04493	Per Sample Data Time 0.04295	Per Sample DNN Time 0.00198	Train Loss 0.0118	
+Epoch: [21][900/40689]	Per Sample Total Time 0.04488	Per Sample Data Time 0.04290	Per Sample DNN Time 0.00198	Train Loss 0.0124	
+Epoch: [21][1000/40689]	Per Sample Total Time 0.04461	Per Sample Data Time 0.04264	Per Sample DNN Time 0.00198	Train Loss 0.0118	
+Epoch: [21][1100/40689]	Per Sample Total Time 0.04465	Per Sample Data Time 0.04267	Per Sample DNN Time 0.00198	Train Loss 0.0149	
+Epoch: [21][1200/40689]	Per Sample Total Time 0.04457	Per Sample Data Time 0.04260	Per Sample DNN Time 0.00198	Train Loss 0.0124	
+Epoch: [21][1300/40689]	Per Sample Total Time 0.04457	Per Sample Data Time 0.04260	Per Sample DNN Time 0.00198	Train Loss 0.0128	
+Epoch: [21][1400/40689]	Per Sample Total Time 0.04445	Per Sample Data Time 0.04247	Per Sample DNN Time 0.00198	Train Loss 0.0132	
+Epoch: [21][1500/40689]	Per Sample Total Time 0.04446	Per Sample Data Time 0.04248	Per Sample DNN Time 0.00198	Train Loss 0.0126	
+Epoch: [21][1600/40689]	Per Sample Total Time 0.04435	Per Sample Data Time 0.04237	Per Sample DNN Time 0.00198	Train Loss 0.0122	
+Epoch: [21][1700/40689]	Per Sample Total Time 0.04441	Per Sample Data Time 0.04243	Per Sample DNN Time 0.00198	Train Loss 0.0133	
+Epoch: [21][1800/40689]	Per Sample Total Time 0.04430	Per Sample Data Time 0.04233	Per Sample DNN Time 0.00198	Train Loss 0.0131	
+Epoch: [21][1900/40689]	Per Sample Total Time 0.04432	Per Sample Data Time 0.04235	Per Sample DNN Time 0.00198	Train Loss 0.0128	
+Epoch: [21][2000/40689]	Per Sample Total Time 0.04423	Per Sample Data Time 0.04225	Per Sample DNN Time 0.00198	Train Loss 0.0141	
+Epoch: [21][2100/40689]	Per Sample Total Time 0.04426	Per Sample Data Time 0.04228	Per Sample DNN Time 0.00198	Train Loss 0.0121	
+Epoch: [21][2200/40689]	Per Sample Total Time 0.04416	Per Sample Data Time 0.04219	Per Sample DNN Time 0.00198	Train Loss 0.0125	
+Epoch: [21][2300/40689]	Per Sample Total Time 0.04418	Per Sample Data Time 0.04220	Per Sample DNN Time 0.00198	Train Loss 0.0119	
+Epoch: [21][2400/40689]	Per Sample Total Time 0.04406	Per Sample Data Time 0.04209	Per Sample DNN Time 0.00198	Train Loss 0.0123	
+Epoch: [21][2500/40689]	Per Sample Total Time 0.04406	Per Sample Data Time 0.04208	Per Sample DNN Time 0.00198	Train Loss 0.0127	
+Epoch: [21][2600/40689]	Per Sample Total Time 0.04397	Per Sample Data Time 0.04199	Per Sample DNN Time 0.00198	Train Loss 0.0130	
+Epoch: [21][2700/40689]	Per Sample Total Time 0.04396	Per Sample Data Time 0.04198	Per Sample DNN Time 0.00198	Train Loss 0.0124	
+Epoch: [21][2800/40689]	Per Sample Total Time 0.04391	Per Sample Data Time 0.04194	Per Sample DNN Time 0.00198	Train Loss 0.0125	
+Epoch: [21][2900/40689]	Per Sample Total Time 0.04387	Per Sample Data Time 0.04189	Per Sample DNN Time 0.00198	Train Loss 0.0132	
+Epoch: [21][3000/40689]	Per Sample Total Time 0.04388	Per Sample Data Time 0.04190	Per Sample DNN Time 0.00198	Train Loss 0.0115	
+Epoch: [21][3100/40689]	Per Sample Total Time 0.04380	Per Sample Data Time 0.04182	Per Sample DNN Time 0.00198	Train Loss 0.0145	
+Epoch: [21][3200/40689]	Per Sample Total Time 0.04391	Per Sample Data Time 0.04193	Per Sample DNN Time 0.00198	Train Loss 0.0122	
+Epoch: [21][3300/40689]	Per Sample Total Time 0.04389	Per Sample Data Time 0.04192	Per Sample DNN Time 0.00198	Train Loss 0.0124	
+Epoch: [21][3400/40689]	Per Sample Total Time 0.04391	Per Sample Data Time 0.04194	Per Sample DNN Time 0.00198	Train Loss 0.0119	
+Epoch: [21][3500/40689]	Per Sample Total Time 0.04383	Per Sample Data Time 0.04185	Per Sample DNN Time 0.00198	Train Loss 0.0151	
+Epoch: [21][3600/40689]	Per Sample Total Time 0.04387	Per Sample Data Time 0.04190	Per Sample DNN Time 0.00198	Train Loss 0.0134	
+Epoch: [21][3700/40689]	Per Sample Total Time 0.04379	Per Sample Data Time 0.04182	Per Sample DNN Time 0.00198	Train Loss 0.0128	
+Epoch: [21][3800/40689]	Per Sample Total Time 0.04378	Per Sample Data Time 0.04180	Per Sample DNN Time 0.00198	Train Loss 0.0130	
+Epoch: [21][3900/40689]	Per Sample Total Time 0.04381	Per Sample Data Time 0.04184	Per Sample DNN Time 0.00198	Train Loss 0.0129	
+Epoch: [21][4000/40689]	Per Sample Total Time 0.04376	Per Sample Data Time 0.04179	Per Sample DNN Time 0.00198	Train Loss 0.0120	
+start validation
+mAP: 0.397578
+AUC: 0.969066
+d_prime: 2.640686
+train_loss: 0.013122
+valid_loss: 0.013402
+validation finished
+Epoch-21 lr: 2.8125000000000003e-05
+epoch 21 training time: 9049.998
+---------------
+2023-06-09 07:30:32.381889
+current #epochs=22, #steps=85470
+Epoch: [22][30/40689]	Per Sample Total Time 0.04917	Per Sample Data Time 0.04719	Per Sample DNN Time 0.00198	Train Loss 0.0137	
+Epoch: [22][130/40689]	Per Sample Total Time 0.04809	Per Sample Data Time 0.04611	Per Sample DNN Time 0.00197	Train Loss 0.0138	
+Epoch: [22][230/40689]	Per Sample Total Time 0.04584	Per Sample Data Time 0.04387	Per Sample DNN Time 0.00198	Train Loss 0.0134	
+Epoch: [22][330/40689]	Per Sample Total Time 0.04586	Per Sample Data Time 0.04388	Per Sample DNN Time 0.00198	Train Loss 0.0130	
+Epoch: [22][430/40689]	Per Sample Total Time 0.04518	Per Sample Data Time 0.04320	Per Sample DNN Time 0.00198	Train Loss 0.0121	
+Epoch: [22][530/40689]	Per Sample Total Time 0.04552	Per Sample Data Time 0.04354	Per Sample DNN Time 0.00198	Train Loss 0.0137	
+Epoch: [22][630/40689]	Per Sample Total Time 0.04505	Per Sample Data Time 0.04307	Per Sample DNN Time 0.00198	Train Loss 0.0122	
+Epoch: [22][730/40689]	Per Sample Total Time 0.04519	Per Sample Data Time 0.04321	Per Sample DNN Time 0.00198	Train Loss 0.0119	
+Epoch: [22][830/40689]	Per Sample Total Time 0.04480	Per Sample Data Time 0.04282	Per Sample DNN Time 0.00198	Train Loss 0.0137	
+Epoch: [22][930/40689]	Per Sample Total Time 0.04505	Per Sample Data Time 0.04307	Per Sample DNN Time 0.00198	Train Loss 0.0127	
+Epoch: [22][1030/40689]	Per Sample Total Time 0.04471	Per Sample Data Time 0.04273	Per Sample DNN Time 0.00198	Train Loss 0.0128	
+Epoch: [22][1130/40689]	Per Sample Total Time 0.04478	Per Sample Data Time 0.04280	Per Sample DNN Time 0.00198	Train Loss 0.0135	
+Epoch: [22][1230/40689]	Per Sample Total Time 0.04457	Per Sample Data Time 0.04259	Per Sample DNN Time 0.00198	Train Loss 0.0132	
+Epoch: [22][1330/40689]	Per Sample Total Time 0.04471	Per Sample Data Time 0.04273	Per Sample DNN Time 0.00198	Train Loss 0.0128	
+Epoch: [22][1430/40689]	Per Sample Total Time 0.04455	Per Sample Data Time 0.04257	Per Sample DNN Time 0.00198	Train Loss 0.0122	
+Epoch: [22][1530/40689]	Per Sample Total Time 0.04447	Per Sample Data Time 0.04249	Per Sample DNN Time 0.00198	Train Loss 0.0123	
+Epoch: [22][1630/40689]	Per Sample Total Time 0.04448	Per Sample Data Time 0.04250	Per Sample DNN Time 0.00198	Train Loss 0.0131	
+Epoch: [22][1730/40689]	Per Sample Total Time 0.04441	Per Sample Data Time 0.04244	Per Sample DNN Time 0.00198	Train Loss 0.0131	
+Epoch: [22][1830/40689]	Per Sample Total Time 0.04435	Per Sample Data Time 0.04238	Per Sample DNN Time 0.00198	Train Loss 0.0149	
+Epoch: [22][1930/40689]	Per Sample Total Time 0.04430	Per Sample Data Time 0.04232	Per Sample DNN Time 0.00198	Train Loss 0.0137	
+Epoch: [22][2030/40689]	Per Sample Total Time 0.04427	Per Sample Data Time 0.04229	Per Sample DNN Time 0.00198	Train Loss 0.0124	
+Epoch: [22][2130/40689]	Per Sample Total Time 0.04426	Per Sample Data Time 0.04228	Per Sample DNN Time 0.00198	Train Loss 0.0127	
+Epoch: [22][2230/40689]	Per Sample Total Time 0.04424	Per Sample Data Time 0.04226	Per Sample DNN Time 0.00198	Train Loss 0.0148	
+Epoch: [22][2330/40689]	Per Sample Total Time 0.04411	Per Sample Data Time 0.04213	Per Sample DNN Time 0.00198	Train Loss 0.0129	
+Epoch: [22][2430/40689]	Per Sample Total Time 0.04408	Per Sample Data Time 0.04210	Per Sample DNN Time 0.00198	Train Loss 0.0118	
+Epoch: [22][2530/40689]	Per Sample Total Time 0.04402	Per Sample Data Time 0.04204	Per Sample DNN Time 0.00198	Train Loss 0.0127	
+Epoch: [22][2630/40689]	Per Sample Total Time 0.04411	Per Sample Data Time 0.04213	Per Sample DNN Time 0.00198	Train Loss 0.0126	
+Epoch: [22][2730/40689]	Per Sample Total Time 0.04404	Per Sample Data Time 0.04206	Per Sample DNN Time 0.00198	Train Loss 0.0142	
+Epoch: [22][2830/40689]	Per Sample Total Time 0.04407	Per Sample Data Time 0.04209	Per Sample DNN Time 0.00198	Train Loss 0.0129	
+Epoch: [22][2930/40689]	Per Sample Total Time 0.04397	Per Sample Data Time 0.04199	Per Sample DNN Time 0.00198	Train Loss 0.0113	
+Epoch: [22][3030/40689]	Per Sample Total Time 0.04401	Per Sample Data Time 0.04203	Per Sample DNN Time 0.00198	Train Loss 0.0115	
+Epoch: [22][3130/40689]	Per Sample Total Time 0.04393	Per Sample Data Time 0.04196	Per Sample DNN Time 0.00198	Train Loss 0.0148	
+Epoch: [22][3230/40689]	Per Sample Total Time 0.04393	Per Sample Data Time 0.04195	Per Sample DNN Time 0.00198	Train Loss 0.0141	
+Epoch: [22][3330/40689]	Per Sample Total Time 0.04391	Per Sample Data Time 0.04193	Per Sample DNN Time 0.00198	Train Loss 0.0134	
+Epoch: [22][3430/40689]	Per Sample Total Time 0.04386	Per Sample Data Time 0.04188	Per Sample DNN Time 0.00198	Train Loss 0.0131	
+Epoch: [22][3530/40689]	Per Sample Total Time 0.04393	Per Sample Data Time 0.04196	Per Sample DNN Time 0.00198	Train Loss 0.0137	
+Epoch: [22][3630/40689]	Per Sample Total Time 0.04387	Per Sample Data Time 0.04189	Per Sample DNN Time 0.00198	Train Loss 0.0143	
+Epoch: [22][3730/40689]	Per Sample Total Time 0.04384	Per Sample Data Time 0.04187	Per Sample DNN Time 0.00198	Train Loss 0.0139	
+Epoch: [22][3830/40689]	Per Sample Total Time 0.04383	Per Sample Data Time 0.04185	Per Sample DNN Time 0.00198	Train Loss 0.0123	
+Epoch: [22][3930/40689]	Per Sample Total Time 0.04378	Per Sample Data Time 0.04180	Per Sample DNN Time 0.00198	Train Loss 0.0117	
+Epoch: [22][4030/40689]	Per Sample Total Time 0.04376	Per Sample Data Time 0.04178	Per Sample DNN Time 0.00198	Train Loss 0.0129	
+start validation
+mAP: 0.397466
+AUC: 0.969206
+d_prime: 2.643524
+train_loss: 0.013042
+valid_loss: 0.013397
+validation finished
+Epoch-22 lr: 2.8125000000000003e-05
+epoch 22 training time: 9060.142
+---------------
+2023-06-09 10:01:32.523546
+current #epochs=23, #steps=89540
+Epoch: [23][60/40689]	Per Sample Total Time 0.04755	Per Sample Data Time 0.04557	Per Sample DNN Time 0.00197	Train Loss 0.0152	
+Epoch: [23][160/40689]	Per Sample Total Time 0.04721	Per Sample Data Time 0.04524	Per Sample DNN Time 0.00197	Train Loss 0.0131	
+Epoch: [23][260/40689]	Per Sample Total Time 0.04582	Per Sample Data Time 0.04385	Per Sample DNN Time 0.00197	Train Loss 0.0140	
+Epoch: [23][360/40689]	Per Sample Total Time 0.04569	Per Sample Data Time 0.04372	Per Sample DNN Time 0.00197	Train Loss 0.0128	
+Epoch: [23][460/40689]	Per Sample Total Time 0.04547	Per Sample Data Time 0.04349	Per Sample DNN Time 0.00198	Train Loss 0.0139	
+Epoch: [23][560/40689]	Per Sample Total Time 0.04546	Per Sample Data Time 0.04348	Per Sample DNN Time 0.00198	Train Loss 0.0134	
+Epoch: [23][660/40689]	Per Sample Total Time 0.04522	Per Sample Data Time 0.04324	Per Sample DNN Time 0.00198	Train Loss 0.0119	
+Epoch: [23][760/40689]	Per Sample Total Time 0.04515	Per Sample Data Time 0.04317	Per Sample DNN Time 0.00198	Train Loss 0.0129	
+Epoch: [23][860/40689]	Per Sample Total Time 0.04508	Per Sample Data Time 0.04310	Per Sample DNN Time 0.00198	Train Loss 0.0131	
+Epoch: [23][960/40689]	Per Sample Total Time 0.04489	Per Sample Data Time 0.04292	Per Sample DNN Time 0.00198	Train Loss 0.0129	
+Epoch: [23][1060/40689]	Per Sample Total Time 0.04498	Per Sample Data Time 0.04301	Per Sample DNN Time 0.00198	Train Loss 0.0126	
+Epoch: [23][1160/40689]	Per Sample Total Time 0.04491	Per Sample Data Time 0.04293	Per Sample DNN Time 0.00198	Train Loss 0.0130	
+Epoch: [23][1260/40689]	Per Sample Total Time 0.04486	Per Sample Data Time 0.04288	Per Sample DNN Time 0.00198	Train Loss 0.0123	
+Epoch: [23][1360/40689]	Per Sample Total Time 0.04468	Per Sample Data Time 0.04271	Per Sample DNN Time 0.00198	Train Loss 0.0141	
+Epoch: [23][1460/40689]	Per Sample Total Time 0.04471	Per Sample Data Time 0.04273	Per Sample DNN Time 0.00198	Train Loss 0.0143	
+Epoch: [23][1560/40689]	Per Sample Total Time 0.04462	Per Sample Data Time 0.04264	Per Sample DNN Time 0.00198	Train Loss 0.0129	
+Epoch: [23][1660/40689]	Per Sample Total Time 0.04457	Per Sample Data Time 0.04259	Per Sample DNN Time 0.00198	Train Loss 0.0133	
+Epoch: [23][1760/40689]	Per Sample Total Time 0.04460	Per Sample Data Time 0.04262	Per Sample DNN Time 0.00198	Train Loss 0.0146	
+Epoch: [23][1860/40689]	Per Sample Total Time 0.04452	Per Sample Data Time 0.04254	Per Sample DNN Time 0.00198	Train Loss 0.0124	
+Epoch: [23][1960/40689]	Per Sample Total Time 0.04465	Per Sample Data Time 0.04267	Per Sample DNN Time 0.00198	Train Loss 0.0109	
+Epoch: [23][2060/40689]	Per Sample Total Time 0.04446	Per Sample Data Time 0.04248	Per Sample DNN Time 0.00198	Train Loss 0.0117	
+Epoch: [23][2160/40689]	Per Sample Total Time 0.04444	Per Sample Data Time 0.04246	Per Sample DNN Time 0.00198	Train Loss 0.0126	
+Epoch: [23][2260/40689]	Per Sample Total Time 0.04437	Per Sample Data Time 0.04239	Per Sample DNN Time 0.00198	Train Loss 0.0138	
+Epoch: [23][2360/40689]	Per Sample Total Time 0.04428	Per Sample Data Time 0.04230	Per Sample DNN Time 0.00198	Train Loss 0.0120	
+Epoch: [23][2460/40689]	Per Sample Total Time 0.04427	Per Sample Data Time 0.04229	Per Sample DNN Time 0.00198	Train Loss 0.0131	
+Epoch: [23][2560/40689]	Per Sample Total Time 0.04421	Per Sample Data Time 0.04223	Per Sample DNN Time 0.00198	Train Loss 0.0117	
+Epoch: [23][2660/40689]	Per Sample Total Time 0.04425	Per Sample Data Time 0.04227	Per Sample DNN Time 0.00198	Train Loss 0.0136	
+Epoch: [23][2760/40689]	Per Sample Total Time 0.04415	Per Sample Data Time 0.04217	Per Sample DNN Time 0.00198	Train Loss 0.0133	
+Epoch: [23][2860/40689]	Per Sample Total Time 0.04421	Per Sample Data Time 0.04223	Per Sample DNN Time 0.00198	Train Loss 0.0133	
+Epoch: [23][2960/40689]	Per Sample Total Time 0.04411	Per Sample Data Time 0.04213	Per Sample DNN Time 0.00198	Train Loss 0.0128	
+Epoch: [23][3060/40689]	Per Sample Total Time 0.04412	Per Sample Data Time 0.04214	Per Sample DNN Time 0.00198	Train Loss 0.0119	
+Epoch: [23][3160/40689]	Per Sample Total Time 0.04409	Per Sample Data Time 0.04211	Per Sample DNN Time 0.00198	Train Loss 0.0139	
+Epoch: [23][3260/40689]	Per Sample Total Time 0.04409	Per Sample Data Time 0.04211	Per Sample DNN Time 0.00198	Train Loss 0.0132	
+Epoch: [23][3360/40689]	Per Sample Total Time 0.04408	Per Sample Data Time 0.04210	Per Sample DNN Time 0.00198	Train Loss 0.0122	
+Epoch: [23][3460/40689]	Per Sample Total Time 0.04403	Per Sample Data Time 0.04205	Per Sample DNN Time 0.00198	Train Loss 0.0121	
+Epoch: [23][3560/40689]	Per Sample Total Time 0.04401	Per Sample Data Time 0.04204	Per Sample DNN Time 0.00198	Train Loss 0.0117	
+Epoch: [23][3660/40689]	Per Sample Total Time 0.04399	Per Sample Data Time 0.04201	Per Sample DNN Time 0.00198	Train Loss 0.0126	
+Epoch: [23][3760/40689]	Per Sample Total Time 0.04395	Per Sample Data Time 0.04198	Per Sample DNN Time 0.00198	Train Loss 0.0147	
+Epoch: [23][3860/40689]	Per Sample Total Time 0.04396	Per Sample Data Time 0.04198	Per Sample DNN Time 0.00198	Train Loss 0.0127	
+Epoch: [23][3960/40689]	Per Sample Total Time 0.04393	Per Sample Data Time 0.04195	Per Sample DNN Time 0.00198	Train Loss 0.0129	
+Epoch: [23][4060/40689]	Per Sample Total Time 0.04392	Per Sample Data Time 0.04194	Per Sample DNN Time 0.00198	Train Loss 0.0124	
+start validation
+mAP: 0.398634
+AUC: 0.968515
+d_prime: 2.629598
+train_loss: 0.013002
+valid_loss: 0.013309
+validation finished
+Epoch-23 lr: 2.8125000000000003e-05
+epoch 23 training time: 9071.565
+---------------
+2023-06-09 12:32:44.088993
+current #epochs=24, #steps=93610
+Epoch: [24][90/40689]	Per Sample Total Time 0.04707	Per Sample Data Time 0.04509	Per Sample DNN Time 0.00198	Train Loss 0.0129	
+Epoch: [24][190/40689]	Per Sample Total Time 0.04485	Per Sample Data Time 0.04287	Per Sample DNN Time 0.00197	Train Loss 0.0131	
+Epoch: [24][290/40689]	Per Sample Total Time 0.04518	Per Sample Data Time 0.04321	Per Sample DNN Time 0.00197	Train Loss 0.0110	
+Epoch: [24][390/40689]	Per Sample Total Time 0.04463	Per Sample Data Time 0.04266	Per Sample DNN Time 0.00197	Train Loss 0.0138	
+Epoch: [24][490/40689]	Per Sample Total Time 0.04487	Per Sample Data Time 0.04290	Per Sample DNN Time 0.00197	Train Loss 0.0130	
+Epoch: [24][590/40689]	Per Sample Total Time 0.04449	Per Sample Data Time 0.04252	Per Sample DNN Time 0.00197	Train Loss 0.0140	
+Epoch: [24][690/40689]	Per Sample Total Time 0.04451	Per Sample Data Time 0.04254	Per Sample DNN Time 0.00197	Train Loss 0.0135	
+Epoch: [24][790/40689]	Per Sample Total Time 0.04430	Per Sample Data Time 0.04233	Per Sample DNN Time 0.00197	Train Loss 0.0121	
+Epoch: [24][890/40689]	Per Sample Total Time 0.04471	Per Sample Data Time 0.04273	Per Sample DNN Time 0.00198	Train Loss 0.0121	
+Epoch: [24][990/40689]	Per Sample Total Time 0.04447	Per Sample Data Time 0.04249	Per Sample DNN Time 0.00198	Train Loss 0.0125	
+Epoch: [24][1090/40689]	Per Sample Total Time 0.04443	Per Sample Data Time 0.04245	Per Sample DNN Time 0.00198	Train Loss 0.0118	
+Epoch: [24][1190/40689]	Per Sample Total Time 0.04431	Per Sample Data Time 0.04233	Per Sample DNN Time 0.00198	Train Loss 0.0146	
+Epoch: [24][1290/40689]	Per Sample Total Time 0.04458	Per Sample Data Time 0.04260	Per Sample DNN Time 0.00198	Train Loss 0.0128	
+Epoch: [24][1390/40689]	Per Sample Total Time 0.04440	Per Sample Data Time 0.04242	Per Sample DNN Time 0.00198	Train Loss 0.0116	
+Epoch: [24][1490/40689]	Per Sample Total Time 0.04448	Per Sample Data Time 0.04251	Per Sample DNN Time 0.00198	Train Loss 0.0144	
+Epoch: [24][1590/40689]	Per Sample Total Time 0.04439	Per Sample Data Time 0.04241	Per Sample DNN Time 0.00198	Train Loss 0.0120	
+Epoch: [24][1690/40689]	Per Sample Total Time 0.04447	Per Sample Data Time 0.04250	Per Sample DNN Time 0.00198	Train Loss 0.0136	
+Epoch: [24][1790/40689]	Per Sample Total Time 0.04441	Per Sample Data Time 0.04244	Per Sample DNN Time 0.00198	Train Loss 0.0120	
+Epoch: [24][1890/40689]	Per Sample Total Time 0.04448	Per Sample Data Time 0.04251	Per Sample DNN Time 0.00198	Train Loss 0.0133	
+Epoch: [24][1990/40689]	Per Sample Total Time 0.04430	Per Sample Data Time 0.04232	Per Sample DNN Time 0.00198	Train Loss 0.0134	
+Epoch: [24][2090/40689]	Per Sample Total Time 0.04431	Per Sample Data Time 0.04233	Per Sample DNN Time 0.00198	Train Loss 0.0130	
+Epoch: [24][2190/40689]	Per Sample Total Time 0.04422	Per Sample Data Time 0.04224	Per Sample DNN Time 0.00198	Train Loss 0.0124	
+Epoch: [24][2290/40689]	Per Sample Total Time 0.04418	Per Sample Data Time 0.04221	Per Sample DNN Time 0.00198	Train Loss 0.0122	
+Epoch: [24][2390/40689]	Per Sample Total Time 0.04406	Per Sample Data Time 0.04208	Per Sample DNN Time 0.00198	Train Loss 0.0119	
+Epoch: [24][2490/40689]	Per Sample Total Time 0.04409	Per Sample Data Time 0.04212	Per Sample DNN Time 0.00198	Train Loss 0.0131	
+Epoch: [24][2590/40689]	Per Sample Total Time 0.04395	Per Sample Data Time 0.04197	Per Sample DNN Time 0.00198	Train Loss 0.0127	
+Epoch: [24][2690/40689]	Per Sample Total Time 0.04392	Per Sample Data Time 0.04194	Per Sample DNN Time 0.00198	Train Loss 0.0137	
+Epoch: [24][2790/40689]	Per Sample Total Time 0.04393	Per Sample Data Time 0.04195	Per Sample DNN Time 0.00198	Train Loss 0.0119	
+Epoch: [24][2890/40689]	Per Sample Total Time 0.04389	Per Sample Data Time 0.04191	Per Sample DNN Time 0.00198	Train Loss 0.0130	
+Epoch: [24][2990/40689]	Per Sample Total Time 0.04385	Per Sample Data Time 0.04187	Per Sample DNN Time 0.00198	Train Loss 0.0135	
+Epoch: [24][3090/40689]	Per Sample Total Time 0.04381	Per Sample Data Time 0.04183	Per Sample DNN Time 0.00198	Train Loss 0.0129	
+Epoch: [24][3190/40689]	Per Sample Total Time 0.04388	Per Sample Data Time 0.04190	Per Sample DNN Time 0.00198	Train Loss 0.0137	
+Epoch: [24][3290/40689]	Per Sample Total Time 0.04381	Per Sample Data Time 0.04184	Per Sample DNN Time 0.00198	Train Loss 0.0139	
+Epoch: [24][3390/40689]	Per Sample Total Time 0.04380	Per Sample Data Time 0.04183	Per Sample DNN Time 0.00198	Train Loss 0.0124	
+Epoch: [24][3490/40689]	Per Sample Total Time 0.04372	Per Sample Data Time 0.04175	Per Sample DNN Time 0.00198	Train Loss 0.0144	
+Epoch: [24][3590/40689]	Per Sample Total Time 0.04373	Per Sample Data Time 0.04175	Per Sample DNN Time 0.00198	Train Loss 0.0129	
+Epoch: [24][3690/40689]	Per Sample Total Time 0.04368	Per Sample Data Time 0.04170	Per Sample DNN Time 0.00198	Train Loss 0.0107	
+Epoch: [24][3790/40689]	Per Sample Total Time 0.04374	Per Sample Data Time 0.04177	Per Sample DNN Time 0.00198	Train Loss 0.0134	
+Epoch: [24][3890/40689]	Per Sample Total Time 0.04369	Per Sample Data Time 0.04171	Per Sample DNN Time 0.00198	Train Loss 0.0135	
+Epoch: [24][3990/40689]	Per Sample Total Time 0.04370	Per Sample Data Time 0.04173	Per Sample DNN Time 0.00198	Train Loss 0.0132	
+start validation
+mAP: 0.401610
+AUC: 0.968841
+d_prime: 2.636124
+train_loss: 0.012947
+valid_loss: 0.013458
+validation finished
+Epoch-24 lr: 2.8125000000000003e-05
+epoch 24 training time: 9044.751
+---------------
+2023-06-09 15:03:28.840183
+current #epochs=25, #steps=97680
+Epoch: [25][20/40689]	Per Sample Total Time 0.05585	Per Sample Data Time 0.05387	Per Sample DNN Time 0.00198	Train Loss 0.0121	
+Epoch: [25][120/40689]	Per Sample Total Time 0.04732	Per Sample Data Time 0.04534	Per Sample DNN Time 0.00198	Train Loss 0.0122	
+Epoch: [25][220/40689]	Per Sample Total Time 0.04574	Per Sample Data Time 0.04376	Per Sample DNN Time 0.00198	Train Loss 0.0141	
+Epoch: [25][320/40689]	Per Sample Total Time 0.04550	Per Sample Data Time 0.04353	Per Sample DNN Time 0.00198	Train Loss 0.0130	
+Epoch: [25][420/40689]	Per Sample Total Time 0.04496	Per Sample Data Time 0.04299	Per Sample DNN Time 0.00197	Train Loss 0.0119	
+Epoch: [25][520/40689]	Per Sample Total Time 0.04525	Per Sample Data Time 0.04328	Per Sample DNN Time 0.00197	Train Loss 0.0142	
+Epoch: [25][620/40689]	Per Sample Total Time 0.04530	Per Sample Data Time 0.04333	Per Sample DNN Time 0.00197	Train Loss 0.0137	
+Epoch: [25][720/40689]	Per Sample Total Time 0.04555	Per Sample Data Time 0.04358	Per Sample DNN Time 0.00198	Train Loss 0.0124	
+Epoch: [25][820/40689]	Per Sample Total Time 0.04527	Per Sample Data Time 0.04329	Per Sample DNN Time 0.00197	Train Loss 0.0124	
+Epoch: [25][920/40689]	Per Sample Total Time 0.04526	Per Sample Data Time 0.04328	Per Sample DNN Time 0.00197	Train Loss 0.0123	
+Epoch: [25][1020/40689]	Per Sample Total Time 0.04500	Per Sample Data Time 0.04302	Per Sample DNN Time 0.00197	Train Loss 0.0125	
+Epoch: [25][1120/40689]	Per Sample Total Time 0.04489	Per Sample Data Time 0.04292	Per Sample DNN Time 0.00197	Train Loss 0.0134	
+Epoch: [25][1220/40689]	Per Sample Total Time 0.04482	Per Sample Data Time 0.04285	Per Sample DNN Time 0.00197	Train Loss 0.0132	
+Epoch: [25][1320/40689]	Per Sample Total Time 0.04479	Per Sample Data Time 0.04282	Per Sample DNN Time 0.00197	Train Loss 0.0135	
+Epoch: [25][1420/40689]	Per Sample Total Time 0.04484	Per Sample Data Time 0.04287	Per Sample DNN Time 0.00197	Train Loss 0.0128	
+Epoch: [25][1520/40689]	Per Sample Total Time 0.04465	Per Sample Data Time 0.04268	Per Sample DNN Time 0.00197	Train Loss 0.0133	
+Epoch: [25][1620/40689]	Per Sample Total Time 0.04468	Per Sample Data Time 0.04271	Per Sample DNN Time 0.00197	Train Loss 0.0120	
+Epoch: [25][1720/40689]	Per Sample Total Time 0.04462	Per Sample Data Time 0.04265	Per Sample DNN Time 0.00197	Train Loss 0.0126	
+Epoch: [25][1820/40689]	Per Sample Total Time 0.04466	Per Sample Data Time 0.04268	Per Sample DNN Time 0.00197	Train Loss 0.0126	
+Epoch: [25][1920/40689]	Per Sample Total Time 0.04454	Per Sample Data Time 0.04256	Per Sample DNN Time 0.00197	Train Loss 0.0136	
+Epoch: [25][2020/40689]	Per Sample Total Time 0.04455	Per Sample Data Time 0.04257	Per Sample DNN Time 0.00197	Train Loss 0.0119	
+Epoch: [25][2120/40689]	Per Sample Total Time 0.04447	Per Sample Data Time 0.04249	Per Sample DNN Time 0.00197	Train Loss 0.0133	
+Epoch: [25][2220/40689]	Per Sample Total Time 0.04455	Per Sample Data Time 0.04257	Per Sample DNN Time 0.00197	Train Loss 0.0133	
+Epoch: [25][2320/40689]	Per Sample Total Time 0.04443	Per Sample Data Time 0.04245	Per Sample DNN Time 0.00197	Train Loss 0.0132	
+Epoch: [25][2420/40689]	Per Sample Total Time 0.04447	Per Sample Data Time 0.04249	Per Sample DNN Time 0.00197	Train Loss 0.0120	
+Epoch: [25][2520/40689]	Per Sample Total Time 0.04433	Per Sample Data Time 0.04235	Per Sample DNN Time 0.00197	Train Loss 0.0137	
+Epoch: [25][2620/40689]	Per Sample Total Time 0.04441	Per Sample Data Time 0.04244	Per Sample DNN Time 0.00197	Train Loss 0.0134	
+Epoch: [25][2720/40689]	Per Sample Total Time 0.04427	Per Sample Data Time 0.04229	Per Sample DNN Time 0.00197	Train Loss 0.0132	
+Epoch: [25][2820/40689]	Per Sample Total Time 0.04427	Per Sample Data Time 0.04229	Per Sample DNN Time 0.00197	Train Loss 0.0126	
+Epoch: [25][2920/40689]	Per Sample Total Time 0.04420	Per Sample Data Time 0.04222	Per Sample DNN Time 0.00197	Train Loss 0.0130	
+Epoch: [25][3020/40689]	Per Sample Total Time 0.04421	Per Sample Data Time 0.04223	Per Sample DNN Time 0.00197	Train Loss 0.0157	
+Epoch: [25][3120/40689]	Per Sample Total Time 0.04413	Per Sample Data Time 0.04216	Per Sample DNN Time 0.00197	Train Loss 0.0123	
+Epoch: [25][3220/40689]	Per Sample Total Time 0.04415	Per Sample Data Time 0.04217	Per Sample DNN Time 0.00197	Train Loss 0.0107	
+Epoch: [25][3320/40689]	Per Sample Total Time 0.04411	Per Sample Data Time 0.04213	Per Sample DNN Time 0.00197	Train Loss 0.0125	
+Epoch: [25][3420/40689]	Per Sample Total Time 0.04416	Per Sample Data Time 0.04218	Per Sample DNN Time 0.00198	Train Loss 0.0128	
+Epoch: [25][3520/40689]	Per Sample Total Time 0.04410	Per Sample Data Time 0.04212	Per Sample DNN Time 0.00198	Train Loss 0.0131	
+Epoch: [25][3620/40689]	Per Sample Total Time 0.04410	Per Sample Data Time 0.04213	Per Sample DNN Time 0.00198	Train Loss 0.0136	
+Epoch: [25][3720/40689]	Per Sample Total Time 0.04404	Per Sample Data Time 0.04207	Per Sample DNN Time 0.00198	Train Loss 0.0140	
+Epoch: [25][3820/40689]	Per Sample Total Time 0.04404	Per Sample Data Time 0.04206	Per Sample DNN Time 0.00198	Train Loss 0.0137	
+Epoch: [25][3920/40689]	Per Sample Total Time 0.04397	Per Sample Data Time 0.04200	Per Sample DNN Time 0.00198	Train Loss 0.0127	
+Epoch: [25][4020/40689]	Per Sample Total Time 0.04394	Per Sample Data Time 0.04197	Per Sample DNN Time 0.00198	Train Loss 0.0141	
+start validation
+mAP: 0.397352
+AUC: 0.967914
+d_prime: 2.617689
+train_loss: 0.012896
+valid_loss: 0.013529
+validation finished
+Epoch-25 lr: 2.109375e-05
+epoch 25 training time: 9081.240
+---------------
+2023-06-09 17:34:50.080701
+current #epochs=26, #steps=101750
+Epoch: [26][50/40689]	Per Sample Total Time 0.04967	Per Sample Data Time 0.04768	Per Sample DNN Time 0.00199	Train Loss 0.0128	
+Epoch: [26][150/40689]	Per Sample Total Time 0.04450	Per Sample Data Time 0.04252	Per Sample DNN Time 0.00198	Train Loss 0.0121	
+Epoch: [26][250/40689]	Per Sample Total Time 0.04498	Per Sample Data Time 0.04301	Per Sample DNN Time 0.00198	Train Loss 0.0144	
+Epoch: [26][350/40689]	Per Sample Total Time 0.04495	Per Sample Data Time 0.04298	Per Sample DNN Time 0.00197	Train Loss 0.0139	
+Epoch: [26][450/40689]	Per Sample Total Time 0.04528	Per Sample Data Time 0.04330	Per Sample DNN Time 0.00197	Train Loss 0.0107	
+Epoch: [26][550/40689]	Per Sample Total Time 0.04491	Per Sample Data Time 0.04293	Per Sample DNN Time 0.00197	Train Loss 0.0132	
+Epoch: [26][650/40689]	Per Sample Total Time 0.04535	Per Sample Data Time 0.04337	Per Sample DNN Time 0.00197	Train Loss 0.0134	
+Epoch: [26][750/40689]	Per Sample Total Time 0.04521	Per Sample Data Time 0.04323	Per Sample DNN Time 0.00198	Train Loss 0.0144	
+Epoch: [26][850/40689]	Per Sample Total Time 0.04524	Per Sample Data Time 0.04326	Per Sample DNN Time 0.00198	Train Loss 0.0120	
+Epoch: [26][950/40689]	Per Sample Total Time 0.04499	Per Sample Data Time 0.04301	Per Sample DNN Time 0.00198	Train Loss 0.0126	
+Epoch: [26][1050/40689]	Per Sample Total Time 0.04517	Per Sample Data Time 0.04319	Per Sample DNN Time 0.00198	Train Loss 0.0140	
+Epoch: [26][1150/40689]	Per Sample Total Time 0.04494	Per Sample Data Time 0.04297	Per Sample DNN Time 0.00198	Train Loss 0.0133	
+Epoch: [26][1250/40689]	Per Sample Total Time 0.04498	Per Sample Data Time 0.04300	Per Sample DNN Time 0.00198	Train Loss 0.0121	
+Epoch: [26][1350/40689]	Per Sample Total Time 0.04486	Per Sample Data Time 0.04288	Per Sample DNN Time 0.00198	Train Loss 0.0126	
+Epoch: [26][1450/40689]	Per Sample Total Time 0.04486	Per Sample Data Time 0.04288	Per Sample DNN Time 0.00198	Train Loss 0.0109	
+Epoch: [26][1550/40689]	Per Sample Total Time 0.04469	Per Sample Data Time 0.04271	Per Sample DNN Time 0.00198	Train Loss 0.0125	
+Epoch: [26][1650/40689]	Per Sample Total Time 0.04473	Per Sample Data Time 0.04275	Per Sample DNN Time 0.00198	Train Loss 0.0134	
+Epoch: [26][1750/40689]	Per Sample Total Time 0.04458	Per Sample Data Time 0.04260	Per Sample DNN Time 0.00198	Train Loss 0.0132	
+Epoch: [26][1850/40689]	Per Sample Total Time 0.04456	Per Sample Data Time 0.04258	Per Sample DNN Time 0.00198	Train Loss 0.0111	
+Epoch: [26][1950/40689]	Per Sample Total Time 0.04444	Per Sample Data Time 0.04246	Per Sample DNN Time 0.00198	Train Loss 0.0131	
+Epoch: [26][2050/40689]	Per Sample Total Time 0.04444	Per Sample Data Time 0.04246	Per Sample DNN Time 0.00198	Train Loss 0.0123	
+Epoch: [26][2150/40689]	Per Sample Total Time 0.04428	Per Sample Data Time 0.04230	Per Sample DNN Time 0.00198	Train Loss 0.0129	
+Epoch: [26][2250/40689]	Per Sample Total Time 0.04430	Per Sample Data Time 0.04232	Per Sample DNN Time 0.00198	Train Loss 0.0140	
+Epoch: [26][2350/40689]	Per Sample Total Time 0.04422	Per Sample Data Time 0.04224	Per Sample DNN Time 0.00198	Train Loss 0.0126	
+Epoch: [26][2450/40689]	Per Sample Total Time 0.04421	Per Sample Data Time 0.04223	Per Sample DNN Time 0.00198	Train Loss 0.0121	
+Epoch: [26][2550/40689]	Per Sample Total Time 0.04421	Per Sample Data Time 0.04223	Per Sample DNN Time 0.00198	Train Loss 0.0129	
+Epoch: [26][2650/40689]	Per Sample Total Time 0.04407	Per Sample Data Time 0.04209	Per Sample DNN Time 0.00198	Train Loss 0.0132	
+Epoch: [26][2750/40689]	Per Sample Total Time 0.04400	Per Sample Data Time 0.04202	Per Sample DNN Time 0.00198	Train Loss 0.0134	
+Epoch: [26][2850/40689]	Per Sample Total Time 0.04400	Per Sample Data Time 0.04202	Per Sample DNN Time 0.00198	Train Loss 0.0131	
+Epoch: [26][2950/40689]	Per Sample Total Time 0.04391	Per Sample Data Time 0.04194	Per Sample DNN Time 0.00198	Train Loss 0.0153	
+Epoch: [26][3050/40689]	Per Sample Total Time 0.04391	Per Sample Data Time 0.04193	Per Sample DNN Time 0.00198	Train Loss 0.0125	
+Epoch: [26][3150/40689]	Per Sample Total Time 0.04382	Per Sample Data Time 0.04184	Per Sample DNN Time 0.00198	Train Loss 0.0122	
+Epoch: [26][3250/40689]	Per Sample Total Time 0.04384	Per Sample Data Time 0.04186	Per Sample DNN Time 0.00198	Train Loss 0.0138	
+Epoch: [26][3350/40689]	Per Sample Total Time 0.04381	Per Sample Data Time 0.04183	Per Sample DNN Time 0.00198	Train Loss 0.0147	
+Epoch: [26][3450/40689]	Per Sample Total Time 0.04382	Per Sample Data Time 0.04184	Per Sample DNN Time 0.00198	Train Loss 0.0139	
+Epoch: [26][3550/40689]	Per Sample Total Time 0.04376	Per Sample Data Time 0.04179	Per Sample DNN Time 0.00198	Train Loss 0.0128	
+Epoch: [26][3650/40689]	Per Sample Total Time 0.04381	Per Sample Data Time 0.04184	Per Sample DNN Time 0.00198	Train Loss 0.0124	
+Epoch: [26][3750/40689]	Per Sample Total Time 0.04381	Per Sample Data Time 0.04183	Per Sample DNN Time 0.00198	Train Loss 0.0131	
+Epoch: [26][3850/40689]	Per Sample Total Time 0.04380	Per Sample Data Time 0.04182	Per Sample DNN Time 0.00198	Train Loss 0.0117	
+Epoch: [26][3950/40689]	Per Sample Total Time 0.04345	Per Sample Data Time 0.04147	Per Sample DNN Time 0.00198	Train Loss 0.0128	
+Epoch: [26][4050/40689]	Per Sample Total Time 0.04318	Per Sample Data Time 0.04120	Per Sample DNN Time 0.00198	Train Loss 0.0129	
+start validation
+mAP: 0.400038
+AUC: 0.967667
+d_prime: 2.612840
+train_loss: 0.012772
+valid_loss: 0.013467
+validation finished
+Epoch-26 lr: 2.109375e-05
+epoch 26 training time: 8757.633
+---------------
+2023-06-09 20:00:47.713958
+current #epochs=27, #steps=105820
+Epoch: [27][80/40689]	Per Sample Total Time 0.03434	Per Sample Data Time 0.03235	Per Sample DNN Time 0.00199	Train Loss 0.0118	
+Epoch: [27][180/40689]	Per Sample Total Time 0.03232	Per Sample Data Time 0.03033	Per Sample DNN Time 0.00199	Train Loss 0.0130	
+Epoch: [27][280/40689]	Per Sample Total Time 0.03194	Per Sample Data Time 0.02996	Per Sample DNN Time 0.00198	Train Loss 0.0111	
+Epoch: [27][380/40689]	Per Sample Total Time 0.03155	Per Sample Data Time 0.02957	Per Sample DNN Time 0.00198	Train Loss 0.0113	
+Epoch: [27][480/40689]	Per Sample Total Time 0.03145	Per Sample Data Time 0.02947	Per Sample DNN Time 0.00198	Train Loss 0.0122	
+Epoch: [27][580/40689]	Per Sample Total Time 0.03115	Per Sample Data Time 0.02917	Per Sample DNN Time 0.00198	Train Loss 0.0132	
+Epoch: [27][680/40689]	Per Sample Total Time 0.03111	Per Sample Data Time 0.02913	Per Sample DNN Time 0.00198	Train Loss 0.0130	
+Epoch: [27][780/40689]	Per Sample Total Time 0.03100	Per Sample Data Time 0.02902	Per Sample DNN Time 0.00198	Train Loss 0.0126	
+Epoch: [27][880/40689]	Per Sample Total Time 0.03092	Per Sample Data Time 0.02894	Per Sample DNN Time 0.00198	Train Loss 0.0132	
+Epoch: [27][980/40689]	Per Sample Total Time 0.03090	Per Sample Data Time 0.02891	Per Sample DNN Time 0.00198	Train Loss 0.0123	
+Epoch: [27][1080/40689]	Per Sample Total Time 0.03071	Per Sample Data Time 0.02873	Per Sample DNN Time 0.00198	Train Loss 0.0124	
+Epoch: [27][1180/40689]	Per Sample Total Time 0.03075	Per Sample Data Time 0.02877	Per Sample DNN Time 0.00198	Train Loss 0.0129	
+Epoch: [27][1280/40689]	Per Sample Total Time 0.03055	Per Sample Data Time 0.02857	Per Sample DNN Time 0.00198	Train Loss 0.0133	
+Epoch: [27][1380/40689]	Per Sample Total Time 0.03056	Per Sample Data Time 0.02857	Per Sample DNN Time 0.00198	Train Loss 0.0121	
+Epoch: [27][1480/40689]	Per Sample Total Time 0.03043	Per Sample Data Time 0.02845	Per Sample DNN Time 0.00198	Train Loss 0.0118	
+Epoch: [27][1580/40689]	Per Sample Total Time 0.03042	Per Sample Data Time 0.02844	Per Sample DNN Time 0.00198	Train Loss 0.0135	
+Epoch: [27][1680/40689]	Per Sample Total Time 0.03027	Per Sample Data Time 0.02828	Per Sample DNN Time 0.00198	Train Loss 0.0127	
+Epoch: [27][1780/40689]	Per Sample Total Time 0.03025	Per Sample Data Time 0.02827	Per Sample DNN Time 0.00198	Train Loss 0.0128	
+Epoch: [27][1880/40689]	Per Sample Total Time 0.03011	Per Sample Data Time 0.02813	Per Sample DNN Time 0.00198	Train Loss 0.0113	
+Epoch: [27][1980/40689]	Per Sample Total Time 0.03014	Per Sample Data Time 0.02816	Per Sample DNN Time 0.00198	Train Loss 0.0117	
+Epoch: [27][2080/40689]	Per Sample Total Time 0.03005	Per Sample Data Time 0.02806	Per Sample DNN Time 0.00198	Train Loss 0.0123	
+Epoch: [27][2180/40689]	Per Sample Total Time 0.03008	Per Sample Data Time 0.02809	Per Sample DNN Time 0.00198	Train Loss 0.0113	
+Epoch: [27][2280/40689]	Per Sample Total Time 0.02999	Per Sample Data Time 0.02801	Per Sample DNN Time 0.00198	Train Loss 0.0129	
+Epoch: [27][2380/40689]	Per Sample Total Time 0.02997	Per Sample Data Time 0.02798	Per Sample DNN Time 0.00198	Train Loss 0.0117	
+Epoch: [27][2480/40689]	Per Sample Total Time 0.02987	Per Sample Data Time 0.02789	Per Sample DNN Time 0.00198	Train Loss 0.0121	
+Epoch: [27][2580/40689]	Per Sample Total Time 0.02987	Per Sample Data Time 0.02789	Per Sample DNN Time 0.00198	Train Loss 0.0126	
+Epoch: [27][2680/40689]	Per Sample Total Time 0.02979	Per Sample Data Time 0.02781	Per Sample DNN Time 0.00198	Train Loss 0.0133	
+Epoch: [27][2780/40689]	Per Sample Total Time 0.02981	Per Sample Data Time 0.02783	Per Sample DNN Time 0.00198	Train Loss 0.0127	
+Epoch: [27][2880/40689]	Per Sample Total Time 0.02974	Per Sample Data Time 0.02775	Per Sample DNN Time 0.00198	Train Loss 0.0120	
+Epoch: [27][2980/40689]	Per Sample Total Time 0.02969	Per Sample Data Time 0.02770	Per Sample DNN Time 0.00198	Train Loss 0.0122	
+Epoch: [27][3080/40689]	Per Sample Total Time 0.02963	Per Sample Data Time 0.02765	Per Sample DNN Time 0.00198	Train Loss 0.0131	
+Epoch: [27][3180/40689]	Per Sample Total Time 0.02961	Per Sample Data Time 0.02762	Per Sample DNN Time 0.00198	Train Loss 0.0127	
+Epoch: [27][3280/40689]	Per Sample Total Time 0.02957	Per Sample Data Time 0.02759	Per Sample DNN Time 0.00198	Train Loss 0.0119	
+Epoch: [27][3380/40689]	Per Sample Total Time 0.02952	Per Sample Data Time 0.02753	Per Sample DNN Time 0.00198	Train Loss 0.0116	
+Epoch: [27][3480/40689]	Per Sample Total Time 0.02948	Per Sample Data Time 0.02749	Per Sample DNN Time 0.00198	Train Loss 0.0127	
+Epoch: [27][3580/40689]	Per Sample Total Time 0.02945	Per Sample Data Time 0.02746	Per Sample DNN Time 0.00198	Train Loss 0.0120	
+Epoch: [27][3680/40689]	Per Sample Total Time 0.02941	Per Sample Data Time 0.02743	Per Sample DNN Time 0.00198	Train Loss 0.0132	
+Epoch: [27][3780/40689]	Per Sample Total Time 0.02936	Per Sample Data Time 0.02738	Per Sample DNN Time 0.00198	Train Loss 0.0124	
+Epoch: [27][3880/40689]	Per Sample Total Time 0.02935	Per Sample Data Time 0.02737	Per Sample DNN Time 0.00198	Train Loss 0.0128	
+Epoch: [27][3980/40689]	Per Sample Total Time 0.02930	Per Sample Data Time 0.02732	Per Sample DNN Time 0.00198	Train Loss 0.0130	
+start validation
+mAP: 0.402533
+AUC: 0.968408
+d_prime: 2.627456
+train_loss: 0.012704
+valid_loss: 0.013273
+validation finished
+Epoch-27 lr: 2.109375e-05
+epoch 27 training time: 6010.583
+---------------
+2023-06-09 21:40:58.296724
+current #epochs=28, #steps=109890
+Epoch: [28][10/40689]	Per Sample Total Time 0.04432	Per Sample Data Time 0.04235	Per Sample DNN Time 0.00197	Train Loss 0.0129	
+Epoch: [28][110/40689]	Per Sample Total Time 0.02961	Per Sample Data Time 0.02763	Per Sample DNN Time 0.00198	Train Loss 0.0146	
+Epoch: [28][210/40689]	Per Sample Total Time 0.02981	Per Sample Data Time 0.02784	Per Sample DNN Time 0.00198	Train Loss 0.0143	
+Epoch: [28][310/40689]	Per Sample Total Time 0.02925	Per Sample Data Time 0.02727	Per Sample DNN Time 0.00198	Train Loss 0.0127	
+Epoch: [28][410/40689]	Per Sample Total Time 0.02943	Per Sample Data Time 0.02746	Per Sample DNN Time 0.00198	Train Loss 0.0129	
+Epoch: [28][510/40689]	Per Sample Total Time 0.02886	Per Sample Data Time 0.02689	Per Sample DNN Time 0.00198	Train Loss 0.0122	
+Epoch: [28][610/40689]	Per Sample Total Time 0.02899	Per Sample Data Time 0.02701	Per Sample DNN Time 0.00198	Train Loss 0.0133	
+Epoch: [28][710/40689]	Per Sample Total Time 0.02884	Per Sample Data Time 0.02687	Per Sample DNN Time 0.00198	Train Loss 0.0124	
+Epoch: [28][810/40689]	Per Sample Total Time 0.02875	Per Sample Data Time 0.02678	Per Sample DNN Time 0.00198	Train Loss 0.0127	
+Epoch: [28][910/40689]	Per Sample Total Time 0.02885	Per Sample Data Time 0.02687	Per Sample DNN Time 0.00198	Train Loss 0.0119	
+Epoch: [28][1010/40689]	Per Sample Total Time 0.02876	Per Sample Data Time 0.02678	Per Sample DNN Time 0.00198	Train Loss 0.0119	
+Epoch: [28][1110/40689]	Per Sample Total Time 0.02878	Per Sample Data Time 0.02680	Per Sample DNN Time 0.00198	Train Loss 0.0120	
+Epoch: [28][1210/40689]	Per Sample Total Time 0.02871	Per Sample Data Time 0.02673	Per Sample DNN Time 0.00198	Train Loss 0.0128	
+Epoch: [28][1310/40689]	Per Sample Total Time 0.02878	Per Sample Data Time 0.02680	Per Sample DNN Time 0.00198	Train Loss 0.0115	
+Epoch: [28][1410/40689]	Per Sample Total Time 0.02873	Per Sample Data Time 0.02675	Per Sample DNN Time 0.00198	Train Loss 0.0135	
+Epoch: [28][1510/40689]	Per Sample Total Time 0.02868	Per Sample Data Time 0.02670	Per Sample DNN Time 0.00198	Train Loss 0.0129	
+Epoch: [28][1610/40689]	Per Sample Total Time 0.02861	Per Sample Data Time 0.02663	Per Sample DNN Time 0.00198	Train Loss 0.0123	
+Epoch: [28][1710/40689]	Per Sample Total Time 0.02862	Per Sample Data Time 0.02664	Per Sample DNN Time 0.00198	Train Loss 0.0141	
+Epoch: [28][1810/40689]	Per Sample Total Time 0.02859	Per Sample Data Time 0.02662	Per Sample DNN Time 0.00198	Train Loss 0.0119	
+Epoch: [28][1910/40689]	Per Sample Total Time 0.02863	Per Sample Data Time 0.02665	Per Sample DNN Time 0.00198	Train Loss 0.0125	
+Epoch: [28][2010/40689]	Per Sample Total Time 0.02859	Per Sample Data Time 0.02662	Per Sample DNN Time 0.00198	Train Loss 0.0121	
+Epoch: [28][2110/40689]	Per Sample Total Time 0.02865	Per Sample Data Time 0.02667	Per Sample DNN Time 0.00198	Train Loss 0.0127	
+Epoch: [28][2210/40689]	Per Sample Total Time 0.02855	Per Sample Data Time 0.02657	Per Sample DNN Time 0.00198	Train Loss 0.0127	
+Epoch: [28][2310/40689]	Per Sample Total Time 0.02858	Per Sample Data Time 0.02660	Per Sample DNN Time 0.00198	Train Loss 0.0129	
+Epoch: [28][2410/40689]	Per Sample Total Time 0.02855	Per Sample Data Time 0.02657	Per Sample DNN Time 0.00198	Train Loss 0.0115	
+Epoch: [28][2510/40689]	Per Sample Total Time 0.02860	Per Sample Data Time 0.02662	Per Sample DNN Time 0.00198	Train Loss 0.0119	
+Epoch: [28][2610/40689]	Per Sample Total Time 0.02856	Per Sample Data Time 0.02658	Per Sample DNN Time 0.00198	Train Loss 0.0126	
+Epoch: [28][2710/40689]	Per Sample Total Time 0.02858	Per Sample Data Time 0.02660	Per Sample DNN Time 0.00198	Train Loss 0.0130	
+Epoch: [28][2810/40689]	Per Sample Total Time 0.02853	Per Sample Data Time 0.02656	Per Sample DNN Time 0.00198	Train Loss 0.0127	
+Epoch: [28][2910/40689]	Per Sample Total Time 0.02856	Per Sample Data Time 0.02658	Per Sample DNN Time 0.00198	Train Loss 0.0119	
+Epoch: [28][3010/40689]	Per Sample Total Time 0.02853	Per Sample Data Time 0.02655	Per Sample DNN Time 0.00198	Train Loss 0.0112	
+Epoch: [28][3110/40689]	Per Sample Total Time 0.02858	Per Sample Data Time 0.02660	Per Sample DNN Time 0.00198	Train Loss 0.0127	
+Epoch: [28][3210/40689]	Per Sample Total Time 0.02853	Per Sample Data Time 0.02655	Per Sample DNN Time 0.00198	Train Loss 0.0122	
+Epoch: [28][3310/40689]	Per Sample Total Time 0.02855	Per Sample Data Time 0.02657	Per Sample DNN Time 0.00198	Train Loss 0.0120	
+Epoch: [28][3410/40689]	Per Sample Total Time 0.02853	Per Sample Data Time 0.02655	Per Sample DNN Time 0.00198	Train Loss 0.0140	
+Epoch: [28][3510/40689]	Per Sample Total Time 0.02853	Per Sample Data Time 0.02655	Per Sample DNN Time 0.00198	Train Loss 0.0106	
+Epoch: [28][3610/40689]	Per Sample Total Time 0.02848	Per Sample Data Time 0.02650	Per Sample DNN Time 0.00198	Train Loss 0.0111	
+Epoch: [28][3710/40689]	Per Sample Total Time 0.02848	Per Sample Data Time 0.02650	Per Sample DNN Time 0.00198	Train Loss 0.0132	
+Epoch: [28][3810/40689]	Per Sample Total Time 0.02843	Per Sample Data Time 0.02645	Per Sample DNN Time 0.00198	Train Loss 0.0117	
+Epoch: [28][3910/40689]	Per Sample Total Time 0.02846	Per Sample Data Time 0.02648	Per Sample DNN Time 0.00198	Train Loss 0.0115	
+Epoch: [28][4010/40689]	Per Sample Total Time 0.02843	Per Sample Data Time 0.02645	Per Sample DNN Time 0.00198	Train Loss 0.0128	
+start validation
+mAP: 0.400263
+AUC: 0.967315
+d_prime: 2.606001
+train_loss: 0.012655
+valid_loss: 0.013399
+validation finished
+Epoch-28 lr: 2.109375e-05
+epoch 28 training time: 5877.740
+---------------
+2023-06-09 23:18:56.036867
+current #epochs=29, #steps=113960
+Epoch: [29][40/40689]	Per Sample Total Time 0.03512	Per Sample Data Time 0.03314	Per Sample DNN Time 0.00198	Train Loss 0.0120	
+Epoch: [29][140/40689]	Per Sample Total Time 0.02982	Per Sample Data Time 0.02785	Per Sample DNN Time 0.00198	Train Loss 0.0130	
+Epoch: [29][240/40689]	Per Sample Total Time 0.02941	Per Sample Data Time 0.02743	Per Sample DNN Time 0.00198	Train Loss 0.0121	
+Epoch: [29][340/40689]	Per Sample Total Time 0.02903	Per Sample Data Time 0.02705	Per Sample DNN Time 0.00198	Train Loss 0.0140	
+Epoch: [29][440/40689]	Per Sample Total Time 0.02871	Per Sample Data Time 0.02673	Per Sample DNN Time 0.00198	Train Loss 0.0138	
+Epoch: [29][540/40689]	Per Sample Total Time 0.02877	Per Sample Data Time 0.02680	Per Sample DNN Time 0.00198	Train Loss 0.0116	
+Epoch: [29][640/40689]	Per Sample Total Time 0.02881	Per Sample Data Time 0.02683	Per Sample DNN Time 0.00198	Train Loss 0.0123	
+Epoch: [29][740/40689]	Per Sample Total Time 0.02869	Per Sample Data Time 0.02671	Per Sample DNN Time 0.00198	Train Loss 0.0131	
+Epoch: [29][840/40689]	Per Sample Total Time 0.02878	Per Sample Data Time 0.02681	Per Sample DNN Time 0.00198	Train Loss 0.0114	
+Epoch: [29][940/40689]	Per Sample Total Time 0.02859	Per Sample Data Time 0.02661	Per Sample DNN Time 0.00198	Train Loss 0.0127	
+Epoch: [29][1040/40689]	Per Sample Total Time 0.02866	Per Sample Data Time 0.02668	Per Sample DNN Time 0.00198	Train Loss 0.0141	
+Epoch: [29][1140/40689]	Per Sample Total Time 0.02855	Per Sample Data Time 0.02657	Per Sample DNN Time 0.00198	Train Loss 0.0117	
+Epoch: [29][1240/40689]	Per Sample Total Time 0.02863	Per Sample Data Time 0.02665	Per Sample DNN Time 0.00198	Train Loss 0.0120	
+Epoch: [29][1340/40689]	Per Sample Total Time 0.02859	Per Sample Data Time 0.02661	Per Sample DNN Time 0.00198	Train Loss 0.0124	
+Epoch: [29][1440/40689]	Per Sample Total Time 0.02862	Per Sample Data Time 0.02664	Per Sample DNN Time 0.00198	Train Loss 0.0135	
+Epoch: [29][1540/40689]	Per Sample Total Time 0.02858	Per Sample Data Time 0.02660	Per Sample DNN Time 0.00198	Train Loss 0.0121	
+Epoch: [29][1640/40689]	Per Sample Total Time 0.02859	Per Sample Data Time 0.02661	Per Sample DNN Time 0.00198	Train Loss 0.0118	
+Epoch: [29][1740/40689]	Per Sample Total Time 0.02846	Per Sample Data Time 0.02648	Per Sample DNN Time 0.00198	Train Loss 0.0137	
+Epoch: [29][1840/40689]	Per Sample Total Time 0.02853	Per Sample Data Time 0.02655	Per Sample DNN Time 0.00198	Train Loss 0.0111	
+Epoch: [29][1940/40689]	Per Sample Total Time 0.02845	Per Sample Data Time 0.02647	Per Sample DNN Time 0.00198	Train Loss 0.0127	
+Epoch: [29][2040/40689]	Per Sample Total Time 0.02850	Per Sample Data Time 0.02653	Per Sample DNN Time 0.00198	Train Loss 0.0118	
+Epoch: [29][2140/40689]	Per Sample Total Time 0.02846	Per Sample Data Time 0.02648	Per Sample DNN Time 0.00198	Train Loss 0.0140	
+Epoch: [29][2240/40689]	Per Sample Total Time 0.02851	Per Sample Data Time 0.02653	Per Sample DNN Time 0.00198	Train Loss 0.0109	
+Epoch: [29][2340/40689]	Per Sample Total Time 0.02847	Per Sample Data Time 0.02649	Per Sample DNN Time 0.00198	Train Loss 0.0131	
+Epoch: [29][2440/40689]	Per Sample Total Time 0.02843	Per Sample Data Time 0.02645	Per Sample DNN Time 0.00198	Train Loss 0.0122	
+Epoch: [29][2540/40689]	Per Sample Total Time 0.02845	Per Sample Data Time 0.02647	Per Sample DNN Time 0.00198	Train Loss 0.0124	
+Epoch: [29][2640/40689]	Per Sample Total Time 0.02842	Per Sample Data Time 0.02644	Per Sample DNN Time 0.00198	Train Loss 0.0136	
+Epoch: [29][2740/40689]	Per Sample Total Time 0.02842	Per Sample Data Time 0.02644	Per Sample DNN Time 0.00198	Train Loss 0.0146	
+Epoch: [29][2840/40689]	Per Sample Total Time 0.02840	Per Sample Data Time 0.02642	Per Sample DNN Time 0.00198	Train Loss 0.0125	
+Epoch: [29][2940/40689]	Per Sample Total Time 0.02845	Per Sample Data Time 0.02647	Per Sample DNN Time 0.00198	Train Loss 0.0130	
+Epoch: [29][3040/40689]	Per Sample Total Time 0.02840	Per Sample Data Time 0.02642	Per Sample DNN Time 0.00198	Train Loss 0.0131	
+Epoch: [29][3140/40689]	Per Sample Total Time 0.02841	Per Sample Data Time 0.02644	Per Sample DNN Time 0.00198	Train Loss 0.0127	
+Epoch: [29][3240/40689]	Per Sample Total Time 0.02837	Per Sample Data Time 0.02639	Per Sample DNN Time 0.00198	Train Loss 0.0141	
+Epoch: [29][3340/40689]	Per Sample Total Time 0.02838	Per Sample Data Time 0.02640	Per Sample DNN Time 0.00198	Train Loss 0.0120	
+Epoch: [29][3440/40689]	Per Sample Total Time 0.02831	Per Sample Data Time 0.02633	Per Sample DNN Time 0.00198	Train Loss 0.0129	
+Epoch: [29][3540/40689]	Per Sample Total Time 0.02833	Per Sample Data Time 0.02635	Per Sample DNN Time 0.00198	Train Loss 0.0141	
+Epoch: [29][3640/40689]	Per Sample Total Time 0.02831	Per Sample Data Time 0.02633	Per Sample DNN Time 0.00198	Train Loss 0.0127	
+Epoch: [29][3740/40689]	Per Sample Total Time 0.02833	Per Sample Data Time 0.02635	Per Sample DNN Time 0.00198	Train Loss 0.0138	
+Epoch: [29][3840/40689]	Per Sample Total Time 0.02828	Per Sample Data Time 0.02630	Per Sample DNN Time 0.00198	Train Loss 0.0134	
+Epoch: [29][3940/40689]	Per Sample Total Time 0.02828	Per Sample Data Time 0.02630	Per Sample DNN Time 0.00198	Train Loss 0.0132	
+Epoch: [29][4040/40689]	Per Sample Total Time 0.02825	Per Sample Data Time 0.02627	Per Sample DNN Time 0.00198	Train Loss 0.0125	
+start validation
+mAP: 0.402385
+AUC: 0.967593
+d_prime: 2.611392
+train_loss: 0.012588
+valid_loss: 0.013412
+validation finished
+Epoch-29 lr: 2.109375e-05
+epoch 29 training time: 5854.058
+---------------
+2023-06-10 00:56:30.094853
+current #epochs=30, #steps=118030
+Epoch: [30][70/40689]	Per Sample Total Time 0.03047	Per Sample Data Time 0.02849	Per Sample DNN Time 0.00198	Train Loss 0.0131	
+Epoch: [30][170/40689]	Per Sample Total Time 0.02966	Per Sample Data Time 0.02768	Per Sample DNN Time 0.00198	Train Loss 0.0124	
+Epoch: [30][270/40689]	Per Sample Total Time 0.02899	Per Sample Data Time 0.02701	Per Sample DNN Time 0.00198	Train Loss 0.0144	
+Epoch: [30][370/40689]	Per Sample Total Time 0.02885	Per Sample Data Time 0.02688	Per Sample DNN Time 0.00198	Train Loss 0.0123	
+Epoch: [30][470/40689]	Per Sample Total Time 0.02881	Per Sample Data Time 0.02683	Per Sample DNN Time 0.00198	Train Loss 0.0131	
+Epoch: [30][570/40689]	Per Sample Total Time 0.02880	Per Sample Data Time 0.02682	Per Sample DNN Time 0.00198	Train Loss 0.0124	
+Epoch: [30][670/40689]	Per Sample Total Time 0.02882	Per Sample Data Time 0.02684	Per Sample DNN Time 0.00198	Train Loss 0.0130	
+Epoch: [30][770/40689]	Per Sample Total Time 0.02864	Per Sample Data Time 0.02666	Per Sample DNN Time 0.00198	Train Loss 0.0113	
+Epoch: [30][870/40689]	Per Sample Total Time 0.02890	Per Sample Data Time 0.02692	Per Sample DNN Time 0.00198	Train Loss 0.0117	
+Epoch: [30][970/40689]	Per Sample Total Time 0.02876	Per Sample Data Time 0.02678	Per Sample DNN Time 0.00198	Train Loss 0.0130	
+Epoch: [30][1070/40689]	Per Sample Total Time 0.02884	Per Sample Data Time 0.02686	Per Sample DNN Time 0.00198	Train Loss 0.0111	
+Epoch: [30][1170/40689]	Per Sample Total Time 0.02868	Per Sample Data Time 0.02670	Per Sample DNN Time 0.00198	Train Loss 0.0130	
+Epoch: [30][1270/40689]	Per Sample Total Time 0.02871	Per Sample Data Time 0.02673	Per Sample DNN Time 0.00198	Train Loss 0.0132	
+Epoch: [30][1370/40689]	Per Sample Total Time 0.02863	Per Sample Data Time 0.02665	Per Sample DNN Time 0.00198	Train Loss 0.0139	
+Epoch: [30][1470/40689]	Per Sample Total Time 0.02871	Per Sample Data Time 0.02673	Per Sample DNN Time 0.00198	Train Loss 0.0125	
+Epoch: [30][1570/40689]	Per Sample Total Time 0.02864	Per Sample Data Time 0.02666	Per Sample DNN Time 0.00198	Train Loss 0.0123	
+Epoch: [30][1670/40689]	Per Sample Total Time 0.02870	Per Sample Data Time 0.02672	Per Sample DNN Time 0.00198	Train Loss 0.0138	
+Epoch: [30][1770/40689]	Per Sample Total Time 0.02862	Per Sample Data Time 0.02664	Per Sample DNN Time 0.00198	Train Loss 0.0128	
+Epoch: [30][1870/40689]	Per Sample Total Time 0.02866	Per Sample Data Time 0.02668	Per Sample DNN Time 0.00198	Train Loss 0.0123	
+Epoch: [30][1970/40689]	Per Sample Total Time 0.02856	Per Sample Data Time 0.02658	Per Sample DNN Time 0.00198	Train Loss 0.0123	
+Epoch: [30][2070/40689]	Per Sample Total Time 0.02862	Per Sample Data Time 0.02664	Per Sample DNN Time 0.00198	Train Loss 0.0123	
+Epoch: [30][2170/40689]	Per Sample Total Time 0.02861	Per Sample Data Time 0.02664	Per Sample DNN Time 0.00198	Train Loss 0.0127	
+Epoch: [30][2270/40689]	Per Sample Total Time 0.02867	Per Sample Data Time 0.02669	Per Sample DNN Time 0.00198	Train Loss 0.0126	
+Epoch: [30][2370/40689]	Per Sample Total Time 0.02861	Per Sample Data Time 0.02663	Per Sample DNN Time 0.00198	Train Loss 0.0125	
+Epoch: [30][2470/40689]	Per Sample Total Time 0.02869	Per Sample Data Time 0.02671	Per Sample DNN Time 0.00198	Train Loss 0.0121	
+Epoch: [30][2570/40689]	Per Sample Total Time 0.02863	Per Sample Data Time 0.02666	Per Sample DNN Time 0.00198	Train Loss 0.0140	
+Epoch: [30][2670/40689]	Per Sample Total Time 0.02866	Per Sample Data Time 0.02668	Per Sample DNN Time 0.00198	Train Loss 0.0125	
+Epoch: [30][2770/40689]	Per Sample Total Time 0.02862	Per Sample Data Time 0.02664	Per Sample DNN Time 0.00198	Train Loss 0.0118	
+Epoch: [30][2870/40689]	Per Sample Total Time 0.02863	Per Sample Data Time 0.02665	Per Sample DNN Time 0.00198	Train Loss 0.0120	
+Epoch: [30][2970/40689]	Per Sample Total Time 0.02858	Per Sample Data Time 0.02660	Per Sample DNN Time 0.00198	Train Loss 0.0127	
+Epoch: [30][3070/40689]	Per Sample Total Time 0.02862	Per Sample Data Time 0.02664	Per Sample DNN Time 0.00198	Train Loss 0.0129	
+Epoch: [30][3170/40689]	Per Sample Total Time 0.02855	Per Sample Data Time 0.02657	Per Sample DNN Time 0.00198	Train Loss 0.0131	
+Epoch: [30][3270/40689]	Per Sample Total Time 0.02859	Per Sample Data Time 0.02661	Per Sample DNN Time 0.00198	Train Loss 0.0112	
+Epoch: [30][3370/40689]	Per Sample Total Time 0.02853	Per Sample Data Time 0.02655	Per Sample DNN Time 0.00198	Train Loss 0.0110	
+Epoch: [30][3470/40689]	Per Sample Total Time 0.02852	Per Sample Data Time 0.02654	Per Sample DNN Time 0.00198	Train Loss 0.0129	
+Epoch: [30][3570/40689]	Per Sample Total Time 0.02849	Per Sample Data Time 0.02651	Per Sample DNN Time 0.00198	Train Loss 0.0116	
+Epoch: [30][3670/40689]	Per Sample Total Time 0.02851	Per Sample Data Time 0.02653	Per Sample DNN Time 0.00198	Train Loss 0.0133	
+Epoch: [30][3770/40689]	Per Sample Total Time 0.02852	Per Sample Data Time 0.02654	Per Sample DNN Time 0.00198	Train Loss 0.0133	
+Epoch: [30][3870/40689]	Per Sample Total Time 0.02859	Per Sample Data Time 0.02661	Per Sample DNN Time 0.00198	Train Loss 0.0136	
+Epoch: [30][3970/40689]	Per Sample Total Time 0.02855	Per Sample Data Time 0.02657	Per Sample DNN Time 0.00198	Train Loss 0.0124	
+start validation
+mAP: 0.400372
+AUC: 0.966941
+d_prime: 2.598791
+train_loss: 0.012556
+valid_loss: 0.013504
+validation finished
+Epoch-30 lr: 1.58203125e-05
+epoch 30 training time: 5880.745
+wa 15 models from 16 to 30
+<All keys matched successfully>
+mAP of model with weights averaged from checkpoint 16-30 is 0.4165
