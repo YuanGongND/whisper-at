@@ -200,6 +200,8 @@ The model code is [[here]](https://github.com/YuanGongND/whisper-at/blob/main/sr
 
 ## Available Models and Audio Tagging Performance
 
+The Whisper-AT script downloads the original OpenAI Whisper model and our AT model automatically. So you do not really need to download it manually. But in case your device does not have Internet access, here is the [[links]](https://github.com/YuanGongND/whisper-at/tree/main/pretrained_models)
+
 |   Model <br /> Name  | #ASR <br /> Params |   Language   | #AT Params <br /> (TL-TR) | AS mAP  <br /> (TL-TR) | #AT Params  <br /> (TL-TR-512) | AS mAP  <br /> (TL-TR-512) |
 |:---------:|:------------:|:------------:|:---------------------------:|:----------------------------------:|:----------------------:|:-----------------------------:|
 |  `large-v2`  <br /> (`large`) |     1550M    | Multilingual |            40.0M            |                41.7                |          7.2M          |              40.3             |
