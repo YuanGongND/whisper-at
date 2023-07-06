@@ -17,6 +17,7 @@
 <p align="center"><img src="https://github.com/YuanGongND/whisper-at/blob/main/tltr.png?raw=true" alt="Illustration of Whisper-AT." width="800"/></p>
 
 <div align="center">
+  (Please turn on audio to listen to the sounds)
   <video src="https://github.com/YuanGongND/whisper-at/assets/17163494/b479320a-b7f7-4bfc-acba-087b447623bd" width="400" />
 </div>
 
