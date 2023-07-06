@@ -1,7 +1,17 @@
 # Whisper-AT
 
+- [Introduction](#introduction)
+- [Citation](#citation)
+- [For Applications](#for-applications)
+- [For Research](#for-research)
+- [Available Models and Audio Tagging Performance](#available-models-and-audio-tagging-performance)
+- [License](#license)
+- [Contact](#contact)
+
+## Introduction
+
 [**[Paper]**]()
-[**[Colab Instruction]**](https://colab.research.google.com/drive/1BbOGWCMjkOlOY5PbEMGk5RomRSqMcy_Q?usp=sharing)
+[**[Colab Demo]**](https://colab.research.google.com/drive/1BbOGWCMjkOlOY5PbEMGk5RomRSqMcy_Q?usp=sharing)
 
 <p align="center"><img src="https://github.com/YuanGongND/whisper-at/blob/main/tltr.png?raw=true" alt="Illustration of Whisper-AT." width="800"/></p>
 
@@ -12,9 +22,9 @@ The advantage of Whisper-AT is that with minimal (less than 1%**) additional com
 
 Internally, Whisper-AT freezes all original Whisper parameters, and trains a Time- and Layer-wise Transformer (TL-TR) on top of the Whisper encoder representations for the audio tagging task.
 
-** *Not for all models, see the paper for details.*
-
 To help better understand the pros and cons of this work, we have attached the anonymous reviews and our responses [[here]](https://github.com/YuanGongND/whisper-at/tree/main/review). We thank the associate editor and anonymous reviewers' invaluable comments.
+
+** *Not for all models, see the paper for details.*
 
 ## Citation
 Please cite our Interspeech 2023 paper if you find this repository useful. 
@@ -31,7 +41,7 @@ Please cite our Interspeech 2023 paper if you find this repository useful.
 
 **The best way to learn how to use Whisper-AT is this [Colab Tutorial](https://colab.research.google.com/drive/1BbOGWCMjkOlOY5PbEMGk5RomRSqMcy_Q?usp=sharing). You can skip all below if you read it.**
 
-If you do not care how Whisper-AT is implemented, but just want to use it, you just need to read this section. This will be very simple.
+If you do not care how Whisper-AT is implemented, but just want to use it, you only need to read this section. This will be very simple.
 
 ### Step 1. Install Whisper-AT
 
