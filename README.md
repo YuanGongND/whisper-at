@@ -14,11 +14,9 @@
 [**[Colab Demo]**](https://colab.research.google.com/drive/1BbOGWCMjkOlOY5PbEMGk5RomRSqMcy_Q?usp=sharing)
 [**[Local Notebook Demo]**(for user without Colab access)](https://github.com/YuanGongND/whisper-at/blob/main/sample/whisper_at_demo.ipynb)
 
-<p align="center"><img src="https://github.com/YuanGongND/whisper-at/blob/main/tltr.png?raw=true" alt="Illustration of Whisper-AT." width="800"/></p>
-
-
 https://github.com/YuanGongND/whisper-at/assets/17163494/b479320a-b7f7-4bfc-acba-087b447623bd
 
+<p align="center"><img src="https://github.com/YuanGongND/whisper-at/blob/main/tltr.png?raw=true" alt="Illustration of Whisper-AT." width="800"/></p>
 
 Whisper-AT is a joint audio tagging and speech recognition model. It inherits strong speech recognition ability from [OpenAI Whisper](https://github.com/openai/whisper), and its ASR performance is exactly the same as the original Whisper. 
 The API interface and usage are also identical to the original OpenAI Whisper, so users can seamlessly switch from the original Whisper to Whisper-AT.
