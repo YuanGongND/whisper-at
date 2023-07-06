@@ -9,7 +9,7 @@
 Whisper-AT is a joint audio tagging and speech recognition model. It inherits strong speech recognition ability from [OpenAI Whisper](https://github.com/openai/whisper), and its ASR performance is exactly the same as the original Whisper. 
 The API interface and usage are also identical to the original OpenAI Whisper, so users can seamlessly switch from the original Whisper to Whisper-AT.
 
-The advantage of Whisper-AT is that with minimal (less than 1%**) additional computational cost, Whisper-AT outputs general audio event labels ([527-class AudioSet labels]()) in desired temporal resolution in addition to the ASR transcripts. This makes audio tagging much easier and faster than using a standalone audio tagging model.
+The advantage of Whisper-AT is that with minimal (less than 1%**) additional computational cost, Whisper-AT outputs general audio event labels ([527-class AudioSet labels](https://github.com/YuanGongND/whisper-at/blob/main/audioset_label.csv)) in desired temporal resolution in addition to the ASR transcripts. This makes audio tagging much easier and faster than using a standalone audio tagging model.
 
 Internally, Whisper-AT freezes all original Whisper parameters, and trains a Time- and Layer-wise Transformer (TL-TR) on top of the Whisper encoder representations for the audio tagging task.
 
@@ -70,7 +70,7 @@ a total of 6 audio event predictions will be made. **Note `at_time_res` must be 
 
 ### Step 3. Get the Audio Tagging Output
 
-Compared with the original Whisper, `result` contains a new entry called `audio_tag`. `result['audio_tag']` is a torch tensor of shape [⌈`audio_length`/`at_time_res`⌉, 527]. For example, for a 60-second audio and `at_time_res = 10`, `result['audio_tag']` is a tensor of shape [6, 527]. 527 is the size of the [AudioSet label set](), `result['audio_tag'][i,j]` is the (unnormalised) logits of class `j` of the `i`th segment.
+Compared with the original Whisper, `result` contains a new entry called `audio_tag`. `result['audio_tag']` is a torch tensor of shape [⌈`audio_length`/`at_time_res`⌉, 527]. For example, for a 60-second audio and `at_time_res = 10`, `result['audio_tag']` is a tensor of shape [6, 527]. 527 is the size of the [AudioSet label set](https://github.com/YuanGongND/whisper-at/blob/main/audioset_label.csv), `result['audio_tag'][i,j]` is the (unnormalised) logits of class `j` of the `i`th segment.
 
 If you are familiar with audio tagging and AudioSet, you can take raw `result['audio_tag']` for your usage. But we also provide a tool to make it easier.
 You can feed the `result` to `whisepr.parse_at_label`
@@ -117,12 +117,12 @@ The most important finding of this paper is that a robust ASR actually learns a 
 Since we freeze the Whisper model, in our experiments, we extract and save the Whisper features first. 
 
 There are two ways to extract Whisper features:
-- You can use the released version of Whisper-AT and get the audio feature [at this line](), by adding `result.audio_features_for_at` to the returns of `transcribe` function. You can get the pooled (x20 temporal downsampling) audio representation of each Whisper audio encoder.
+- You can use the released version of Whisper-AT and get the audio feature [[at this line]](https://github.com/YuanGongND/whisper-at/blob/d68531414a118b9fcf46d0e1ae9715ee8fa67d0f/package/whisper-at/whisper_at/transcribe.py#L258C25-L258C25), by adding `result.audio_features_for_at` to the returns of `transcribe` function. You can get the pooled (x20 temporal downsampling) audio representation of each Whisper audio encoder.
 E.g., for Whisper-Large, `result.audio_features_for_at` is of shape [32, 75, 1280], where 32 is the number of Whisper encoder layer, 75 is the time length (30s * 100 = 3000 frames / 2 (Whisper downsample) / 20 (AT downsample) = 75). Note the Whisper window is always 30s. So if your input audio is 10s, you need to slice the first 25 time steps.
 i.e., [32, 25, 1280]. In addition, with the padded zeros and attention mechanism, the output won't be same as just inputting 10s audio without padding.
   - Advantage: polished code.
   - Disadvantage: always padded to 30s (which is acceptable), not used in our paper experiments.
-- We also provide our actual code to extract feature at [here](https://github.com/YuanGongND/whisper-at/tree/main/src/noise_robust_asr/intermediate_feat_extract). This code is researchy, but trims the audio to 10s instead of padding. 
+- We also provide our actual code to extract feature at [[here]](https://github.com/YuanGongND/whisper-at/tree/main/src/noise_robust_asr/intermediate_feat_extract). This code is researchy, but trims the audio to 10s instead of padding. 
   - We don't have time to polish this, use if you are an expert on Whisper.
 
 **To facilitate reproduction, we release the ESC-50 features used for experiments [[here]](https://www.dropbox.com/s/hmmdopfjlq3o3vs/esc_feat.zip?dl=1).**
