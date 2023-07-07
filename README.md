@@ -1,4 +1,4 @@
-# Whisper-AT
+# Whisper-AT: Noise-Robust Automatic Speech Recognizers are Also Strong Audio Event Taggers
 
 - [Introduction](#introduction)
 - [Citation](#citation)
