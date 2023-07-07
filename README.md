@@ -12,6 +12,7 @@
 
 [**[Paper]**](https://arxiv.org/pdf/2307.03183.pdf)
 [**[Colab Demo]**](https://colab.research.google.com/drive/1BbOGWCMjkOlOY5PbEMGk5RomRSqMcy_Q?usp=sharing)
+
 [**[Local Notebook Demo]**(for user without Colab access)](https://github.com/YuanGongND/whisper-at/blob/main/sample/whisper_at_demo.ipynb)
 
 <p align="center"><img src="https://github.com/YuanGongND/whisper-at/blob/main/tltr.png?raw=true" alt="Illustration of Whisper-AT." width="800"/></p>
