@@ -10,7 +10,7 @@
 
 ## Introduction
 
-[**[Paper]**]()
+[**[Paper]**](https://arxiv.org/pdf/2307.03183.pdf)
 [**[Colab Demo]**](https://colab.research.google.com/drive/1BbOGWCMjkOlOY5PbEMGk5RomRSqMcy_Q?usp=sharing)
 [**[Local Notebook Demo]**(for user without Colab access)](https://github.com/YuanGongND/whisper-at/blob/main/sample/whisper_at_demo.ipynb)
 
@@ -119,7 +119,7 @@ That's it!
 
 ## For Research
 
-If you are interested in the findings and experiments in our Interspeech paper *[Whisper-AT: Noise-Robust Automatic Speech Recognizers are Also Strong Audio Event Taggers]()*, please check this section.
+If you are interested in the findings and experiments in our Interspeech paper *[Whisper-AT: Noise-Robust Automatic Speech Recognizers are Also Strong Audio Event Taggers](https://arxiv.org/pdf/2307.03183.pdf)*, please check this section.
 We provide our code to reproduce the experiments in the paper. 
 
 The paper mainly contains two contributions:
