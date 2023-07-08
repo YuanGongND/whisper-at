@@ -33,6 +33,8 @@ To help better understand the pros and cons of this work, we have attached the a
 
 ** *Not for all models, see the paper for details.*
 
+<hr style="border: 0; height: 1px; background-color: #e0e0e0;">
+
 ***Quick Start (Run in 8 lines of code)***
 
 In shell, 
