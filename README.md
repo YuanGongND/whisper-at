@@ -33,7 +33,7 @@ To help better understand the pros and cons of this work, we have attached the a
 
 ** *Not for all models, see the paper for details.*
 
-***Quick Start***
+***Quick Start (Run in 8 lines of code)***
 
 In shell, 
 ```
