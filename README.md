@@ -33,6 +33,25 @@ To help better understand the pros and cons of this work, we have attached the a
 
 ** *Not for all models, see the paper for details.*
 
+***Quick Start***
+
+```
+pip install whisper-at
+```
+and then
+```python3
+import whisper_at as whisper
+
+audio_tagging_time_resolution = 10
+model = whisper.load_model("large-v1")
+result = model.transcribe("audio.mp3", at_time_res=audio_tagging_time_resolution)
+# ASR Results
+print(result["text"])
+# Audio Tagging Results
+audio_tag_result = whisper.parse_at_label(result, language='follow_asr', top_k=5, p_threshold=-1, include_class_list=list(range(527)))
+print(audio_tag_result)
+```
+
 ## Citation
 Please cite our Interspeech 2023 paper if you find this repository useful. 
 ```  
