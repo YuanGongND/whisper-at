@@ -35,10 +35,11 @@ To help better understand the pros and cons of this work, we have attached the a
 
 ***Quick Start***
 
+In shell, 
 ```
 pip install whisper-at
 ```
-and then
+Then, in Python,
 ```python3
 import whisper_at as whisper
 
