@@ -12,7 +12,7 @@
 
 [**[Paper]**](https://arxiv.org/pdf/2307.03183.pdf)
 
-[**[Interactive Demo (try without coding)]**](https://c916b4a5ed75eac733.gradio.live)
+[**[Interactive Demo (try without coding)]**](https://5fed6fa7ac5a08c643.gradio.live)
 
 [**[Colab Demo]**](https://colab.research.google.com/drive/1BbOGWCMjkOlOY5PbEMGk5RomRSqMcy_Q?usp=sharing)
 
