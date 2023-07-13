@@ -48,9 +48,9 @@ pip install whisper-at
 For Mac users, there is a known bug, please use the following workaround:
 ```
 # install all dependencies except triton, this will break when it tries to install triton
-pip install --no-deps whisper-at  
-# install whisper-at without any dependency
 pip install whisper-at 
+# install whisper-at without any dependency
+pip install --no-deps whisper-at  
 ```
 Then, in Python,
 ```python3
