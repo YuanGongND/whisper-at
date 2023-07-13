@@ -94,6 +94,14 @@ Whisper-AT can be installed simply by:
 
     pip install whisper-at
 
+For Mac users, there is a known bug, please use the following workaround:
+```bash
+# install all dependencies except triton, this will break when it tries to install triton
+pip install whisper-at 
+# install whisper-at without any dependency
+pip install --no-deps whisper-at  
+```
+
 Note that following original Whisper, it also requires the command-line tool [`ffmpeg`](https://ffmpeg.org/) to be installed on your system. Please check OpenAI Whisper repo for details.
 
 ### Step 2. Use as the Original Whisper
