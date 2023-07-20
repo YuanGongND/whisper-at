@@ -47,8 +47,8 @@ pip install whisper-at
 
 For Mac users, there is a known bug, please use the following workaround:
 ```bash
-# install all dependencies except triton, this will break when it tries to install triton
-pip install whisper-at 
+# install all dependencies except triton
+pip install numba numpy torch tqdm more-itertools tiktoken==0.3.3
 # install whisper-at without any dependency
 pip install --no-deps whisper-at  
 ```
@@ -96,8 +96,8 @@ Whisper-AT can be installed simply by:
 
 For Mac users, there is a known bug, please use the following workaround:
 ```bash
-# install all dependencies except triton, this will break when it tries to install triton
-pip install whisper-at 
+# install all dependencies except triton
+pip install numba numpy torch tqdm more-itertools tiktoken==0.3.3
 # install whisper-at without any dependency
 pip install --no-deps whisper-at  
 ```

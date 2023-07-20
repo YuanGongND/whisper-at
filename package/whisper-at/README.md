@@ -1,4 +1,4 @@
-# Whisper-AT
+# Whisper-AT: Noise-Robust Automatic Speech Recognizers are Also Strong Audio Event Taggers
 
 - [Introduction](#introduction)
 - [Citation](#citation)
@@ -10,8 +10,20 @@
 
 ## Introduction
 
-[**[Paper]**]()
+[**[Paper]**](https://arxiv.org/pdf/2307.03183.pdf)
+
+[**[HuggingFace Space]**](https://huggingface.co/spaces/yuangongfdu/whisper-at) (Try Whisper-AT without Coding!)
+
 [**[Colab Demo]**](https://colab.research.google.com/drive/1BbOGWCMjkOlOY5PbEMGk5RomRSqMcy_Q?usp=sharing)
+
+[**[Local Notebook Demo]**(for user without Colab access)](https://github.com/YuanGongND/whisper-at/blob/main/sample/whisper_at_demo.ipynb)
+
+<p align="center"><img src="https://github.com/YuanGongND/whisper-at/blob/main/tltr.png?raw=true" alt="Illustration of Whisper-AT." width="800"/></p>
+
+<div align="center">
+  (Please turn on audio to listen to the sounds)
+  <video src="https://github.com/YuanGongND/whisper-at/assets/17163494/b479320a-b7f7-4bfc-acba-087b447623bd" width="400" />
+</div>
 
 Whisper-AT is a joint audio tagging and speech recognition model. It inherits strong speech recognition ability from [OpenAI Whisper](https://github.com/openai/whisper), and its ASR performance is exactly the same as the original Whisper. 
 The API interface and usage are also identical to the original OpenAI Whisper, so users can seamlessly switch from the original Whisper to Whisper-AT.
@@ -23,6 +35,36 @@ Internally, Whisper-AT freezes all original Whisper parameters, and trains a Tim
 To help better understand the pros and cons of this work, we have attached the anonymous reviews and our responses [[here]](https://github.com/YuanGongND/whisper-at/tree/main/review). We thank the anonymous reviewers' invaluable comments.
 
 ** *Not for all models, see the paper for details.*
+
+<hr style="border: 0; height: 1px; background-color: #e0e0e0;">
+
+***Quick Start (Run in 8 lines of code)***
+
+In shell, 
+```
+pip install whisper-at
+```
+
+For Mac users, there is a known bug, please use the following workaround:
+```bash
+# install all dependencies except triton, this will break when it tries to install triton
+pip install whisper-at 
+# install whisper-at without any dependency
+pip install --no-deps whisper-at  
+```
+Then, in Python,
+```python3
+import whisper_at as whisper
+
+audio_tagging_time_resolution = 10
+model = whisper.load_model("large-v1")
+result = model.transcribe("audio.mp3", at_time_res=audio_tagging_time_resolution)
+# ASR Results
+print(result["text"])
+# Audio Tagging Results
+audio_tag_result = whisper.parse_at_label(result, language='follow_asr', top_k=5, p_threshold=-1, include_class_list=list(range(527)))
+print(audio_tag_result)
+```
 
 ## Citation
 Please cite our Interspeech 2023 paper if you find this repository useful. 
@@ -37,7 +79,10 @@ Please cite our Interspeech 2023 paper if you find this repository useful.
 
 ## For Applications
 
-**The best way to learn how to use Whisper-AT is this [Colab Tutorial](https://colab.research.google.com/drive/1BbOGWCMjkOlOY5PbEMGk5RomRSqMcy_Q?usp=sharing). You can skip all below if you read it.**
+**The best way to learn how to use Whisper-AT is this [[**Colab Tutorial**]](https://colab.research.google.com/drive/1BbOGWCMjkOlOY5PbEMGk5RomRSqMcy_Q?usp=sharing). You can skip all below if you read it.**
+If you don't have Google Colab access (uncommon), you can use this [[Local Notebook]](https://github.com/YuanGongND/whisper-at/blob/main/sample/whisper_at_demo.ipynb) as a substitution.
+
+<hr style="border: 0; height: 1px; background-color: #e0e0e0;">
 
 If you do not care how Whisper-AT is implemented, but just want to use it, you only need to read this section. This will be very simple.
 
@@ -48,6 +93,14 @@ We intentionally do not any additional dependencies to the original Whisper. So 
 Whisper-AT can be installed simply by:
 
     pip install whisper-at
+
+For Mac users, there is a known bug, please use the following workaround:
+```bash
+# install all dependencies except triton, this will break when it tries to install triton
+pip install whisper-at 
+# install whisper-at without any dependency
+pip install --no-deps whisper-at  
+```
 
 Note that following original Whisper, it also requires the command-line tool [`ffmpeg`](https://ffmpeg.org/) to be installed on your system. Please check OpenAI Whisper repo for details.
 
@@ -108,7 +161,7 @@ That's it!
 
 ## For Research
 
-If you are interested in the findings and experiments in our Interspeech paper *[Whisper-AT: Noise-Robust Automatic Speech Recognizers are Also Strong Audio Event Taggers]()*, please check this section.
+If you are interested in the findings and experiments in our Interspeech paper *[Whisper-AT: Noise-Robust Automatic Speech Recognizers are Also Strong Audio Event Taggers](https://arxiv.org/pdf/2307.03183.pdf)*, please check this section.
 We provide our code to reproduce the experiments in the paper. 
 
 The paper mainly contains two contributions:
