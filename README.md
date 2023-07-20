@@ -77,6 +77,14 @@ Please cite our Interspeech 2023 paper if you find this repository useful.
 }
 ```
 
+<script
+	type="module"
+	src="https://gradio.s3-us-west-2.amazonaws.com/3.34.0/gradio.js"
+></script>
+
+<gradio-app src="https://yuangongfdu-whisper-at.hf.space"></gradio-app>
+
+
 ## For Applications
 
 **The best way to learn how to use Whisper-AT is this [[**Colab Tutorial**]](https://colab.research.google.com/drive/1BbOGWCMjkOlOY5PbEMGk5RomRSqMcy_Q?usp=sharing). You can skip all below if you read it.**
