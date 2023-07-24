@@ -12,7 +12,7 @@ if sys.platform.startswith("linux") and platform.machine() == "x86_64":
 setup(
     name="whisper-at",
     py_modules=["whisper_at"],
-    version=0.3,
+    version=0.4,
     description="Joint speech recognition and audio tagging model.",
     long_description=open("README.md", encoding="utf-8").read(),
     long_description_content_type="text/markdown",

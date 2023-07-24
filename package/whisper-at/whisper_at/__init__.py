@@ -71,7 +71,8 @@ def _download(url: str, root: str, in_memory: bool) -> Union[bytes, str]:
     os.makedirs(root, exist_ok=True)
 
     expected_sha256 = url.split("/")[-2]
-    download_target = os.path.join(root, os.path.basename(url))
+    parsed_url = urllib.parse.urlparse(url).path
+    download_target = os.path.join(root, os.path.basename(parsed_url))
 
     if os.path.exists(download_target) and not os.path.isfile(download_target):
         raise RuntimeError(f"{download_target} exists and is not a regular file")
