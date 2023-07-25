@@ -45,7 +45,7 @@ In shell,
 pip install whisper-at
 ```
 
-For Mac users, there is a known bug, please use the following workaround:
+For Mac/Windows users, there is a known bug, please use the following workaround:
 ```bash
 # install all dependencies except triton
 pip install numba numpy torch tqdm more-itertools tiktoken==0.3.3
@@ -94,7 +94,7 @@ Whisper-AT can be installed simply by:
 
     pip install whisper-at
 
-For Mac users, there is a known bug, please use the following workaround:
+For Mac/Windows users, there is a known bug, please use the following workaround:
 ```bash
 # install all dependencies except triton
 pip install numba numpy torch tqdm more-itertools tiktoken==0.3.3
