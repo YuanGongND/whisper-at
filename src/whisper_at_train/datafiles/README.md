@@ -1,4 +1,4 @@
-# Audio Datafiles
+# AudioSet Datafiles
 
 We provide the json file we used to train the model to facilitate reproduction, it contains sample id and corresponding labels, actual audio files are not contained.
 
