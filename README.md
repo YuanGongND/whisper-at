@@ -10,7 +10,7 @@
 
 ## Introduction
 
-[**[Paper]**](https://arxiv.org/pdf/2307.03183.pdf)
+[**[Paper]**](https://www.isca-speech.org/archive/pdfs/interspeech_2023/gong23d_interspeech.pdf)
 
 [**[HuggingFace Space]**](https://huggingface.co/spaces/yuangongfdu/whisper-at) (Try Whisper-AT without Coding!)
 
