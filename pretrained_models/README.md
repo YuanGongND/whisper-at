@@ -1,7 +1,7 @@
 # Pretrained Weights
 
 The Whisper-AT script downloads the original OpenAI Whisper model and our AT model automatically. So you do not really need to download it manually. 
-But in case your device does not have Internet access, here is the link. Download and place the model in the same directory as the original OpenAI Whisper model. 
+But in case your device does not have Internet access, here is the link. Download and place the model in the same directory (by default `~/.cache/whisper`) as the original OpenAI Whisper model. 
 
 These links support `wget`.
 
@@ -27,7 +27,7 @@ dropbox_path = [
 "large_low": "https://www.dropbox.com/s/wk5dyxustpji06c/large-v2_low.pth?dl=1"]
 ```
 
-## China Mirror Links
+## China Mirror Links 镜像链接
 
 The models are hosted on Dropbox. If dropbox is not accessible, use a VPN or the mirror link, you would have to donwload it manually and place it in the same directory (by default `~/.cache/whisper`) as the original OpenAI Whisper model.
 [[镜像链接(腾讯微云)]](https://share.weiyun.com/bVxQWxTe)
