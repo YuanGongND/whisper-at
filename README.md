@@ -18,6 +18,8 @@
 
 [**[Local Notebook Demo]**(for user without Colab access)](https://github.com/YuanGongND/whisper-at/blob/main/sample/whisper_at_demo.ipynb)
 
+[**[Python Package]**](https://pypi.org/project/whisper-at/) [![Downloads](https://static.pepy.tech/badge/whisper-at)](https://pepy.tech/project/whisper-at)
+
 <p align="center"><img src="https://github.com/YuanGongND/whisper-at/blob/main/poster.png?raw=true" alt="Illustration of Whisper-AT." width="800"/></p>
 
 <div align="center">
