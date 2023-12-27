@@ -128,7 +128,7 @@ def transcribe(
     #print(mel.shape)
     content_frames = mel.shape[-1] - N_FRAMES
 
-    at_decision_window = at_time_res * 100 # in number of frames
+    at_decision_window = round(at_time_res * 100, 5) # in number of frames
     assert at_decision_window % 40 == 0, "Audio tagging resolution at_time_res must be an integer multiple of 0.4 second, e.g., 0.4, 0.8, 1.2, etc, current at_time_res={:.2f}.".format(at_time_res)
     if at_decision_window != 1000:
         warn_msg = "Current at_time_res is {:.2f} second, the audio tagging model is trained with time resolution of 10 seconds. Mismatch time resolution may cause an audio tagging performance drop, but won't impact ASR performance.".format(at_time_res)
